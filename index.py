@@ -1,10 +1,13 @@
-
 from Metrics import Metrics
 
 import csv
+import nltk
 from nltk.corpus import wordnet as wn
+import pandas as pd
 
-#cd /Users/aleclock/Desktop/uni/TLN/radicioni/progetto
+
+# cd /Users/aleclock/Desktop/uni/TLN/radicioni/progetto_TLN_radicioni
+
 
 def load_csv(path):
     couple_list = []
@@ -17,13 +20,19 @@ def load_csv(path):
 
     return couple_list
 
+def writeCSV(dict):
+    pd.DataFrame(dict).to_csv('./output.csv', index=False)
+
+
 def main():
-    #print(wordnet.get_version())
-    couple_list  = load_csv('./WordSim353.csv')
+    # print(wordnet.get_version())
+    couple_list = load_csv('./WordSim353.csv')
 
     mm = Metrics()
 
     similarities = {
+        'Term 1': [],
+        'Term 2': [],
         'wup': [],
         'sp': [],
         'lch': []
@@ -31,12 +40,22 @@ def main():
 
     for r in couple_list:
         ss1 = wn.synsets(r[0])
-        ss2 = wn.synsets(r[0])
+        ss2 = wn.synsets(r[1])
 
-        sim_wup = Metrics.wuPalmerMetric(ss1, ss2)
-        sim_path = Metrics.shortestPathMetric(ss1,ss2)
-        sim_lc = Metrics.leakcockChodorowMetric(ss1,ss2)
+        sim_wup = mm.wuPalmerMetric(ss1, ss2)
+        #print (str(r[0]) + " , " + str(r[1]) + " ---- " + str(sim_wup) + " , " + str(sim_wupWN))
+        sim_path = mm.shortestPathMetric(ss1, ss2)
+        sim_lc = mm.leakcockChodorowMetric(ss1, ss2)
 
+        similarities["Term 1"].append(r[0])
+        similarities["Term 2"].append(r[1])
+        similarities["wup"].append(sim_wup)
+        similarities["sp"].append(sim_path)
+        similarities["lch"].append(sim_lc)
+    
+    writeCSV(similarities)
+    
+    print("done")
 
 
 main()
