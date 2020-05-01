@@ -1,9 +1,11 @@
 from Metrics import Metrics
+from Correlation import *
 
 import csv
 import nltk
 from nltk.corpus import wordnet as wn
 import pandas as pd
+from prettytable import PrettyTable
 
 
 # cd /Users/aleclock/Desktop/uni/TLN/radicioni/progetto_TLN_radicioni
@@ -33,29 +35,38 @@ def main():
     similarities = {
         'Term 1': [],
         'Term 2': [],
+        'Target': [],
         'wup': [],
         'sp': [],
         'lch': []
     }
 
-    for r in couple_list:
+    for r in couple_list[:]:
         ss1 = wn.synsets(r[0])
         ss2 = wn.synsets(r[1])
 
         sim_wup = mm.wuPalmerMetric(ss1, ss2)
-        #print (str(r[0]) + " , " + str(r[1]) + " ---- " + str(sim_wup) + " , " + str(sim_wupWN))
         sim_path = mm.shortestPathMetric(ss1, ss2)
         sim_lc = mm.leakcockChodorowMetric(ss1, ss2)
 
         similarities["Term 1"].append(r[0])
         similarities["Term 2"].append(r[1])
+        similarities["Target"].append(r[2])
         similarities["wup"].append(sim_wup)
         similarities["sp"].append(sim_path)
         similarities["lch"].append(sim_lc)
-    
+
     writeCSV(similarities)
+
+    table = PrettyTable()
+    table.field_names = ["Similarity index", "Spearman index", "Pearson index"]
+    table.add_row(["Wu & Palmer", pearson_index(similarities["Target"], similarities["wup"]), spearman_index(similarities["Target"], similarities["wup"])])
+    table.add_row(["Shortest Path", pearson_index(similarities["Target"], similarities["sp"]), spearman_index(similarities["Target"], similarities["sp"])])
+    table.add_row(["Leakcock & Chodorow", pearson_index(similarities["Target"], similarities["lch"]), spearman_index(similarities["Target"], similarities["lch"])])
+
     
-    print("done")
+    print(table)
+
 
 
 main()
