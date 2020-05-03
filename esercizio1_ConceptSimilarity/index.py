@@ -8,7 +8,7 @@ import pandas as pd
 from prettytable import PrettyTable
 
 
-# cd /Users/aleclock/Desktop/uni/TLN/radicioni/progetto_TLN_radicioni
+# cd /Users/aleclock/Desktop/uni/TLN/radicioni/progettoTLN_Radicioni/esercizio1_ConceptSimilarity
 
 
 def load_csv(path):
@@ -18,7 +18,7 @@ def load_csv(path):
             temp = row.split(",")
             # TODO valutare se normalizzare gold_value (dividere per 10)
             gold_value = temp[2].replace('\n', '')
-            couple_list.append((temp[0], temp[1], float(gold_value)))
+            couple_list.append((temp[0], temp[1], float(gold_value)/10))
 
     return couple_list
 
