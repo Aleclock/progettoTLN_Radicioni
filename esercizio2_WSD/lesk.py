@@ -6,7 +6,6 @@ def lesk(word,sentences):
     senses = wn.synsets(word)
     best_sense = senses[0]
     max_overlap = 0
-    #context = set(sentence.split())
     context = bagOfWord(sentences)
 
     for sense in senses:
@@ -35,9 +34,6 @@ def bagOfWord(sent):
     """
     Transforms the given sentence according to the bag of words approach,
     apply lemmatization, stop words and punctuation removal
-
-    :param sent: sentence
-    :return: bag of words
     """
 
     stop_words = set(stopwords.words('english'))
