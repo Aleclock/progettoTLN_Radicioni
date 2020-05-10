@@ -1,10 +1,12 @@
 
-from lesk import * 
+from leskUtils import * 
 from reformatSemcor import *
 
 import re
 import pandas as pd
 import xml.etree.ElementTree as ET
+from nltk.wsd import lesk as leskNltk
+from sklearn.metrics import accuracy_score
 
 import numpy as np
 import random
@@ -22,8 +24,8 @@ def openFile(path):
     file.close()
     return sentences
 
-def writeCSV(dict):
-    pd.DataFrame(dict).to_csv('./output.csv', index=False)
+def writeCSV(dict, name):
+    pd.DataFrame(dict).to_csv('./' + name + '.csv', index=False)
 
 def addTableRow(table, sentence, word, sense, newSentence):
     table.add_row([sentence,word,str(sense),newSentence])
@@ -40,9 +42,12 @@ def main():
 
     # ---------------------------------------------
     # ----      PARTE 1
+    # Disambiguare i termini polisemici all’interno delle frasi del file ‘sentences.txt’; 
+    # oltre a restituire i synset ID del senso (appropriato per il contesto), il programma deve riscrivere ciascuna frase in input sostituendo 
+    # il termine polisemico con l’elenco dei sinonimi eventualmente presenti nel synset.
     # ---------------------------------------------
 
-    """sentences = openFile("sentences.txt")
+    sentences = openFile("sentences.txt")
 
     output = {
         'Original sentence': [],
@@ -61,25 +66,61 @@ def main():
         output["Synset"].append(best_sense)
         output["New sentence"].append(newSentence)
     
-    writeCSV(output)"""
+    writeCSV(output, "outputDisambiguation")
 
     # ---------------------------------------------
     # ----      PARTE 2
+    # Estrarre 50 frasi dal corpus SemCor (corpus annotato con i synset di WN) e disambiguare almeno un sostantivo per frase. 
+    # Calcolare l’accuratezza del sistema implementato sulla base dei sensi annotati in SemCor.
     # ---------------------------------------------
 
     sentences = readXML ("br-a01.xml")
+    sentences = random.sample(sentences, 50)    # Vengono selezionate 50 frasi casuali
+
+    database = {
+        'Sentence': [],
+        'Ambiguos term': [],
+        'Semcor synset': [],
+        'My synset': [],
+        'Nltk synset': []
+    }
 
     for s in sentences:
         tagged_words = [word for word in s.iter()
                             if word.get("cmd") is not "ignore" and      # Se non sbaglio "ignore" indica le parole che non devono essere taggate 
-                            word.get("pos") in ['NN', 'NNS', 'NNPS']]   # In quanto si vuole prende un sostantivo  
+                            word.get("lexsn") is not None and
+                            word.get("lemma") is not None and 
+                            word.get("pos") in ['NN', 'NNS', 'NNPS'] and  # In quanto si vuole prende un sostantivo  
+                            word.get("wnsn") != "0"]   
         
         word = random.choice(tagged_words)  # Choose a random word (NOUN)
-        
-        word = word.text
+
+        """ http://www.nltk.org/api/nltk.corpus.reader.html?highlight=wordnet """
+        semCorSynset = wn.synset_from_sense_key("%".join([word.get("lemma"), word.get("lexsn")]))   # Synset annotate in semCor
+
+        w = word.text   # Word to disambiguate
         sentence = " ".join(word.text for word in s.iter()) 
+        
+        best_sense = lesk(w, sentence)
+        best_senseNLTK = leskNltk(sentence,w)
 
-        # TODO determinare il synset della parola (vedere notebook prof)
-        # TODO su queste due variabili devo far partire l'algoritmo di Lesk
+        database["Sentence"].append(sentence)
+        database["Ambiguos term"].append(w)
+        database["Semcor synset"].append(semCorSynset)
+        database["My synset"].append(best_sense)
+        database["Nltk synset"].append(best_senseNLTK)
 
+    writeCSV(database, "outputSemcor")
+
+    ground = [str(i) for i in database["Semcor synset"]]
+    predicted_lesk = [str(i) for i in database["My synset"]]
+    predicted_nltk = [str(i) for i in database["Nltk synset"]]
+
+    accuracyPersonal = accuracy_score(ground,predicted_lesk)
+    accuracyNLTK = accuracy_score(ground,predicted_nltk)
+
+    print ("------------------")
+    print ("Accuracy with personal Leks: "  + str(accuracyPersonal))
+    print ("Accuracy with Nltk Leks: "  + str(accuracyNLTK))
+    print ("------------------")
 main()

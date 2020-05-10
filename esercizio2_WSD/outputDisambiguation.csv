@@ -1,0 +1,15 @@
+Original sentence,Word,Synset,New sentence
+arms bend at the elbow,arms,Synset('arm.n.01'),['arm'] bend at the elbow
+germany sells arms to saudi arabia,arms,Synset('arm.n.02'),"germany sells ['arm', 'branch', 'limb'] to saudi arabia"
+the key broke in the lock,key,Synset('key.v.02'),the ['key'] broke in the lock
+the key problem was not one of quality but of quantity,key,Synset('key.v.05'),the ['key'] problem was not one of quality but of quantity
+work out the solution in your head,solution,Synset('solution.n.01'),work out the ['solution'] in your head
+heat the solution to 75° celsius,solution,Synset('solution.n.01'),heat the ['solution'] to 75° celsius
+the house was burnt to ashes while the owner returned,ashes,Synset('ash.n.03'),the house was burnt to ['ash'] while the owner returned
+this table is made of ash wood,ash,Synset('ash.n.03'),this table is made of ['ash'] wood
+the lunch with her boss took longer than she expected,lunch,Synset('lunch.n.01'),"the ['lunch', 'luncheon', 'tiffin', 'dejeuner'] with her boss took longer than she expected"
+she packed her lunch in her purse,lunch,Synset('lunch.n.01'),"she packed her ['lunch', 'luncheon', 'tiffin', 'dejeuner'] in her purse"
+the classification of the genetic data took two years,classification,Synset('categorization.n.03'),"the ['categorization', 'categorisation', 'classification', 'compartmentalization', 'compartmentalisation', 'assortment'] of the genetic data took two years"
+the journal science published the classification this month,classification,Synset('categorization.n.03'),"the journal science published the ['categorization', 'categorisation', 'classification', 'compartmentalization', 'compartmentalisation', 'assortment'] this month"
+his cottage is near a small wood,wood,Synset('wood.n.08'),his cottage is near a small ['wood']
+the statue was made out of a block of wood,wood,Synset('wood.n.08'),the statue was made out of a block of ['wood']

@@ -3,12 +3,15 @@ from nltk.corpus import wordnet as wn
 from nltk.corpus import stopwords
 
 def lesk(word,sentences):
-    senses = wn.synsets(word)
-    best_sense = senses[0]
+
+    best_sense = None
     max_overlap = 0
     context = bagOfWord(sentences)
 
-    for sense in senses:
+    for sense in wn.synsets(word):
+        if (best_sense is None):
+            best_sense = sense
+
         signature = bagOfWord(sense.definition())
         examples = sense.examples()
         for ex in examples:
