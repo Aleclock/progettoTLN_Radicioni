@@ -144,3 +144,6 @@ def shortestPath(ss1, ss2):
                 minPath2 = k"""
             minDist = min(minDist, (d1+d2))
     return minDist
+
+def maximimDepth():
+    return max(max(len(hyp_path) for hyp_path in ss.hypernym_paths()) for ss in wn.all_synsets())

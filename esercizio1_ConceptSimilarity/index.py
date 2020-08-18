@@ -56,17 +56,13 @@ def main():
         similarities["sp"].append(sim_path)
         similarities["lch"].append(sim_lc)
 
-    writeCSV(similarities)
+    #writeCSV(similarities)
 
     table = PrettyTable()
     table.field_names = ["Similarity index", "Spearman index", "Pearson index"]
     table.add_row(["Wu & Palmer", pearson_index(similarities["Target"], similarities["wup"]), spearman_index(similarities["Target"], similarities["wup"])])
     table.add_row(["Shortest Path", pearson_index(similarities["Target"], similarities["sp"]), spearman_index(similarities["Target"], similarities["sp"])])
     table.add_row(["Leakcock & Chodorow", pearson_index(similarities["Target"], similarities["lch"]), spearman_index(similarities["Target"], similarities["lch"])])
-
-    
     print(table)
-
-
 
 main()

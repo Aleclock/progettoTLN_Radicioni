@@ -55,6 +55,7 @@ def main():
         'Synset': [],
         'New sentence': []
     }
+    print (len(sentences))
 
     for s in sentences:
         best_sense = lesk(s['word'], s['sentence'])

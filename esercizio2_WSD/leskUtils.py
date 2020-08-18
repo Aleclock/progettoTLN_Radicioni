@@ -38,7 +38,6 @@ def bagOfWord(sent):
     Transforms the given sentence according to the bag of words approach,
     apply lemmatization, stop words and punctuation removal
     """
-
     stop_words = set(stopwords.words('english'))
     punct = {',', ';', '(', ')', '{', '}', ':', '?', '!'}
     wnl = nltk.WordNetLemmatizer()

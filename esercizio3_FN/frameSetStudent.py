@@ -11,6 +11,24 @@ def print_frames_with_IDs():
 def get_frams_IDs():
     return [f.ID for f in fn.frames()]   
 
+def getFrameElements(id):
+    f = fn.frame_by_id(id)
+    return f.FE
+
+def getFrameLU (id):
+    f = fn.frame_by_id(id)
+    return f.lexUnit
+
+def getFrameName (id):
+    f = fn.frame_by_id(id)
+    return f.name
+
+def getFrameByName (name):
+    return fn.frame_by_name(name)
+
+def getFrame(id):
+    return fn.frame_by_id(id)
+
 def getFrameSetForStudent(surname, list_len=5):
     nof_frames = len(fn.frames())
     base_idx = (abs(int(hashlib.sha512(surname.encode('utf-8')).hexdigest(), 16)) % nof_frames)
@@ -20,10 +38,7 @@ def getFrameSetForStudent(surname, list_len=5):
     offset = 0 
     seed(1)
 
-    dict = {
-        'id': [],
-        'frame': []
-    }
+    dataset = []
 
     while i < list_len:
         fID = framenet_IDs[(base_idx+offset)%nof_frames]
@@ -32,7 +47,8 @@ def getFrameSetForStudent(surname, list_len=5):
         print('\tID: {a:4d}\tframe: {framename}'.format(a=fID, framename=fNAME))
         offset = randint(0, nof_frames)
         
-        dict["id"].append(fID)
-        dict["frame"].append(fNAME)
+        #dataset.append({"id":fID, "frame": fNAME})
+        dataset.append(fID)
+
         i += 1    
-    return dict    
+    return dataset    
