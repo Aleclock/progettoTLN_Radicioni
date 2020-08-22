@@ -1,5 +1,7 @@
 from summarization import *
 
+from pathlib import Path
+
 # cd /Users/aleclock/Desktop/uni/TLN/radicioni/progettoTLN_Radicioni/esercizio4_nasariSummarisation
 
 
@@ -21,6 +23,9 @@ def loadDocument(path):
 
         title = False
         paragraphs = 0
+
+        ff = Path(path)
+        print ("Initial length: " + str(len(ff.read_text(encoding='utf-8'))))
 
         for line in file:
             if line[0].isalpha() or line[0] == '“':
@@ -44,23 +49,41 @@ Output:
     concepts: dizionario {word: {term:score}}
 """
 def loadNasari(path):
-    concepts = dict()
+    concepts = {}
+    """
     with open(path, 'r', encoding='utf8') as file:
         for line in file:
             line = (line.strip().lower().split(';'))
             concepts[line[1]] = [tuple(element.split("_")) for element in line[2:]]
     file.close()
+    """
+
+    # Allow to create a dictionary with the form:   nasari_word: {nasari_lexic:nasari_score}
+    with open(path, 'r', encoding='utf8') as file:
+        for line in file.readlines():
+            tokens = line.split(";")
+            lexical_dict = {}
+
+            for token in tokens[2:]:
+                token_part = token.split("_")
+                if len(token_part) > 1:
+                    lexical_dict[token_part[0]] = token_part[1]
+
+            concepts[tokens[1].lower()] = lexical_dict
+    file.close()
+
     return concepts
+
 
 
 """
 __ Initilize the summarization variables. Load the document (title, article) and start summarization function
 """
-def init_summarization(document_path, nasari, compression):
-    print("Starting compression of: {} by {}%".format(document_path.split("\\")[-1],compression))
+def init_summarization(document_path, ouput_path, nasari, compression):
+    print("Starting compression of: {} by {}%".format(document_path.split("/")[-1],compression))
     #nasari = dict_nasari_word_to_lexical()
     title, article = loadDocument(document_path)
-    new_article = summarization(document_path, title,article, nasari, compression)
+    new_article = summarization(ouput_path, document_path.split ("/")[-1], title, article, nasari, compression)
     #print("Numero caratteri documento finale: ",len(new_article),"\n")
 
 
@@ -69,13 +92,22 @@ def main():
     nasari = loadNasari("./nasariSubset/dd-small-nasari-15.txt")
     # TODO provare anche con Nasari grande, scaricare qui   https://goo.gl/85BubW
     
-    method_score = "title"  # Altri: cue, phrase, cohesion TODO da implementare eventualmente
-    #print (document["[title]"])
-    #print (len(document["[body]"]))
-    #for d,value in document.items():
-        #print (d," °°°° " ,  value)
-    
+    method_score = "title"  # Altri: cue, phrase, cohesion TODO da implementare eventualmente    
     #init_summarization("./documents/Andy-Warhol.txt", nasari, 10)
-    init_summarization("./documents/Ebola-virus-disease.txt", nasari, 10)
+    """init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 10)
+    init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 20)
+    init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 30)
+
+    init_summarization("./documents/Andy-Warhol.txt", "./output/", nasari, 10)
+    init_summarization("./documents/Andy-Warhol.txt", "./output/", nasari, 20)
+    init_summarization("./documents/Andy-Warhol.txt", "./output/", nasari, 30)
+
+    init_summarization("./documents/Life-indoors.txt", "./output/", nasari, 10)
+    init_summarization("./documents/Life-indoors.txt", "./output/", nasari, 20)
+    init_summarization("./documents/Life-indoors.txt", "./output/", nasari, 30)"""
+
+    init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 10)
+    init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 20)
+    init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 30)
 
 main()

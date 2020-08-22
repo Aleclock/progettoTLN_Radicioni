@@ -1,5 +1,6 @@
 import nltk
 import re
+import numpy
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
@@ -7,6 +8,7 @@ from nltk.corpus import stopwords
 __ Summarized the text with title method of Compression%
 Input
     path: ouput file path
+    file_name:
 	title: title of the document
 	document: rapresentation of the document
 	nasari: Nasari dictionary
@@ -14,13 +16,48 @@ Input
 Output
     Summarized text
 """
-def summarization(path, title, article, nasari, compression):
-    topics = getNasariVectors(title, nasari)
-    print (topics)
-    for s in article:
-        context = getNasariVectors(s, nasari)
-        
+def summarization(path, file_name, title, article, nasari, compression):
+    topics = getNasariVectors(title, nasari)    # Nasari vectors of title
+    
+    sentences = []
+    sentences_score = []
+
+    sentence_wo = 0     # Sentence weighted overlap
+    for s in article:   # For each paragraph in article
+        context = getNasariVectors(s, nasari)   # Nasari vectors of paragraph of article
+        topics_wo = 0
+        for c in context:   # For each topic in Nasari vector of paragraph
+            for t in topics:    # For each topic in Nasari vector of title
+                topics_wo += getWeightedOverlap(c,t)
+            topics_wo /= len(topics)
+            sentence_wo += topics_wo
+        # This control allow to eliminate from analysis/summarization sentences (s) with no topic in Nasari vectors
+        if len(context) > 0:
+            sentence_wo /= len(context)
+            sentences.append(s)
+            sentences_score.append(sentence_wo)
+
+    percent = int((compression * len(sentences_score))/100) # Number of paragraph to delete
+    paragraph_score_sorted = numpy.argsort(sentences_score) # Returns the indices that would sort an array
+
+    i = 0
+    while (i < percent):
+        print ("---------- Paragraph removed")
+        print (sentences[paragraph_score_sorted[i]])
+        sentences[paragraph_score_sorted[i]]= ""
+        i += 1
+
+    article_summ = title + "\n"
+    for s in sentences:
+        article_summ += s + "\n"
+
+    print ("Summarized completed")
+    print ("Final length: " + str(len(article_summ)))
+    
+    saveArticle(path, file_name, article_summ, compression)
+
     return article
+
 """
 Clear the string in input (lower case, lemmatizer) and create a vector of the word of the string
 Input:
@@ -44,6 +81,8 @@ Input:
 Output:
     list of Nasari vectors
 """
+# TODO non è corretto, nel progetto che sto copiando utilizza due funzioni diverse, capire perchè
+# nel caso di "Napoleone Bonaparte" non trova vettori nasari quindi non è possibile eseguire il riassunto
 def getNasariVectors(sentence, nasari):
     topic = clear_sentence(sentence)
 
@@ -51,18 +90,48 @@ def getNasariVectors(sentence, nasari):
     for word in topic:
         if word in nasari.keys():
             vectors.append(nasari[word])
+    print (topic)
+    print ("°°°" + str(vectors))
 
     return vectors
 
 """
-Create a list of Nasari vectors from title words token
+Allow to calculate the Semantic similarity. Implementation of Weight Overlap (Pilehvar et al.)
 Input:
-    title: title of the document
-    nasari: Nasari dictionary
+    vect1: Nasari vector (topic)
+    vect2: Nasari vector (paragraph)
 Output:
-    list of Nasari vectors
+    square-rooted Weighted Overlap, or 0
 """
-def title_method(title, nasari):
-    tokens = clear_sentence(title)
-    vectors = getVectors(tokens, nasari)
-    return vectors
+def getWeightedOverlap(vect1, vect2):
+    keys_overlap = list(vect1.keys() & vect2.keys()) # keys in common
+    if len(keys_overlap) > 0:
+        n = sum(1 / (rank(q, list(vect1)) + rank(q, list(vect2))) for q in keys_overlap)
+        d = sum(list(map(lambda x: 1 / (2 * x), list(range(1, len(keys_overlap) + 1)))))
+        return n/d
+    return 0
+
+"""
+Input:
+    q: key of nasari vector
+    v: Nasari vector
+Output:
+    index of the element q in v
+"""
+def rank(q, v):
+    for i in range(len(v)):
+        if v[i] == q:
+            return i + 1
+
+"""
+Allow to save the summarised article in .txt located in path
+Input:
+    path: destination path
+    name: file name
+    article: content of file (summarised article)
+    compressione: percent of reduction (used in file name)
+"""
+def saveArticle(path, name, article, compression):
+    file = open(path + name + "_summ_" + str(compression) + ".txt", 'a')
+    file.write(article)
+    file.close()
