@@ -14,8 +14,8 @@ def main ():
     # La funzione restituisce, dato un cognome in input, l'elenco di frame da elaborare.
     # ---------------------------------------------
 
-    #dataset = getFrameSetForStudent('Clocchiatti')
-    dataset = [31, 120, 1030, 1771, 2303]
+    #frameSet = getFrameSetForStudent('Clocchiatti')
+    frameSet = [31, 120, 1030, 1771, 2303] # id
     
     # ---------------------------------------------
     # ----      1. ASSEGNAZIONE DI UN WN SYNSET AD UN ELEMENTO FRAMENET
@@ -25,19 +25,16 @@ def main ():
     table = PrettyTable()
     table.field_names = ["Frame ID", "Frame", "Synset by Frame name", "Synset by FE", "Synset by LU"]
 
-    for f in dataset[:]:
+    for f in frameSet[:]:
         f_name = getFrameName(f)
         f_FE = getFrameElements(f)
         f_LU = getFrameLU(f)
 
-        syn_fname = ""
-        syn_fe = ""
-
         syn_fname = getWNSynset(f, f_name, 0)
-        #syn_fe = getWNSynset(f, f_FE, 1)
+        syn_fe = getWNSynset(f, f_FE, 1)
         syb_lu = getWNSynset(f, f_LU, 2)
 
-        print ("-----")
+        print ("--------------------------------------------------------------------------------")
         table.add_row([str(f), str(f_name) , str(syn_fname), str(syn_fe), syb_lu])
     
     print(table)
