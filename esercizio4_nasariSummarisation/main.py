@@ -75,27 +75,42 @@ def loadNasari(path):
     return concepts
 
 
+"""
+Allow to save the summarised article in .txt located in path
+Input:
+    path: destination path
+    name: file name
+    article: content of file (summarised article)
+    compressione: percent of reduction (used in file name)
+"""
+def saveArticle(path, name, article, compression):
+    file = open(path + name + "_summ_" + str(compression) + ".txt", 'a')
+    file.write(article)
+    file.close()
+
 
 """
 __ Initilize the summarization variables. Load the document (title, article) and start summarization function
 """
 def init_summarization(document_path, ouput_path, nasari, compression):
     print("Starting compression of: {} by {}%".format(document_path.split("/")[-1],compression))
-    #nasari = dict_nasari_word_to_lexical()
     title, article = loadDocument(document_path)
-    new_article = summarization(ouput_path, document_path.split ("/")[-1], title, article, nasari, compression)
+    article_summ = summarization(title, article, nasari, compression)
+    saveArticle(ouput_path, document_path.split ("/")[-1], article_summ, compression)
     #print("Numero caratteri documento finale: ",len(new_article),"\n")
 
 
 def main():
 
     nasari = loadNasari("./nasariSubset/dd-small-nasari-15.txt")
-    # TODO provare anche con Nasari grande, scaricare qui   https://goo.gl/85BubW
+    #nasari = loadNasari("./nasariSubset/dd-nasari.txt")
+    #nasari = loadNasari("./nasariSubset/dd-small-nasari-15__.txt") # Contain Bonaparte and Napoleone vectors
     
     method_score = "title"  # Altri: cue, phrase, cohesion TODO da implementare eventualmente    
+    
     #init_summarization("./documents/Andy-Warhol.txt", nasari, 10)
-    """init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 10)
-    init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 20)
+    init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 10)
+    """init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 20)
     init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 30)
 
     init_summarization("./documents/Andy-Warhol.txt", "./output/", nasari, 10)
@@ -104,10 +119,10 @@ def main():
 
     init_summarization("./documents/Life-indoors.txt", "./output/", nasari, 10)
     init_summarization("./documents/Life-indoors.txt", "./output/", nasari, 20)
-    init_summarization("./documents/Life-indoors.txt", "./output/", nasari, 30)"""
-
+    init_summarization("./documents/Life-indoors.txt", "./output/", nasari, 30)
+    
     init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 10)
     init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 20)
-    init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 30)
+    init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 30)"""
 
 main()

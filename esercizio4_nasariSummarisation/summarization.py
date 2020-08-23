@@ -4,11 +4,10 @@ import numpy
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
+
 """
 __ Summarized the text with title method of Compression%
 Input
-    path: ouput file path
-    file_name:
 	title: title of the document
 	document: rapresentation of the document
 	nasari: Nasari dictionary
@@ -16,8 +15,12 @@ Input
 Output
     Summarized text
 """
-def summarization(path, file_name, title, article, nasari, compression):
+def summarization(title, article, nasari, compression):
     topics = getNasariVectors(title, nasari)    # Nasari vectors of title
+
+    if len(topics) == 0:
+        print ("Impossibile effettuare riassunto, non ci sono abbastanza topics")
+        return article
     
     sentences = []
     sentences_score = []
@@ -53,10 +56,8 @@ def summarization(path, file_name, title, article, nasari, compression):
 
     print ("Summarized completed")
     print ("Final length: " + str(len(article_summ)))
-    
-    saveArticle(path, file_name, article_summ, compression)
 
-    return article
+    return article_summ
 
 """
 Clear the string in input (lower case, lemmatizer) and create a vector of the word of the string
@@ -90,10 +91,9 @@ def getNasariVectors(sentence, nasari):
     for word in topic:
         if word in nasari.keys():
             vectors.append(nasari[word])
-    print (topic)
-    print ("°°°" + str(vectors))
 
     return vectors
+
 
 """
 Allow to calculate the Semantic similarity. Implementation of Weight Overlap (Pilehvar et al.)
@@ -111,6 +111,7 @@ def getWeightedOverlap(vect1, vect2):
         return n/d
     return 0
 
+
 """
 Input:
     q: key of nasari vector
@@ -122,16 +123,3 @@ def rank(q, v):
     for i in range(len(v)):
         if v[i] == q:
             return i + 1
-
-"""
-Allow to save the summarised article in .txt located in path
-Input:
-    path: destination path
-    name: file name
-    article: content of file (summarised article)
-    compressione: percent of reduction (used in file name)
-"""
-def saveArticle(path, name, article, compression):
-    file = open(path + name + "_summ_" + str(compression) + ".txt", 'a')
-    file.write(article)
-    file.close()

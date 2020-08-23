@@ -15,6 +15,12 @@ Il riassunto viene invocato tramite la funzione summarization(), la quale prende
 Tramite getNasariVectors() si ottiene una lista di vettori nasari contenente i topic riferiti al titolo (title). 
 Per ogni paragrafo dell'articolo (for s in article) viene calcolata la lista di vettori nasari e, per ogni topic del titolo (lista vettori nasari del titolo) e per ogni topic del paragrafo (lista vettori nasari del paragrafo), viene calcolato il Weighted Overlap.
 
+|	Nel caso in cui il riassunto sia basato sul title (title_method), il riassunto 
+|	del documento Napoleon non risulta possibile, in quanto non esistono vettori
+|	relativi alle parole Napoleon e Bonaparte (sia small che complete Nasari).
+|	Risulta necessario utilizzare un'altra versione di small Nasari 
+|	(dd-small-nasari-15__.txt)
+
 Weighted Overlap
 ======================== 
 La sovrapposizione pesata (Weighted Overlap) tra i due vettori Nasari (uno del titolo e l'altro del paragrafo) si ottiene determinando inizialmente l'insieme delle chiavi riferite al vettore Nasari (vect.keys()) in comune ai due vettori Nasari. Se l'insieme delle chiavi in comune è maggiore di zero, la sovrapposizione pesata si calcola come rapporto tra:
