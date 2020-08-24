@@ -131,7 +131,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('direction.n.01')``` |0.051 | | a line leading to a place or point
-```Synset('direction.n.02')``` |0.077 | | the spatial relation between something and the course along which it points or moves
+```Synset('direction.n.02')``` |0.077 | X | the spatial relation between something and the course along which it points or moves
 ```Synset('direction.n.03')``` |0.103 | | a general course along which something has a tendency to develop
 ```Synset('guidance.n.01')``` |0.051 | | something that provides direction or advice as to a decision or course of action
 ```Synset('management.n.01')``` |0.077 | | the act of managing something
@@ -148,7 +148,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('purpose.n.01')``` |0.051 | | an anticipated outcome that is intended or that guides your planned actions
+```Synset('purpose.n.01')``` |0.051 | X | an anticipated outcome that is intended or that guides your planned actions
 ```Synset('function.n.02')``` |0.051 | | what something is used for
 ```Synset('determination.n.02')``` |0.051 | | the quality of being determined to do or achieve something; firmness of purpose
 ```Synset('aim.v.02')``` |0.026 | | propose or intend
@@ -168,7 +168,7 @@ Synset | Score | Best synset | Definition
 ```Synset('culture_medium.n.01')``` |0.026 | | (bacteriology) a nutrient substance (solid or liquid) that is used to cultivate micro-organisms
 ```Synset('medium.n.05')``` |0.026 | | a liquid with which pigment is mixed by a painter
 ```Synset('medium.n.06')``` |0.077 | | (biology) a substance in which specimens are preserved or displayed
-```Synset('medium.n.07')``` |0.077 | | an intervening substance through which something is achieved
+```Synset('medium.n.07')``` |0.077 | X | an intervening substance through which something is achieved
 ```Synset('medium.n.08')``` |0.051 | | a state that is intermediate between extremes; a middle position
 ```Synset('medium.n.09')``` |0.051 | | someone who serves as an intermediary between the living and the dead
 ```Synset('medium.n.10')``` |0.026 | | (usually plural) transmissions that are disseminated widely to the public
@@ -184,7 +184,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('instrument.n.01')``` |0.128 | | a device that requires skill for proper use
+```Synset('instrument.n.01')``` |0.128 | X | a device that requires skill for proper use
 ```Synset('instrument.n.02')``` |0.026 | | the means whereby some act is accomplished
 ```Synset('instrument.n.03')``` |0.051 | | a person used by another to gain an end
 ```Synset('legal_document.n.01')``` |0.282 | | (law) a document that states some contractual relationship or grants some right
@@ -207,7 +207,7 @@ Synset | Score | Best synset | Definition
 ```Synset('time.n.03')``` |0.103 | | an indefinite period (usually marked by specific attributes or activities)
 ```Synset('time.n.04')``` |0.051 | | a suitable moment
 ```Synset('time.n.05')``` |0.154 | | the continuum of experience in which events pass from the future through the present to the past
-```Synset('time.n.06')``` |0.103 | | a person's experience on a particular occasion
+```Synset('time.n.06')``` |0.103 | X | a person's experience on a particular occasion
 ```Synset('clock_time.n.01')``` |0.051 | | a reading of a point in time as given by a clock
 ```Synset('fourth_dimension.n.01')``` |0.077 | | the fourth coordinate that is required (along with three spatial dimensions) to specify a physical event
 ```Synset('meter.n.04')``` |0.077 | | rhythm as given by division into parts of equal duration
@@ -233,7 +233,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('analyze.v.01')``` |0.179 | | consider in detail and subject to an analysis in order to discover essential features or meaning
+```Synset('analyze.v.01')``` |0.179 | X | consider in detail and subject to an analysis in order to discover essential features or meaning
 ```Synset('analyze.v.03')``` |0.026 | | break down into components or essential features
 ```Synset('analyze.v.02')``` |0.026 | | make a mathematical, chemical, or grammatical analysis of; break down into components or essential features
 ```Synset('analyze.v.04')``` |0.051 | | subject to psychoanalytic treatment
@@ -246,10 +246,10 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('analysis.n.01')``` |0.077 | | an investigation of the component parts of a whole and their relations in making up the whole
+```Synset('analysis.n.01')``` |0.077 | X | an investigation of the component parts of a whole and their relations in making up the whole
 ```Synset('analysis.n.02')``` |0.077 | | the abstract separation of a whole into its constituent parts in order to study the parts and their relations
 ```Synset('analysis.n.03')``` |0.026 | | a form of literary criticism in which the structure of a piece of writing is analyzed
-```Synset('analysis.n.04')``` |0.205 | | the use of closed-class words instead of inflections: e.g., `the father of the bride' instead of `the bride's father'
+```Synset('analysis.n.04')``` |0.205 | | the use of closed-class words instead of inflections: e.g., 'the father of the bride' instead of 'the bride's father'
 ```Synset('analysis.n.05')``` |0.051 | | a branch of mathematics involving calculus and the theory of limits; sequences and series and integration and differentiation
 ```Synset('psychoanalysis.n.01')``` |0.026 | | a set of techniques for exploring underlying motives and a method of treating various mental disorders; based on the theories of Sigmund Freud
 
@@ -261,7 +261,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('investigate.v.01')``` |0.179 | | investigate scientifically
+```Synset('investigate.v.01')``` |0.179 | X | investigate scientifically
 ```Synset('investigate.v.02')``` |0.077 | | conduct an inquiry or investigation of
 
 <br/><br/>
@@ -273,7 +273,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('probe.n.01')``` |0.077 | | an inquiry into unfamiliar or questionable activities
-```Synset('investigation.n.02')``` |0.154 | | the work of inquiring into something thoroughly and systematically
+```Synset('investigation.n.02')``` |0.154 | X | the work of inquiring into something thoroughly and systematically
 
 <br/><br/>
 
@@ -290,7 +290,7 @@ Synset | Score | Best synset | Definition
 ```Synset('look.v.01')``` |0.154 | | perceive with attention; direct one's gaze towards
 ```Synset('look.v.02')``` |0.154 | | give a certain impression or have a certain outward aspect
 ```Synset('look.v.03')``` |0.128 | | have a certain outward or facial expression
-```Synset('search.v.02')``` |0.128 | | search or seek
+```Synset('search.v.02')``` |0.128 | X | search or seek
 ```Synset('front.v.01')``` |0.051 | | be oriented in a certain direction, often with respect to another reference point; be opposite to
 ```Synset('attend.v.02')``` |0.051 | | take charge of or deal with
 ```Synset('look.v.07')``` |0.051 | | convey by one's expression
@@ -306,7 +306,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('perusal.n.01')``` |0.026 | | reading carefully with intent to remember
+```Synset('perusal.n.01')``` |0.026 | X | reading carefully with intent to remember
 
 <br/><br/>
 
@@ -316,7 +316,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('peruse.v.01')``` |0.077 | | examine or consider with attention and in detail
+```Synset('peruse.v.01')``` |0.077 | X | examine or consider with attention and in detail
 
 <br/><br/>
 
@@ -326,7 +326,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('scan.n.01')``` |0.077 | | the act of scanning; systematic examination of a prescribed region
+```Synset('scan.n.01')``` |0.077 | X | the act of scanning; systematic examination of a prescribed region
 ```Synset('scan.n.02')``` |0.051 | | an image produced by scanning
 ```Synset('scan.v.01')``` |0.051 | | examine minutely or intensely
 ```Synset('scan.v.02')``` |0.051 | | examine hastily
@@ -344,7 +344,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('size_up.v.01')``` |0.051 | | to look at critically or searchingly, or in minute detail
+```Synset('size_up.v.01')``` |0.051 | X | to look at critically or searchingly, or in minute detail
 ```Synset('audit.v.01')``` |0.077 | | examine carefully for accuracy with the intent of verification
 
 <br/><br/>
@@ -355,7 +355,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('examination.n.01')``` |0.179 | | the act of examining something closely (as for mistakes)
+```Synset('examination.n.01')``` |0.179 | X | the act of examining something closely (as for mistakes)
 ```Synset('scrutiny.n.02')``` |0.051 | | a prolonged intense look
 
 <br/><br/>
@@ -371,7 +371,7 @@ Synset | Score | Best synset | Definition
 ```Synset('search.n.03')``` |0.051 | | an operation that determines whether one or more of a set of items has a specified property
 ```Synset('search.n.04')``` |0.103 | | the examination of alternative hypotheses
 ```Synset('search.n.05')``` |0.103 | | boarding and inspecting a ship on the high seas
-```Synset('search.v.01')``` |0.179 | | try to locate or discover, or try to establish the existence of
+```Synset('search.v.01')``` |0.179 | X | try to locate or discover, or try to establish the existence of
 ```Synset('search.v.02')``` |0.128 | | search or seek
 ```Synset('research.v.02')``` |0.051 | | inquire into
 ```Synset('search.v.04')``` |0.154 | | subject to a search
@@ -389,7 +389,7 @@ Synset | Score | Best synset | Definition
 ```Synset('search.n.03')``` |0.051 | | an operation that determines whether one or more of a set of items has a specified property
 ```Synset('search.n.04')``` |0.103 | | the examination of alternative hypotheses
 ```Synset('search.n.05')``` |0.103 | | boarding and inspecting a ship on the high seas
-```Synset('search.v.01')``` |0.179 | | try to locate or discover, or try to establish the existence of
+```Synset('search.v.01')``` |0.179 | X | try to locate or discover, or try to establish the existence of
 ```Synset('search.v.02')``` |0.128 | | search or seek
 ```Synset('research.v.02')``` |0.051 | | inquire into
 ```Synset('search.v.04')``` |0.154 | | subject to a search
@@ -412,7 +412,7 @@ Synset | Score | Best synset | Definition
 ```Synset('cogitation.n.02')``` |0.051 | | attentive consideration and meditation
 ```Synset('study.n.09')``` |0.051 | | someone who memorizes quickly and easily (as the lines for a part in a play)
 ```Synset('study.n.10')``` |0.026 | | a composition intended to develop one aspect of the performer's technique
-```Synset('analyze.v.01')``` |0.179 | | consider in detail and subject to an analysis in order to discover essential features or meaning
+```Synset('analyze.v.01')``` |0.179 | X | consider in detail and subject to an analysis in order to discover essential features or meaning
 ```Synset('study.v.02')``` |0.026 | | be a student; follow a course of study; be enrolled at an institute of learning
 ```Synset('study.v.03')``` |0.051 | | give careful consideration to
 ```Synset('learn.v.04')``` |0.051 | | be a student of a certain subject
@@ -437,7 +437,7 @@ Synset | Score | Best synset | Definition
 ```Synset('cogitation.n.02')``` |0.051 | | attentive consideration and meditation
 ```Synset('study.n.09')``` |0.051 | | someone who memorizes quickly and easily (as the lines for a part in a play)
 ```Synset('study.n.10')``` |0.026 | | a composition intended to develop one aspect of the performer's technique
-```Synset('analyze.v.01')``` |0.179 | | consider in detail and subject to an analysis in order to discover essential features or meaning
+```Synset('analyze.v.01')``` |0.179 | X | consider in detail and subject to an analysis in order to discover essential features or meaning
 ```Synset('study.v.02')``` |0.026 | | be a student; follow a course of study; be enrolled at an institute of learning
 ```Synset('study.v.03')``` |0.051 | | give careful consideration to
 ```Synset('learn.v.04')``` |0.051 | | be a student of a certain subject
@@ -452,7 +452,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('survey.n.01')``` |0.077 | | a detailed critical inspection
+```Synset('survey.n.01')``` |0.077 | X | a detailed critical inspection
 ```Synset('sketch.n.03')``` |0.051 | | short descriptive summary (of events)
 ```Synset('view.n.03')``` |0.051 | | the act of looking or seeing or observing
 ```Synset('survey.v.01')``` |0.077 | | consider in a comprehensive way
@@ -470,7 +470,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('survey.n.01')``` |0.077 | | a detailed critical inspection
+```Synset('survey.n.01')``` |0.077 | X | a detailed critical inspection
 ```Synset('sketch.n.03')``` |0.051 | | short descriptive summary (of events)
 ```Synset('view.n.03')``` |0.051 | | the act of looking or seeing or observing
 ```Synset('survey.v.01')``` |0.077 | | consider in a comprehensive way
@@ -488,7 +488,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('analyst.n.01')``` |0.051 | | someone who is skilled at analyzing data
+```Synset('analyst.n.01')``` |0.051 | X | someone who is skilled at analyzing data
 ```Synset('analyst.n.02')``` |0.103 | | an expert who studies financial data (on credit or securities or sales or financial patterns etc.) and recommends appropriate business actions
 ```Synset('analyst.n.03')``` |0.026 | | a licensed practitioner of psychoanalysis
 
@@ -505,7 +505,7 @@ Synset | Score | Best synset | Definition
 ```Synset('probe.n.03')``` |0.051 | | an exploratory action or expedition
 ```Synset('probe.n.04')``` |0.026 | | an investigation conducted using a flexible surgical instrument to explore an injury or a body cavity
 ```Synset('probe.v.01')``` |0.077 | | question or examine thoroughly and closely
-```Synset('probe.v.02')``` |0.051 | | examine physically with or as if with a probe
+```Synset('probe.v.02')``` |0.051 | X | examine physically with or as if with a probe
 
 <br/><br/>
 
@@ -515,7 +515,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('scout.v.01')``` |0.077 | | explore, often with the goal of finding something or somebody
+```Synset('scout.v.01')``` |0.077 | X | explore, often with the goal of finding something or somebody
 
 <br/><br/>
 
@@ -526,7 +526,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('inspector.n.01')``` |0.026 | | a high ranking police officer
-```Synset('examiner.n.02')``` |0.077 | | an investigator who observes carefully
+```Synset('examiner.n.02')``` |0.077 | X | an investigator who observes carefully
 
 <br/><br/>
 
@@ -539,7 +539,7 @@ Synset | Score | Best synset | Definition
 ```Synset('assay.n.01')``` |0.077 | | an appraisal of the state of affairs
 ```Synset('assay.n.02')``` |0.077 | | a substance that is undergoing an analysis of its components
 ```Synset('assay.n.03')``` |0.026 | | a written report of the results of an analysis of the composition of some substance
-```Synset('assay.n.04')``` |0.051 | | a quantitative or qualitative test of a substance (especially an ore or a drug) to determine its components; frequently used to test for the presence or concentration of infectious agents or antibodies etc.
+```Synset('assay.n.04')``` |0.051 | X | a quantitative or qualitative test of a substance (especially an ore or a drug) to determine its components; frequently used to test for the presence or concentration of infectious agents or antibodies etc.
 ```Synset('assay.v.01')``` |0.077 | | analyze (chemical substances)
 ```Synset('try.v.01')``` |0.103 | | make an effort or attempt
 
@@ -555,7 +555,7 @@ Synset | Score | Best synset | Definition
 ```Synset('skim.n.02')``` |0.026 | | reading or glancing through quickly
 ```Synset('plane.v.02')``` |0.051 | | travel on the surface of water
 ```Synset('skim_over.v.02')``` |0.051 | | move or pass swiftly and lightly over the surface of
-```Synset('scan.v.02')``` |0.051 | | examine hastily
+```Synset('scan.v.02')``` |0.051 | X | examine hastily
 ```Synset('skim.v.04')``` |0.026 | | cause to skip over a surface
 ```Synset('skim.v.05')``` |0.026 | | coat (a liquid) with a layer
 ```Synset('skim.v.06')``` |0.077 | | remove from the surface
@@ -572,7 +572,7 @@ Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('sift.v.01')``` |0.051 | | move as if through a sieve
 ```Synset('sift.v.02')``` |0.026 | | separate by passing through a sieve or other straining device to separate out coarser elements
-```Synset('sieve.v.02')``` |0.077 | | check and sort carefully
+```Synset('sieve.v.02')``` |0.077 | X | check and sort carefully
 ```Synset('sieve.v.04')``` |0.051 | | distinguish and separate out
 
 <br/><br/>
@@ -584,7 +584,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('rummage.n.01')``` |0.026 | | a jumble of things to be given away
-```Synset('ransacking.n.01')``` |0.103 | | a thorough search for something (often causing disorder or confusion)
+```Synset('ransacking.n.01')``` |0.103 | X | a thorough search for something (often causing disorder or confusion)
 ```Synset('rummage.v.01')``` |0.077 | | search haphazardly
 
 <br/><br/>
@@ -595,7 +595,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('surveyor.n.01')``` |0.051 | | an engineer who determines the boundaries and elevations of land or structures
+```Synset('surveyor.n.01')``` |0.051 | X | an engineer who determines the boundaries and elevations of land or structures
 ```Synset('surveyor.n.02')``` |0.026 | | someone who conducts a statistical survey
 
 <br/><br/>
@@ -610,7 +610,7 @@ Synset | Score | Best synset | Definition
 ```Synset('scout.n.02')``` |0.051 | | a Boy Scout or Girl Scout
 ```Synset('scout.n.03')``` |0.077 | | someone employed to discover and recruit talented persons (especially in the worlds of entertainment or sports)
 ```Synset('scout.n.04')``` |0.051 | | someone who can find paths through unexplored territory
-```Synset('scout.v.01')``` |0.077 | | explore, often with the goal of finding something or somebody
+```Synset('scout.v.01')``` |0.077 | X | explore, often with the goal of finding something or somebody
 
 <br/><br/>
 
@@ -621,7 +621,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('eyeball.n.01')``` |0.051 | | the ball-shaped capsule containing the vertebrate eye
-```Synset('eye.v.01')``` |0.051 | | look at
+```Synset('eye.v.01')``` |0.051 | X | look at
 
 <br/><br/>
 
@@ -644,7 +644,7 @@ Synset | Score | Best synset | Definition
 ```Synset('bridle.n.02')``` |0.051 | | the act of restraining power or action or limiting excess
 ```Synset('check.n.12')``` |0.026 | | obstructing an opponent in ice hockey
 ```Synset('check.n.13')``` |0.026 | | (chess) a direct attack on an opponent's king
-```Synset('check.v.01')``` |0.103 | | examine so as to determine accuracy, quality, or condition
+```Synset('check.v.01')``` |0.103 | X | examine so as to determine accuracy, quality, or condition
 ```Synset('check.v.02')``` |0.051 | | make an examination or investigation
 ```Synset('see.v.10')``` |0.154 | | be careful or certain to do something; make certain of something
 ```Synset('control.v.02')``` |0.077 | | lessen the intensity of; temper; hold in restraint; hold or keep within limits
@@ -688,7 +688,7 @@ Synset | Score | Best synset | Definition
 ```Synset('sweep.v.02')``` |0.051 | | move with sweeping, effortless, gliding motions
 ```Synset('sweep.v.03')``` |0.026 | | sweep with a broom or as if with a broom
 ```Synset('embroil.v.01')``` |0.026 | | force into some kind of situation, condition, or course of action
-```Synset('cross.v.05')``` |0.077 | | to cover or extend over an area or time period; ,
+```Synset('cross.v.05')``` |0.077 | X | to cover or extend over an area or time period; ,
 ```Synset('sweep.v.06')``` |0.051 | | clean by sweeping
 ```Synset('sweep.v.07')``` |0.026 | | win an overwhelming victory in or on
 ```Synset('sweep.v.08')``` |0.077 | | cover the entire range of
@@ -712,7 +712,7 @@ Synset | Score | Best synset | Definition
 ```Synset('sweep.v.02')``` |0.051 | | move with sweeping, effortless, gliding motions
 ```Synset('sweep.v.03')``` |0.026 | | sweep with a broom or as if with a broom
 ```Synset('embroil.v.01')``` |0.026 | | force into some kind of situation, condition, or course of action
-```Synset('cross.v.05')``` |0.077 | | to cover or extend over an area or time period; ,
+```Synset('cross.v.05')``` |0.077 | X | to cover or extend over an area or time period; ,
 ```Synset('sweep.v.06')``` |0.051 | | clean by sweeping
 ```Synset('sweep.v.07')``` |0.026 | | win an overwhelming victory in or on
 ```Synset('sweep.v.08')``` |0.077 | | cover the entire range of
@@ -726,7 +726,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('double-check.v.01')``` |0.077 | | check once more to be absolutely sure
+```Synset('double-check.v.01')``` |0.077 | X | check once more to be absolutely sure
 
 <br/><br/>
 
@@ -737,7 +737,7 @@ Synset | Score | Best synset | Definition
 ynset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('spy.n.01')``` |0.051 | | (military) a secret agent hired by a state to obtain information about its enemies or by a business to obtain industrial secrets from competitors
-```Synset('spy.n.02')``` |0.103 | | a secret watcher; someone who secretly watches other people
+```Synset('spy.n.02')``` |0.103 | X | a secret watcher; someone who secretly watches other people
 ```Synset('descry.v.01')``` |0.026 | | catch sight of
 ```Synset('spy.v.02')``` |0.026 | | watch, observe, or inquire secretly
 ```Synset('spy.v.03')``` |0.051 | | catch sight of; to perceive with the eyes
@@ -751,7 +751,7 @@ ynset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('once-over.n.01')``` |0.077 | | a swift cursory examination or inspection
+```Synset('once-over.n.01')``` |0.077 | X | a swift cursory examination or inspection
 
 <br/><br/>
 
@@ -767,7 +767,7 @@ Synset | Score | Best synset | Definition
 ```Synset('comb.n.04')``` |0.026 | | ciliated comb-like swimming plate of a ctenophore
 ```Synset('comb.n.05')``` |0.026 | | the act of drawing a comb through hair
 ```Synset('comb.v.01')``` |0.026 | | straighten with a comb
-```Synset('comb.v.02')``` |0.077 | | search thoroughly
+```Synset('comb.v.02')``` |0.077 | X | search thoroughly
 ```Synset('comb.v.03')``` |0.026 | | smoothen and neaten with or as with a comb
 
 <br/><br/>
@@ -778,7 +778,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('frisk.n.01')``` |0.103 | | the act of searching someone for concealed weapons or illegal drugs
+```Synset('frisk.n.01')``` |0.103 | X | the act of searching someone for concealed weapons or illegal drugs
 ```Synset('frolic.v.01')``` |0.077 | | play boisterously
 ```Synset('frisk.v.02')``` |0.077 | | search as for concealed weapons by running the hands rapidly over the clothing and through the pockets
 
@@ -791,7 +791,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('plunder.v.03')``` |0.051 | | steal goods; take as spoils
-```Synset('comb.v.02')``` |0.077 | | search thoroughly
+```Synset('comb.v.02')``` |0.077 | X | search thoroughly
 
 <br/><br/>
 
@@ -802,7 +802,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('scour.n.01')``` |0.026 | | a place that is scoured (especially by running water)
-```Synset('scour.v.01')``` |0.103 | | examine minutely
+```Synset('scour.v.01')``` |0.103 | X | examine minutely
 ```Synset('scrub.v.01')``` |0.051 | | clean with hard rubbing
 ```Synset('scour.v.03')``` |0.051 | | rub hard or scrub
 ```Synset('flush.v.05')``` |0.026 | | rinse, clean, or empty with a liquid
@@ -822,7 +822,7 @@ Synset | Score | Best synset | Definition
 ```Synset('monitor.n.05')``` |0.026 | | electronic equipment that is used to check the quality or content of electronic transmissions
 ```Synset('monitor.n.06')``` |0.026 | | a piece of electronic equipment that keeps track of the operation of a system continuously and warns of trouble
 ```Synset('monitor.n.07')``` |0.026 | | any of various large tropical carnivorous lizards of Africa and Asia and Australia; fabled to warn of crocodiles
-```Synset('monitor.v.01')``` |0.051 | | keep tabs on; keep an eye on; keep under surveillance
+```Synset('monitor.v.01')``` |0.051 | X | keep tabs on; keep an eye on; keep under surveillance
 ```Synset('monitor.v.02')``` |0.051 | | check, track, or observe by means of a receiver
 
 <br/><br/>
@@ -835,7 +835,7 @@ Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('analytic.a.01')``` |0.026 | | using or subjected to a methodology using algebra and calculus
 ```Synset('analytic.a.02')``` |0.026 | | using or skilled in using analysis (i.e., separating a whole--intellectual or substantial--into its elemental parts or basic principles)
-```Synset('analytic.a.03')``` |0.077 | | expressing a grammatical category by using two or more words rather than inflection
+```Synset('analytic.a.03')``` |0.077 | X | expressing a grammatical category by using two or more words rather than inflection
 ```Synset('analytic.a.04')``` |0.051 | | of a proposition that is necessarily true independent of fact or experience
 
 <br/><br/>
@@ -850,7 +850,7 @@ Synset | Score | Best synset | Definition
 ```Synset('adam.n.03')``` |0.026 | | street names for methylenedioxymethamphetamine
 ```Synset('crack.n.09')``` |0.051 | | a usually brief attempt
 ```Synset('go.n.04')``` |0.026 | | a board game for two players who place counters on a grid; the object is to surround and so capture the opponent's counters
-```Synset('travel.v.01')``` |0.179 | | change location; move, travel, or proceed, also metaphorically
+```Synset('travel.v.01')``` |0.179 | X | change location; move, travel, or proceed, also metaphorically
 ```Synset('go.v.02')``` |0.051 | | follow a procedure or take a course
 ```Synset('go.v.03')``` |0.051 | | move away from a place into another direction
 ```Synset('become.v.01')``` |0.051 | | enter or assume a certain state or condition
@@ -890,7 +890,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('monitoring.n.01')``` |0.051 | | the act of observing something (and sometimes keeping a record of it)
+```Synset('monitoring.n.01')``` |0.051 | X | the act of observing something (and sometimes keeping a record of it)
 ```Synset('monitor.v.01')``` |0.051 | | keep tabs on; keep an eye on; keep under surveillance
 ```Synset('monitor.v.02')``` |0.051 | | check, track, or observe by means of a receiver
 
@@ -911,7 +911,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('surveillance.n.01')``` |0.077 | | close observation of a person or group (usually by the police)
+```Synset('surveillance.n.01')``` |0.077 | X | close observation of a person or group (usually by the police)
 
 <br/><br/>
 
@@ -921,7 +921,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('surveillance.n.01')``` |0.077 | | close observation of a person or group (usually by the police)
+```Synset('surveillance.n.01')``` |0.077 | X | close observation of a person or group (usually by the police)
 
 <br/><br/>
 
@@ -931,7 +931,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('research.v.02')``` |0.051 | | inquire into
+```Synset('research.v.02')``` |0.051 | X| inquire into
 ```Synset('explore.v.02')``` |0.026 | | travel to or penetrate into
 ```Synset('explore.v.03')``` |0.026 | | examine minutely
 ```Synset('explore.v.04')``` |0.026 | | examine (organs) for diagnostic purposes
@@ -946,7 +946,7 @@ Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('rifle.n.01')``` |0.026 | | a shoulder firearm with a long barrel and a rifled bore
 ```Synset('plunder.v.03')``` |0.051 | | steal goods; take as spoils
-```Synset('rifle.v.02')``` |0.128 | | go through in search of something; search through someone's belongings in an unauthorized way
+```Synset('rifle.v.02')``` |0.128 | X| go through in search of something; search through someone's belongings in an unauthorized way
 
 <br/><br/>
 
@@ -960,7 +960,7 @@ Synset | Score | Best synset | Definition
 ```Synset('pry.v.01')``` |0.077 | | to move or force, especially in an effort to get something open; :
 ```Synset('pry.v.02')``` |0.051 | | be nosey
 ```Synset('intrude.v.03')``` |0.077 | | search or inquire in a meddlesome way
-```Synset('pry.v.04')``` |0.026 | | make an uninvited or presumptuous inquiry
+```Synset('pry.v.04')``` |0.026 | X | make an uninvited or presumptuous inquiry
 
 <br/><br/>
 
@@ -970,7 +970,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('examination.n.01')``` |0.179 | | the act of examining something closely (as for mistakes)
+```Synset('examination.n.01')``` |0.179 | X| the act of examining something closely (as for mistakes)
 ```Synset('examination.n.02')``` |0.051 | | a set of questions or exercises evaluating skill or knowledge
 ```Synset('interrogation.n.03')``` |0.077 | | formal systematic questioning
 ```Synset('examen.n.01')``` |0.026 | | a detailed inspection of your conscience (as done daily by Jesuits)
@@ -984,4 +984,4 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('reconnaissance.n.01')``` |0.077 | | the act of reconnoitring (especially to gain information about an enemy or potential enemy)
+```Synset('reconnaissance.n.01')``` |0.077 | X| the act of reconnoitring (especially to gain information about an enemy or potential enemy)
