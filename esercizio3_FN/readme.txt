@@ -3,6 +3,34 @@ Mapping di Frame in WN Synsets
 ————————————————————————————————————————————
 
 
+- 'name'       : the name of the Frame (e.g. 'Birth', 'Apply_heat', etc.)
+- 'lexUnit'    : a dict containing all of the LUs for this frame.
+                     The keys in this dict are the names of the LUs and
+                     the value for each key is itself a dict containing
+                     info about the LU (see the lu() function for more info.)
+- 'FE' : a dict containing the Frame Elements that are part of this frame
+             The keys in this dict are the names of the FEs (e.g. 'Body_system')
+             and the values are dicts containing the following keys
+          - 'definition' : The definition of the FE
+          - 'name'       : The name of the FE e.g. 'Body_system'
+          - 'ID'         : The id number
+          - '_type'      : 'fe'
+          - 'abbrev'     : Abbreviation e.g. 'bod'
+          - 'coreType'   : one of "Core", "Peripheral", or "Extra-Thematic"
+          - 'semType'    : if not None, a dict with the following two keys:
+             - 'name' : name of the semantic type. can be used with
+                        the semtype() function
+             - 'ID'   : id number of the semantic type. can be used with
+                        the semtype() function
+          - 'requiresFE' : if not None, a dict with the following two keys:
+             - 'name' : the name of another FE in this frame
+             - 'ID'   : the id of the other FE in this frame
+          - 'excludesFE' : if not None, a dict with the following two keys:
+             - 'name' : the name of another FE in this frame
+             - 'ID'   : the id of the other FE in this frame
+
+
+
 0. INDIVIDUAZIONE DI UN SET DI FRAME
 ________________________________________________________
 
@@ -68,7 +96,7 @@ Frame element (FE)
 I frame elements di un frame si ottengono tramite la funzione getFrameElements(f) (fn.frame_by_id(id))
 
 
-Inizialmente viene calcolato il frame dato l'id, in modo tale da ottenere il contesto del frame
+Inizialmente viene calcolato il fram e dato l'id, in modo tale da ottenere il contesto del frame
 
 Per ogni frame element (FE) si determinano i WN synset associati e, per ogni synset, si calcola il contesto (getSynsetContext(s)). 
 In questo modo si calcola l'overlap tra il contesto del frame e tutti i synset associati ai frame elements del frame. Il synset che ottiene lo score di overlap maggiore risulta essere quello migliore.
@@ -77,10 +105,28 @@ In questo modo si calcola l'overlap tra il contesto del frame e tutti i synset a
 Lexical Units (LU)
 ============================
 
-Inizialmente viene calcolato il frame dato l'id, in modo tale da ottenere il contesto del frame
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+A lexical unit (LU) is a pairing of a word with a meaning. For example, the "Applyheat" Frame 
+describes a common situation involving a Cook, some Food, and a Heating Instrument, and is _evoked by words such as bake, blanch, boil, broil, brown, simmer, steam, etc. These frame-evoking words 
+are the LUs in the Apply_heat frame. Each sense of a polysemous word is a different LU.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Inizialmente viene calcolato il frame dato l'id, in modo tale da ottenere il contesto del frame (ctx_frame)
 
 
-Per ogni lexical unit (LU) si determinano i synset associati e, per ogni synset, si calcola il contesto del synset.
+Per ogni lexical unit (LU) si prende il nome del lexical unit (tramite lu.lexemes[0].name) e si calcolano i synset associati al nome del lexical unit.
+Per ogni synset si calcola il contesto di disambiguazione (getSynsetContext(s)) e si calcola l'overlap con il contesto del frame. Il synset con score overlap maggiore risulta essere il migliore.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Inizialmente calcolavo un synset per ogni elemento del frame (un synset per il frame name, un synset unico per tutti i frame elements, un frame unico per tutte le lexical unit).
+Adesso calcolo un synset per ciascun elemento:
+ - un synset per il frame name
+ - un synset per ogni frame element del frame
+ - un sysnet per ogni lexical unit del frame
+
+
+ 
 
 
 
