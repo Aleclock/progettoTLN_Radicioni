@@ -1,8 +1,6 @@
 import nltk
 from nltk.corpus import wordnet as wn
 from nltk.corpus import stopwords
-
-from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 
 # nltk.download('averaged_perceptron_tagger')
@@ -15,48 +13,47 @@ Allow to call the correct function based on type variable (frameName, frameEleme
 Input:
     id: frame id
     el: frame elements (frame name, frame elements, lexical units)
+    ctx_frame: context of the frame
+    type: type of el element (0: frame name, 1: frame elements, 2: lexical units)
 Output:
     best WN synset
 """
-
-
-def getWNSynset(id, el, type):
-
+def getWNSynset(id, el, ctx_frame, type):
     if (type == 0):
-        return syn_frameName(id, el)
+        return syn_frameName(id, ctx_frame, el)
     elif (type == 1):
-        return syn_frameElements(id, el)
+        return syn_frameElements(id, ctx_frame, el)
     elif (type == 2):
-        return syn_lexicalUnits(id, el)
-
+        return syn_lexicalUnits(id, ctx_frame, el)
 
 """
 Calculate the best WN synset of a frame name
 Input:
     id: frame id
+    ctx_frame: context of frame
     el: frame name
 Output:
     best_sense: best WN synset
 """
-
-
-def syn_frameName(id, el):
+def syn_frameName(id, ctx_frame, el):
 
     if "_" in el:   # Disambiguation needed
         pos_tags = getPOS(el)
         el = getMainTerm(pos_tags)
 
-    f = getFrame(id)  # Context frame
+    f = getFrame(id) 
 
-    ctx_frame = preProcess(f.definition)
     synsets = wn.synsets(el)
 
     mapped_el = []
 
     # print ("************ " + f.name + " , " + el)
 
-    if (len(synsets) == 1):  # Se esiste solo un synset, è per forza il migliore
+    if (len(synsets) == 1):  # If there is only one synset, it is the best
         # print (str(synsets[0]) + " , " + str(synsets[0].definition()))
+        """print ("Synset | Score | Best synset | Definition")
+        print ("------------ | :------------: | :-------------: | -------------")
+        print ("```" + str(synsets[0]) + "``` | - |" + str(synsets[0].definition()))"""
         mapped_el.append(["fn", f.name, el, synsets[0]])
         return mapped_el
     elif (len(synsets) == 0):
@@ -69,7 +66,8 @@ def syn_frameName(id, el):
     for s in synsets:
         ctx_synset = getSynsetContext(s)
         overlap = computeOverlap(ctx_frame, ctx_synset) + 1
-        print('\t\t SY: {}\tDEF: {}\tSCORE: {}'.format(str(s), str(s.definition()), str(overlap/len(ctx_frame))))
+        #print('\t\t SY: {}\tDEF: {}\tSCORE: {}'.format(str(s), str(s.definition()), str(overlap/len(ctx_frame))))
+        #print ("```" + str(s) + "``` | " + str(round(overlap/len(ctx_frame),3)) + "| " + str(s.definition()))
         # print (s.examples())
         if (overlap > max_overlap):
             max_overlap = overlap
@@ -84,34 +82,29 @@ def syn_frameName(id, el):
 Calculate the best WN synset of frame elements of frame
 Input:
     id: frame id
+    ctx_frame: context of frame
     el: frame elements
 Output:
     best_sense: best WN synset
 """
-
-
-def syn_frameElements(id, el):
+def syn_frameElements(id, ctx_frame, el):
 
     if len(el) == 0:
         return None
 
     f = getFrame(id)
-    ctx_frame = preProcess(f.definition)
 
     mapped_el = []
 
     for fe in el:   # for each frame element
         synsets = wn.synsets(fe)
 
-        print ("<br/>")
-        print ("\n")
-        print ("# Frame element: " + fe)
-        print ("\n")
-        print ("> " + f.FE[fe].definition)
-        print ("\n")
+        """"print ("\n<br/><br/>\n")
+        print ("* ## " + fe + "\n")
+        print ("> " + f.FE[fe].definition + "\n")
 
         print ("Synset | Score | Best synset | Definition")
-        print ("------------ | :------------: | :-------------: | -------------")
+        print ("------------ | :------------: | :-------------: | -------------")"""
         
         #print ("************************************************")
         #print(f.name + " , " + fe)
@@ -127,9 +120,8 @@ def syn_frameElements(id, el):
             ctx_synset = getSynsetContext(s)
             overlap = computeOverlap(ctx_frame, ctx_synset) + 1
             #print('\t\t SY: {}\tDEF: {}\tSCORE: {}'.format(str(s), str(s.definition()), str(overlap/len(ctx_frame))))
-            print ("```" + str(s) + "``` |" + str(round(overlap/len(ctx_frame),3)) + " | | " + str(s.definition()))
+            #print ("```" + str(s) + "``` |" + str(round(overlap/len(ctx_frame),3)) + " | | " + str(s.definition()))
             #print(s.examples())
-            # print (overlap/len(ctx_frame))
             if (overlap > max_overlap):
                 max_overlap=overlap
                 best_sense=s
@@ -142,32 +134,29 @@ def syn_frameElements(id, el):
 """
 Input:
     id : id del frame
+    ctx_frame: context of frame
     el : dizionario contenente tutte le lexical unit
 Output:
     best_sense : WordNet synset che massimizza i contesti
 """
-def syn_lexicalUnits(id, el):
+def syn_lexicalUnits(id, ctx_frame, el):
 
     if len(el) == 0:
         return None
 
     f=getFrame(id)
-    ctx_frame=preProcess(f.definition)
 
     mapped_el=[]
 
     for name, lu in el.items():   # Per ogni lexical unit del frame f (name: lexical unit name, lu: lexical unit)
         synsets=wn.synsets(lu.lexemes[0].name)
 
-        print ("<br/><br/>")
-        print ("\n")
-        print ("* ## " + lu.lexemes[0].name)
-        print ("\n")
-        print ("> " + lu.definition)
-        print ("\n")
+        """print ("\n<br/><br/>\n")
+        print ("* ## " + lu.lexemes[0].name + "\n")
+        print ("> " + lu.definition + "\n")
 
         print ("Synset | Score | Best synset | Definition")
-        print ("------------ | :------------: | :-------------: | -------------")
+        print ("------------ | :------------: | :-------------: | -------------")"""
 
 
         ctx_synset=[]
@@ -178,7 +167,7 @@ def syn_lexicalUnits(id, el):
             ctx_synset=getSynsetContext(s)
             overlap=computeOverlap(ctx_frame, ctx_synset) + 1
 
-            print ("```" + str(s) + "``` |" + str(round(overlap/len(ctx_frame),3)) + " | | " + str(s.definition()))
+            #print ("```" + str(s) + "``` |" + str(round(overlap/len(ctx_frame),3)) + " | | " + str(s.definition()))
             if (overlap > max_overlap):
                 max_overlap=overlap
                 best_sense=s
@@ -227,12 +216,36 @@ def getSynsetContext(s):
 
     return context
 
+"""
+Calculate the context of frame.
+The context is composed of:
+    * frame definition
+    * frame elements defintion
+Input:
+    id: id of frame
+    LE: frame elements of frame
+Output:
+    context of frame
+"""
+def getFrameContext(id, FE):
+    context = []
+    f=getFrame(id)
+    context = list(set().union(context, preProcess(f.definition)))  # Adding frame definition
+    for fe in FE:
+        context=list(set().union(context, preProcess(f.FE[fe].definition))) # Adding frame element definition
+
+    return context
+
 
 """ Made the pre-process of a sentence
     - stopword removal
     - puntualization removal
     - lemmatization
-    Return a list of words"""
+Input:
+    d: sentence
+Output:
+    list of words
+"""
 def preProcess(d):
     stop_words=set(stopwords.words('english'))
     punct={',', ';', '(', ')', '{', '}', ':', '?', '!', '.'}

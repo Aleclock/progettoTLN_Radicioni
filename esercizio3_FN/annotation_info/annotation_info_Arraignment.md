@@ -23,7 +23,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('defendant.n.01')``` |0.083 | | a person or institution against whom an action is brought in a court of law; the person being sued or accused
+```Synset('defendant.n.01')``` |0.083 | X | a person or institution against whom an action is brought in a court of law; the person being sued or accused
 
 <br/><br/>
 
@@ -34,7 +34,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('topographic_point.n.01')``` |0.083 | | a point located with respect to surface features of some region
-```Synset('place.n.02')``` |0.056 | | any area set aside for a particular purpose
+```Synset('place.n.02')``` |0.056 | X | any area set aside for a particular purpose
 ```Synset('place.n.03')``` |0.056 | | an abstract mental location
 ```Synset('place.n.04')``` |0.028 | | a general vicinity
 ```Synset('stead.n.01')``` |0.056 | | the post or function properly or customarily occupied or served by another
@@ -74,7 +74,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('time.n.01')``` |0.028 | | an instance or single occasion for some event
+```Synset('time.n.01')``` |0.028 | X | an instance or single occasion for some event
 ```Synset('time.n.02')``` |0.056 | | a period of time considered as a resource under your control and sufficient to accomplish something
 ```Synset('time.n.03')``` |0.083 | | an indefinite period (usually marked by specific attributes or activities)
 ```Synset('time.n.04')``` |0.028 | | a suitable moment
@@ -98,7 +98,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('judge.n.01')``` |0.083 | | a public official authorized to decide questions brought before a court of justice
+```Synset('judge.n.01')``` |0.083 | X | a public official authorized to decide questions brought before a court of justice
 ```Synset('evaluator.n.01')``` |0.056 | | an authority who is able to estimate worth or quality
 ```Synset('judge.v.01')``` |0.056 | | determine the result of (a competition)
 ```Synset('evaluate.v.02')``` |0.139 | | form a critical opinion of
@@ -115,7 +115,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('charge.n.01')``` |0.056 | | an impetuous rush toward someone or something
-```Synset('charge.n.02')``` |0.056 | | (criminal law) a pleading describing some wrong or offense
+```Synset('charge.n.02')``` |0.056 | X | (criminal law) a pleading describing some wrong or offense
 ```Synset('charge.n.03')``` |0.111 | | the price charged for some article or service
 ```Synset('charge.n.04')``` |0.056 | | the quantity of unbalanced electricity in a body (either positive or negative) and construed as an excess or deficiency of electrons
 ```Synset('care.n.05')``` |0.056 | | attention and management implying responsibility for safety
@@ -163,7 +163,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('duration.n.01')``` |0.056 | | the period of time during which something continues
+```Synset('duration.n.01')``` |0.056 | X | the period of time during which something continues
 ```Synset('duration.n.02')``` |0.028 | | the property of enduring or continuing in time
 ```Synset('duration.n.03')``` |0.028 | | continuance in time
 
@@ -176,7 +176,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('manner.n.01')``` |0.028 | | how something is done or how it happens
-```Synset('manner.n.02')``` |0.056 | | a way of acting or behaving
+```Synset('manner.n.02')``` |0.056 | X | a way of acting or behaving
 ```Synset('manner.n.03')``` |0.028 | | a kind
 
 <br/><br/>
@@ -192,7 +192,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('arraign.v.01')``` |0.056 | | call before a court to answer an indictment
-```Synset('arraign.v.02')``` |0.056 | | accuse of a wrong or an inadequacy
+```Synset('arraign.v.02')``` |0.056 | X | accuse of a wrong or an inadequacy
 
 <br/><br/>
 
@@ -202,4 +202,4 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('arraignment.n.01')``` |0.056 | | a legal document calling someone to court to answer an indictment
+```Synset('arraignment.n.01')``` |0.056 | X| a legal document calling someone to court to answer an indictment

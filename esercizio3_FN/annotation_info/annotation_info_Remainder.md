@@ -26,7 +26,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('remainder.n.01')``` |0.119 | | something left after other parts have been taken away
+```Synset('remainder.n.01')``` |0.119 | X | something left after other parts have been taken away
 ```Synset('remainder.n.02')``` |0.048 | | the part of the dividend that is left over when the dividend is not evenly divisible by the divisor
 ```Synset('remainder.n.03')``` |0.048 | | the number that remains after subtraction; the number that when added to the subtrahend gives the minuend
 ```Synset('end.n.13')``` |0.048 | | a piece of cloth that is left over after the rest has been used or sold
@@ -40,7 +40,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('resource.n.01')``` |0.071 | | available source of wealth; a new or reserve supply that can be drawn upon when needed
+```Synset('resource.n.01')``` |0.071 | X | available source of wealth; a new or reserve supply that can be drawn upon when needed
 ```Synset('resource.n.02')``` |0.095 | | a source of aid or support that may be drawn upon when needed
 ```Synset('resource.n.03')``` |0.048 | | the ability to deal resourcefully with unusual problems
 
@@ -52,7 +52,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('location.n.01')``` |0.119 | | a point or extent in space
+```Synset('location.n.01')``` |0.119 | X | a point or extent in space
 ```Synset('placement.n.03')``` |0.095 | | the act of putting something in a certain place
 ```Synset('localization.n.01')``` |0.071 | | a determination of the place where something is
 ```Synset('location.n.04')``` |0.071 | | a workplace away from a studio at which some or all of a movie may be made
@@ -71,7 +71,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('time.n.01')``` |0.048 | | an instance or single occasion for some event
+```Synset('time.n.01')``` |0.048 | X | an instance or single occasion for some event
 ```Synset('time.n.02')``` |0.071 | | a period of time considered as a resource under your control and sufficient to accomplish something
 ```Synset('time.n.03')``` |0.048 | | an indefinite period (usually marked by specific attributes or activities)
 ```Synset('time.n.04')``` |0.048 | | a suitable moment
@@ -95,7 +95,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('beneficiary.n.01')``` |0.071 | | the recipient of funds or other benefits
+```Synset('beneficiary.n.01')``` |0.071 | X | the recipient of funds or other benefits
 ```Synset('benefactive_role.n.01')``` |0.024 | | the semantic role of the intended recipient who benefits from the happening denoted by the verb in the clause
 ```Synset('beneficiary.a.01')``` |0.024 | | having or arising from a benefice
 
@@ -117,7 +117,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('leftover.n.01')``` |0.119 | | a small part or portion that remains after the main part no longer exists
+```Synset('leftover.n.01')``` |0.119 | X | a small part or portion that remains after the main part no longer exists
 ```Synset('end.n.13')``` |0.048 | | a piece of cloth that is left over after the rest has been used or sold
 
 <br/><br/>
@@ -143,7 +143,7 @@ Synset | Score | Best synset | Definition
 ```Synset('leave.v.08')``` |0.167 | | remove oneself from an association with or participation in
 ```Synset('entrust.v.02')``` |0.048 | | put into the care or protection of someone
 ```Synset('bequeath.v.01')``` |0.095 | | leave or give by will after one's death
-```Synset('leave.v.11')``` |0.095 | | have left or have as a remainder
+```Synset('leave.v.11')``` |0.095 | X | have left or have as a remainder
 ```Synset('leave.v.12')``` |0.095 | | be survived by after one's death
 ```Synset('impart.v.01')``` |0.024 | | transmit (knowledge or skills)
 ```Synset('forget.v.04')``` |0.071 | | leave behind unintentionally
@@ -161,7 +161,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('stay.v.01')``` |0.143 | | stay the same; remain in a certain state
+```Synset('stay.v.01')``` |0.143 | X | stay the same; remain in a certain state
 ```Synset('stay.v.04')``` |0.071 | | continue in a place, position, or situation
 ```Synset('remain.v.03')``` |0.095 | | be left; of persons, questions, problems, results, evidence, etc.
 ```Synset('persist.v.03')``` |0.071 | | stay behind
@@ -174,7 +174,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('remains.n.01')``` |0.095 | | any object that is left unused or still extant
+```Synset('remains.n.01')``` |0.095 | X | any object that is left unused or still extant
 ```Synset('cadaver.n.01')``` |0.071 | | the dead body of a human being
 ```Synset('stay.v.01')``` |0.143 | | stay the same; remain in a certain state
 ```Synset('stay.v.04')``` |0.071 | | continue in a place, position, or situation

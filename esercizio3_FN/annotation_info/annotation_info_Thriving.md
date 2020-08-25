@@ -24,7 +24,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('entity.n.01')``` |0.052 | | that which is perceived or known or inferred to have its own distinct existence (living or nonliving)
+```Synset('entity.n.01')``` |0.052 | X | that which is perceived or known or inferred to have its own distinct existence (living or nonliving)
 
 <br/><br/>
 
@@ -36,7 +36,7 @@ Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('fortune.n.04')``` |0.069 | | your overall circumstances or condition in life (including everything that happens to you)
 ```Synset('circumstances.n.02')``` |0.017 | | a person's financial situation (good or bad)
-```Synset('circumstance.n.01')``` |0.103 | | a condition that accompanies or influences some event or activity
+```Synset('circumstance.n.01')``` |0.103 | X | a condition that accompanies or influences some event or activity
 ```Synset('context.n.02')``` |0.052 | | the set of facts or circumstances that surround a situation or event
 ```Synset('circumstance.n.03')``` |0.052 | | information that should be kept in mind when making a decision
 ```Synset('circumstance.n.04')``` |0.034 | | formal ceremony about important occasions
@@ -53,7 +53,7 @@ Synset | Score | Best synset | Definition
 ```Synset('time.n.02')``` |0.017 | | a period of time considered as a resource under your control and sufficient to accomplish something
 ```Synset('time.n.03')``` |0.069 | | an indefinite period (usually marked by specific attributes or activities)
 ```Synset('time.n.04')``` |0.034 | | a suitable moment
-```Synset('time.n.05')``` |0.086 | | the continuum of experience in which events pass from the future through the present to the past
+```Synset('time.n.05')``` |0.086 | X | the continuum of experience in which events pass from the future through the present to the past
 ```Synset('time.n.06')``` |0.034 | | a person's experience on a particular occasion
 ```Synset('clock_time.n.01')``` |0.034 | | a reading of a point in time as given by a clock
 ```Synset('fourth_dimension.n.01')``` |0.034 | | the fourth coordinate that is required (along with three spatial dimensions) to specify a physical event
@@ -74,7 +74,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('topographic_point.n.01')``` |0.034 | | a point located with respect to surface features of some region
-```Synset('place.n.02')``` |0.069 | | any area set aside for a particular purpose
+```Synset('place.n.02')``` |0.069 | X | any area set aside for a particular purpose
 ```Synset('place.n.03')``` |0.069 | | an abstract mental location
 ```Synset('place.n.04')``` |0.034 | | a general vicinity
 ```Synset('stead.n.01')``` |0.052 | | the post or function properly or customarily occupied or served by another
@@ -114,7 +114,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('frequency.n.01')``` |0.052 | | the number of occurrences within a given time period
+```Synset('frequency.n.01')``` |0.052 | X | the number of occurrences within a given time period
 ```Synset('frequency.n.02')``` |0.052 | | the ratio of the number of observations in a statistical category to the total number of observations
 ```Synset('frequency.n.03')``` |0.034 | | the number of observations in a given statistical category
 
@@ -129,7 +129,7 @@ Synset | Score | Best synset | Definition
 ```Synset('function.n.03')``` |0.034 | | the actions and activities assigned to or required or expected of a person or group
 ```Synset('character.n.04')``` |0.017 | | an actor's portrayal of someone in a play
 ```Synset('function.n.02')``` |0.017 | | what something is used for
-```Synset('role.n.04')``` |0.086 | | normal or customary activity of a person in a particular social setting
+```Synset('role.n.04')``` |0.086 | X | normal or customary activity of a person in a particular social setting
 
 <br/><br/>
 
@@ -145,7 +145,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('duration.n.01')``` |0.034 | | the period of time during which something continues
+```Synset('duration.n.01')``` |0.034 | X | the period of time during which something continues
 ```Synset('duration.n.02')``` |0.052 | | the property of enduring or continuing in time
 ```Synset('duration.n.03')``` |0.052 | | continuance in time
 
@@ -157,7 +157,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('explanation.n.01')``` |0.086 | | a statement that makes something comprehensible by describing the relevant structure or operation or circumstances etc.
+```Synset('explanation.n.01')``` |0.086 | X | a statement that makes something comprehensible by describing the relevant structure or operation or circumstances etc.
 ```Synset('explanation.n.02')``` |0.017 | | thought that makes something comprehensible
 ```Synset('explanation.n.03')``` |0.069 | | the act of explaining; making something plain or intelligible
 
@@ -169,7 +169,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('desirability.n.01')``` |0.034 | | the quality of being worthy of desiring
+```Synset('desirability.n.01')``` |0.034 | X | the quality of being worthy of desiring
 ```Synset('sex_appeal.n.01')``` |0.069 | | attractiveness to the opposite sex
 
 <br/><br/>
@@ -184,7 +184,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('boom.v.05')``` |0.052 | | grow vigorously
+```Synset('boom.v.05')``` |0.052 | X | grow vigorously
 ```Synset('thrive.v.02')``` |0.052 | | make steady progress; be at the high point in one's career or reach a high point in historical significance or importance
 
 <br/><br/>
@@ -200,7 +200,7 @@ Synset | Score | Best synset | Definition
 ```Synset('flourish.n.03')``` |0.017 | | a display of ornamental speech or language
 ```Synset('flourish.n.04')``` |0.017 | | the act of waving
 ```Synset('flourish.n.05')``` |0.052 | | (music) a short lively tune played on brass instruments
-```Synset('boom.v.05')``` |0.052 | | grow vigorously
+```Synset('boom.v.05')``` |0.052 | X | grow vigorously
 ```Synset('thrive.v.02')``` |0.052 | | make steady progress; be at the high point in one's career or reach a high point in historical significance or importance
 ```Synset('brandish.v.01')``` |0.034 | | move or swing back and forth
 
@@ -212,7 +212,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('thrive.v.02')``` |0.052 | | make steady progress; be at the high point in one's career or reach a high point in historical significance or importance
+```Synset('thrive.v.02')``` |0.052 | X | make steady progress; be at the high point in one's career or reach a high point in historical significance or importance
 
 <br/><br/>
 
@@ -224,7 +224,7 @@ Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('pine_away.v.01')``` |0.017 | | lose vigor, health, or flesh, as through grief
 ```Synset('ache.v.02')``` |0.034 | | have a desire for something or someone who is not present
-```Synset('languish.v.03')``` |0.017 | | become feeble
+```Synset('languish.v.03')``` |0.017 | X | become feeble
 
 <br/><br/>
 
@@ -235,7 +235,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('slump.n.01')``` |0.034 | | a noticeable deterioration in performance or quality
-```Synset('depression.n.02')``` |0.052 | | a long-term economic state characterized by unemployment and low prices and low levels of trade and investment
+```Synset('depression.n.02')``` |0.052 | X | a long-term economic state characterized by unemployment and low prices and low levels of trade and investment
 ```Synset('slump.v.01')``` |0.017 | | assume a drooping posture or carriage
 ```Synset('slump.v.02')``` |0.017 | | fall or sink heavily
 ```Synset('slump.v.03')``` |0.017 | | fall heavily or suddenly; decline markedly
@@ -260,7 +260,7 @@ Synset | Score | Best synset | Definition
 ```Synset('practice.v.01')``` |0.017 | | carry out or practice; as of jobs and professions
 ```Synset('suffice.v.01')``` |0.086 | | be sufficient; be adequate, either in quality or quantity
 ```Synset('do.v.08')``` |0.034 | | create or design, often in a certain way
-```Synset('act.v.02')``` |0.069 | | behave in a certain manner; show a certain behavior; conduct or comport oneself
+```Synset('act.v.02')``` |0.069 | X | behave in a certain manner; show a certain behavior; conduct or comport oneself
 ```Synset('serve.v.09')``` |0.034 | | spend time in prison or in a labor camp
 ```Synset('do.v.11')``` |0.017 | | carry on or function
 ```Synset('dress.v.16')``` |0.017 | | arrange attractively
@@ -278,7 +278,7 @@ Synset | Score | Best synset | Definition
 ```Synset('fare.n.02')``` |0.034 | | the sum charged for riding in a public conveyance
 ```Synset('fare.n.03')``` |0.034 | | a paying (taxi) passenger
 ```Synset('fare.n.04')``` |0.017 | | the food and drink that are regularly served or consumed
-```Synset('do.v.04')``` |0.017 | | proceed or get along
+```Synset('do.v.04')``` |0.017 | X | proceed or get along
 ```Synset('fare.v.02')``` |0.017 | | eat well
 
 <br/><br/>
@@ -289,7 +289,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('prosperity.n.01')``` |0.052 | | an economic state of growth with rising profits and full employment
+```Synset('prosperity.n.01')``` |0.052 | X | an economic state of growth with rising profits and full employment
 ```Synset('prosperity.n.02')``` |0.052 | | the condition of prospering; having good fortune
 
 <br/><br/>
@@ -301,7 +301,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('populate.v.01')``` |0.069 | | inhabit or live in; be an inhabitant of
-```Synset('live.v.02')``` |0.069 | | lead a certain kind of life; live in a certain style
+```Synset('live.v.02')``` |0.069 | X | lead a certain kind of life; live in a certain style
 ```Synset('survive.v.01')``` |0.069 | | continue to live through hardship or adversity
 ```Synset('exist.v.02')``` |0.034 | | support oneself
 ```Synset('be.v.11')``` |0.034 | | have life, be alive

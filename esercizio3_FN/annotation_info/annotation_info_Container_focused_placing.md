@@ -22,7 +22,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('agent.n.01')``` |0.188 | | an active and efficient cause; capable of producing a certain effect
+```Synset('agent.n.01')``` |0.188 | X | an active and efficient cause; capable of producing a certain effect
 ```Synset('agent.n.02')``` |0.188 | | a representative who acts on behalf of other persons or organizations
 ```Synset('agent.n.03')``` |0.188 | | a substance that exerts some force or effect
 ```Synset('agent.n.04')``` |0.125 | | a businessman who buys or sells for another in exchange for a commission
@@ -37,7 +37,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('subject.n.01')``` |0.125 | | the subject matter of a conversation or discussion
+```Synset('subject.n.01')``` |0.125 | X | the subject matter of a conversation or discussion
 ```Synset('theme.n.02')``` |0.125 | | a unifying idea that is a recurrent element in literary or artistic work
 ```Synset('theme.n.03')``` |0.125 | | (music) melodic subject of a musical composition
 ```Synset('composition.n.08')``` |0.062 | | an essay (especially one written as an assignment)
@@ -52,7 +52,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('beginning.n.04')``` |0.125 | | the place where something begins, where it springs into being
+```Synset('beginning.n.04')``` |0.125 | X | the place where something begins, where it springs into being
 ```Synset('source.n.02')``` |0.062 | | a document (or organization) from which information is obtained
 ```Synset('source.n.03')``` |0.062 | | anything that provides inspiration for later work
 ```Synset('source.n.04')``` |0.062 | | a facility where something is available
@@ -75,7 +75,7 @@ Synset | Score | Best synset | Definition
 ```Synset('way.n.05')``` |0.062 | | a course of conduct
 ```Synset('path.n.02')``` |0.062 | | a way especially designed for a particular use
 ```Synset('path.n.03')``` |0.188 | | an established line of travel or access
-```Synset('path.n.04')``` |0.188 | | a line or route along which something travels or moves
+```Synset('path.n.04')``` |0.188 | X | a line or route along which something travels or moves
 
 <br/><br/>
 
@@ -85,7 +85,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('goal.n.01')``` |0.188 | | the state of affairs that a plan is intended to achieve and that (when achieved) terminates behavior intended to achieve it
+```Synset('goal.n.01')``` |0.188 | X | the state of affairs that a plan is intended to achieve and that (when achieved) terminates behavior intended to achieve it
 ```Synset('finish.n.04')``` |0.125 | | the place designated as the end (as of a race or journey)
 ```Synset('goal.n.03')``` |0.125 | | game equipment consisting of the place toward which players of a game try to advance a ball or puck in order to score points
 ```Synset('goal.n.04')``` |0.125 | | a successful attempt at scoring
@@ -98,7 +98,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('degree.n.01')``` |0.062 | | a position on a scale of intensity or amount or quality
+```Synset('degree.n.01')``` |0.062 | X | a position on a scale of intensity or amount or quality
 ```Synset('degree.n.02')``` |0.062 | | a specific identifiable position in a continuum or series or especially in a process
 ```Synset('academic_degree.n.01')``` |0.062 | | an award conferred by a college or university signifying that the recipient has satisfactorily completed a course of study
 ```Synset('degree.n.04')``` |0.062 | | a measure for arcs and angles
@@ -114,7 +114,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('delineative.s.01')``` |0.062 | | depicted in a recognizable manner
+```Synset('delineative.s.01')``` |0.062 | X | depicted in a recognizable manner
 
 <br/><br/>
 
@@ -124,7 +124,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('manner.n.01')``` |0.062 | | how something is done or how it happens
+```Synset('manner.n.01')``` |0.062 | X | how something is done or how it happens
 ```Synset('manner.n.02')``` |0.062 | | a way of acting or behaving
 ```Synset('manner.n.03')``` |0.062 | | a kind
 
@@ -137,7 +137,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('means.n.01')``` |0.188 | | how a result is obtained or an end is achieved
-```Synset('means.n.02')``` |0.062 | | an instrumentality for accomplishing some end
+```Synset('means.n.02')``` |0.062 | X | an instrumentality for accomplishing some end
 ```Synset('means.n.03')``` |0.062 | | considerable capital (wealth or income)
 ```Synset('mean.n.01')``` |0.125 | | an average of n numbers computed by adding some function of the numbers and dividing by some function of n
 ```Synset('mean.v.01')``` |0.188 | | mean or intend to express or convey
@@ -156,7 +156,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('consequence.n.01')``` |0.312 | | a phenomenon that follows and is caused by some previous phenomenon
+```Synset('consequence.n.01')``` |0.312 | X | a phenomenon that follows and is caused by some previous phenomenon
 ```Synset('solution.n.02')``` |0.062 | | a statement that solves a problem or explains how to solve the problem
 ```Synset('result.n.03')``` |0.062 | | something that results
 ```Synset('resultant_role.n.01')``` |0.062 | | the semantic role of the noun phrase whose referent exists only by virtue of the activity denoted by the verb in the clause
@@ -172,7 +172,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('explanation.n.01')``` |0.125 | | a statement that makes something comprehensible by describing the relevant structure or operation or circumstances etc.
+```Synset('explanation.n.01')``` |0.125 | X | a statement that makes something comprehensible by describing the relevant structure or operation or circumstances etc.
 ```Synset('explanation.n.02')``` |0.062 | | thought that makes something comprehensible
 ```Synset('explanation.n.03')``` |0.062 | | the act of explaining; making something plain or intelligible
 
@@ -185,7 +185,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('time.n.01')``` |0.062 | | an instance or single occasion for some event
-```Synset('time.n.02')``` |0.062 | | a period of time considered as a resource under your control and sufficient to accomplish something
+```Synset('time.n.02')``` |0.062 | X | a period of time considered as a resource under your control and sufficient to accomplish something
 ```Synset('time.n.03')``` |0.062 | | an indefinite period (usually marked by specific attributes or activities)
 ```Synset('time.n.04')``` |0.062 | | a suitable moment
 ```Synset('time.n.05')``` |0.25 | | the continuum of experience in which events pass from the future through the present to the past
@@ -237,7 +237,7 @@ Synset | Score | Best synset | Definition
 ```Synset('place.v.11')``` |0.062 | | estimate
 ```Synset('place.v.12')``` |0.125 | | identify the location or place of
 ```Synset('invest.v.01')``` |0.125 | | make an investment
-```Synset('station.v.01')``` |0.312 | | assign to a station
+```Synset('station.v.01')``` |0.312 | X | assign to a station
 ```Synset('place.v.15')``` |0.062 | | finish second or better in a horse or dog race
 ```Synset('place.v.16')``` |0.062 | | sing a note with the correct pitch
 
@@ -250,7 +250,7 @@ Synset | Score | Best synset | Definition
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('purpose.n.01')``` |0.125 | | an anticipated outcome that is intended or that guides your planned actions
-```Synset('function.n.02')``` |0.125 | | what something is used for
+```Synset('function.n.02')``` |0.125 | X | what something is used for
 ```Synset('determination.n.02')``` |0.125 | | the quality of being determined to do or achieve something; firmness of purpose
 ```Synset('aim.v.02')``` |0.125 | | propose or intend
 ```Synset('purpose.v.02')``` |0.062 | | reach a decision
@@ -263,7 +263,7 @@ Synset | Score | Best synset | Definition
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
-```Synset('instrument.n.01')``` |0.125 | | a device that requires skill for proper use
+```Synset('instrument.n.01')``` |0.125 | X | a device that requires skill for proper use
 ```Synset('instrument.n.02')``` |0.062 | | the means whereby some act is accomplished
 ```Synset('instrument.n.03')``` |0.125 | | a person used by another to gain an end
 ```Synset('legal_document.n.01')``` |0.125 | | (law) a document that states some contractual relationship or grants some right
@@ -290,7 +290,7 @@ Synset | Score | Best synset | Definition
 ```Synset('cause.n.01')``` |0.125 | | events that provide the generative force that is the origin of something
 ```Synset('cause.n.02')``` |0.125 | | a justification for something existing or happening
 ```Synset('campaign.n.02')``` |0.125 | | a series of actions advancing a principle or tending toward a particular end
-```Synset('causal_agent.n.01')``` |0.25 | | any entity that produces an effect or is responsible for events or results
+```Synset('causal_agent.n.01')``` |0.25 | X | any entity that produces an effect or is responsible for events or results
 ```Synset('lawsuit.n.01')``` |0.062 | | a comprehensive term for any proceeding in a court of law whereby an individual seeks a legal remedy
 ```Synset('cause.v.01')``` |0.25 | | give rise to; cause to happen or occur, not always intentionally
 ```Synset('induce.v.02')``` |0.312 | | cause to do; cause to act in a specified manner
