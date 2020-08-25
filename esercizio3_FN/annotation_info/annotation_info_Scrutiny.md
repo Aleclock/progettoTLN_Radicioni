@@ -3,16 +3,12 @@
 
 > This frame concerns a Cognizer (a person or other intelligent being) paying close attention to something, the Ground, in order to discover and note its salient characteristics.  The Cognizer may be interested in a particular characteristic or entity, the Phenomenon, that belongs to the Ground or is contained in the Ground (or to ensure that such a property of entity is not present).  Some words in this frame allow alternate expressions of the Groundand the Phenomenon: 'We searched the yard  for my contact lens.'
 
-## **Frame name: Scrutiny** <br/><br/>
+# **Frame name: Scrutiny** <br/><br/>
 
 Synset | Score | Best synset | Definition
 ------------ | :------------: | :-------------: | -------------
 ```Synset('examination.n.01')``` | 0.179 | X | the act of examining something closely (as for mistakes)
 ```Synset('scrutiny.n.02')``` | 0.051 | | a prolonged intense look
-
-
-
-
 
 <br/><br/>
 
