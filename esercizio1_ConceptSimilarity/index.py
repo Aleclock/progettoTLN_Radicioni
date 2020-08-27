@@ -10,18 +10,28 @@ from prettytable import PrettyTable
 
 # cd /Users/aleclock/Desktop/uni/TLN/radicioni/progettoTLN_Radicioni/esercizio1_ConceptSimilarity
 
-
+"""
+Allow to load a csv file
+Input:
+    path: path file
+Output:
+    list
+"""
 def load_csv(path):
     couple_list = []
     with open(path, 'r') as fileCSV:
         for row in fileCSV.readlines()[1:]:
             temp = row.split(",")
-            # TODO valutare se normalizzare gold_value (dividere per 10)
             gold_value = temp[2].replace('\n', '')
             couple_list.append((temp[0], temp[1], float(gold_value)/10))
 
     return couple_list
 
+"""
+Allow to write a dictionary
+Input:
+    dict: dictionary
+"""
 def writeCSV(dict):
     pd.DataFrame(dict).to_csv('./output.csv', index=False)
 
@@ -41,6 +51,17 @@ def main():
         'lch': []
     }
 
+    nltk_sim = {
+        'Term 1': [],
+        'Term 2': [],
+        'wup': [],
+        'wup_api': [],
+        'sp' : [],
+        'sp_api' : [],
+        'lch': [],
+        'lch_api': []
+    }
+
     for r in couple_list[:]:
         ss1 = wn.synsets(r[0])
         ss2 = wn.synsets(r[1])
@@ -55,14 +76,36 @@ def main():
         similarities["wup"].append(sim_wup)
         similarities["sp"].append(sim_path)
         similarities["lch"].append(sim_lc)
+        
+        nltk_sim['Term 1'].append(r[0])
+        nltk_sim['Term 2'].append(r[1])
+        nltk_sim['wup'].append(sim_wup)
+        nltk_sim['wup_api'].append(mm.wuPalmerMetricAPI(ss1,ss2))
+        nltk_sim['sp'].append(sim_path)
+        nltk_sim['sp_api'].append(mm.shortestPathMetricAPI(ss1, ss2))
+        nltk_sim['lch'].append(sim_lc)
+        nltk_sim['lch_api'].append(mm.leakcockChodorowMetricAPI(ss1, ss2))
+        
 
-    #writeCSV(similarities)
+    writeCSV(similarities)
 
     table = PrettyTable()
+    table.title = 'Personal - target'
     table.field_names = ["Similarity index", "Spearman index", "Pearson index"]
+    table.add_row(["", "", ""])
+    table.add_row(["PERSONAL / TARGET", "", ""])
+    table.add_row(["", "", ""])
     table.add_row(["Wu & Palmer", pearson_index(similarities["Target"], similarities["wup"]), spearman_index(similarities["Target"], similarities["wup"])])
     table.add_row(["Shortest Path", pearson_index(similarities["Target"], similarities["sp"]), spearman_index(similarities["Target"], similarities["sp"])])
     table.add_row(["Leakcock & Chodorow", pearson_index(similarities["Target"], similarities["lch"]), spearman_index(similarities["Target"], similarities["lch"])])
+    table.add_row(["", "", ""])
+    table.add_row(['------------','-----------','------------'])
+    table.add_row(["", "", ""])
+    table.add_row(["PERSONAL / NLTK", "", ""])
+    table.add_row(["", "", ""])
+    table.add_row(["Wu & Palmer", pearson_index(nltk_sim["wup"], nltk_sim["wup_api"]), spearman_index(nltk_sim["wup"], nltk_sim["wup_api"])])
+    table.add_row(["Shortest Path", pearson_index(nltk_sim["sp"], nltk_sim["sp_api"]), spearman_index(nltk_sim["sp"], nltk_sim["sp_api"])])
+    table.add_row(["Leakcock & Chodorow", pearson_index(nltk_sim["lch"], nltk_sim["lch_api"]), spearman_index(nltk_sim["lch"], nltk_sim["lch_api"])])
     print(table)
 
 main()
