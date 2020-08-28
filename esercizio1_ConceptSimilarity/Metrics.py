@@ -4,22 +4,22 @@ import math
 from nltk.corpus import wordnet as wn
 import collections
 
-"""
-Lista funzioni e correttezza
-
-getCommonSubsumer > Dovrebbe essere corretta
-getLowestCommonSubsumer > Funziona correttamente    sbaglia una volta sola per motivi strani
-min_depthPath > dà risultati diversi rispetto a min_depth()
-getSubDistance
-shortestPath > Non funziona sempre
-"""
 
 class Metrics:
 
     # https://docs.huihoo.com/nltk/0.9.5/api/nltk.wordnet.synset.Synset-class.html
 
 
-    # https://docs.huihoo.com/nltk/0.9.5/api/nltk.wordnet.similarity-pysrc.html#wup_similarity
+    """
+    Calculate the maximum similarity between words based on Wu-Palmer similarity metric
+    Input:
+        listSynsets1: list of synsets of word
+        listSynsets2: list of synsets of word
+    Output:
+        maximum similarity
+
+    https://docs.huihoo.com/nltk/0.9.5/api/nltk.wordnet.similarity-pysrc.html#wup_similarity
+    """
     def wuPalmerMetric (self, listSynsets1, listSynsets2):
         maxSimilarity = 0
         for ss1 in listSynsets1:
@@ -29,10 +29,6 @@ class Metrics:
                 if not lcs:
                     similarity = 0
                 else:
-                    """lcs_depth = min_depthPath(lcs,lcs)
-                    ss1_depth = shortestPath(ss1,lcs) + lcs_depth
-                    ss2_depth = shortestPath(ss2,lcs) + lcs_depth"""
-
                     lcs_depth = min_depthPath(lcs,lcs)
                     ss1_depth = min_depthPath(ss1,lcs)
                     ss2_depth = min_depthPath(ss2,lcs)
@@ -43,6 +39,14 @@ class Metrics:
 
         return maxSimilarity
     
+    """
+    Calculate the maximum similarity between words based on Shortest Path similarity metric
+    Input:
+        listSynsets1: list of synsets of word
+        listSynsets2: list of synsets of word
+    Output:
+        maximum similarity
+    """
     def shortestPathMetric (self, listSynsets1, listSynsets2):
         #maxDepth = maximimDepth()
         maxDepth = 20
@@ -50,15 +54,22 @@ class Metrics:
 
         for ss1 in listSynsets1:
             for ss2 in listSynsets2:
-                distance = shortestPath(ss1,ss2)
-                #distance = ss1.shortest_path_distance(ss2)
-
-                similarity = ((2 * maxDepth) - distance) / (2*maxDepth) if distance is not None else 0
+                #distance = shortestPath(ss1,ss2)
+                distance = ss1.shortest_path_distance(ss2)
+                similarity = ((2 * maxDepth) - distance) / (2 * maxDepth) if distance is not None else 0
+                #similarity = 1 / (distance + 1) if distance is not None else 0
                 maxSimilarity = max(similarity, maxSimilarity)
     
         return maxSimilarity
 
-    # TODO arrivato qui, mi sta dando problemi nel calcolo della similarità
+    """
+    Calculate the maximum similarity between words based on Leacock Chodorow similarity metric
+    Input:
+        listSynsets1: list of synsets of word
+        listSynsets2: list of synsets of word
+    Output:
+        maximum similarity
+    """
     def leakcockChodorowMetric (self, listSynsets1,listSynsets2):
         #maxDepth = maximimDepth()
         maxDepth = 20
@@ -67,8 +78,6 @@ class Metrics:
             for ss2 in listSynsets2:
                 distance = shortestPath(ss1,ss2)
                 #distance = ss1.shortest_path_distance(ss2)
-                similarity = - (np.log((distance or 1.)/(2*maxDepth))) / np.log((2*maxDepth) + 1) # if depth is None -> 1
-                
                 if distance is not None:
                     if distance > 0:
                         similarity = - (math.log(distance/(2 * maxDepth))) / math.log(2 * maxDepth + 1)
@@ -78,8 +87,6 @@ class Metrics:
                     similarity = 0
                 
                 maxSimilarity = max(similarity, maxSimilarity)
-    
-        #return maxSimilarity/(np.log((2*maxDepth)+1))
         return maxSimilarity
 
     """
@@ -94,6 +101,9 @@ class Metrics:
         
         return maxSimilarity
     
+    """
+    NLTK Shortest Path similarity metric (as a reference)
+    """
     def shortestPathMetricAPI (self, listSynsets1, listSynsets2):
         maxSimilarity = 0
         for ss1 in listSynsets1:
@@ -103,6 +113,9 @@ class Metrics:
         
         return maxSimilarity
 
+    """
+    NLTK Leacock Chodorow similarity metric (as a reference)
+    """
     def leakcockChodorowMetricAPI (self, listSynsets1,listSynsets2):
         maxSimilarity = 0
         for ss1 in listSynsets1:
@@ -125,48 +138,18 @@ Input:
     ss1: synset 1
     ss2: synset 2
 Ouput:
-    commons_hypernyms: list of common synsets, formed by tuple (Synset, depth from root)
+    commons_hypernyms: list of common synsets
 """
 def getCommonSubsumer(ss1,ss2):
-
-    ah1 = ss1._all_hypernyms # all hypernym
-    ah2 = ss2._all_hypernyms # all hypernym
-
-    comm = list(ah1.intersection(ah2))
-
-    """
-    hypernym_paths
-    Get the path(s) from this synset to the root, where each path is a list of the synset nodes traversed on the way to the root.
-    :return: A list of lists, where each list gives the node sequence connecting the initial ``Synset`` node and a root node.
-    """
-    hp1 = ss1.hypernym_paths()
-    hp2 = ss2.hypernym_paths()
-
-    commons_hypernyms = []
-    commons_api = ss1.common_hypernyms(ss2)
-
-    for h in hp1:
-        for k in hp2:
-            zipped = list(zip(h, k))  # unisce 2 liste in una lista di tuple
-
-            common = None
-            for i in range(len(zipped)):
-                if (zipped[i][0] != zipped[i][1]):
-                    break
-                common = (zipped[i][0],i) # L'indice è utile per tenere conto della profondità
-
-                if common is not None and common not in commons_hypernyms:
-                    commons_hypernyms.append(common)
-
-    #return commons_hypernyms
-    return comm
+    h1 = ss1._all_hypernyms # all hypernym
+    h2 = ss2._all_hypernyms # all hypernym
+    common_hypernyms = list(h1.intersection(h2))
+    return common_hypernyms
 
 
 """
 Return the lowest common subsumer between two synsets.
-getCommonSubsumer() ritorna gli iperonimi comuni tra i due synset. L'indice corrisponde alla distanza dell'iperonimo dal root (elemento più generico).
-in questo metodo prendo l'elemento meno generico in comune tra i due (il primo, quello più lontano dal root). 
-Effettivamente corrisponde con la funzione implementata da nltk ma devo capire se ha senso.
+From list of common hypernyms, the least common hypernym is that with the maximum distance from synset to root
 Input:
     ss1: synset 1
     ss2: synset 2
@@ -174,39 +157,18 @@ Output:
     lowest common subsumer
 """
 def getLowestCommonSubsumer (ss1, ss2):
-    commons_api = ss1.lowest_common_hypernyms(ss2)
+    #commons_api = ss1.lowest_common_hypernyms(ss2)
     common_hypernyms = getCommonSubsumer(ss1,ss2)
     
-    lch = 0
-    s_max = None
+    lch_index = 0   # lch depth  
+    lch = None  # lowest common hypernyms
 
     for s in common_hypernyms:
-        if max_depthPath(s) > lch:
-            lch = max_depthPath(s)
-            s_max = s
-    
-    """if commons_api != []:
-        if (s_max == commons_api[0]):
-            print ("--" + str(ss1), str(ss2))
-            print (commons_api)
-            print (s_max)
-            print ("")"""
+        if max_depthPath(s) > lch_index:
+            lch_index = max_depthPath(s)
+            lch = s
 
-    """common_hypernyms.sort(key=lambda x: x[1], reverse=True) # Ordina la lista in base alla profondità del synset comune (ordine decrescente di profondità)
-
-    if (len(common_hypernyms) == 0):
-        return None
-
-    #Nella funzione lowest_common_hypernyms di wordnet l'elemento da prendere è quello in posizione len(commons_api)
-    if (common_hypernyms[0][0] != commons_api[-1]):
-        print (ss1, ss2)
-        print (commons_api)
-        print (common_hypernyms)
-        print ("")
-
-    return common_hypernyms[0][0]"""
-
-    return s_max
+    return lch
     
 
 """
@@ -221,7 +183,6 @@ def min_depthPath(synset,lcs):
     paths = synset.hypernym_paths()
     paths = list(filter(lambda x: lcs in x, paths))  # Seleziono solo i path che contengono lcs
     depth = (min(len(path) for path in paths))  # Prende la lunghezza della lista path con cardinalità minore (profondità minore)
-    #depth_api = synset.min_depth()
     return depth
 
 """
@@ -232,8 +193,14 @@ def max_depthPath(synset):
     depth = (max(len(path) for path in paths))    
     return depth
 
-# Calculate distance between root and the element of list
-# Ritorna la distanza tra il root ed un elemento della lista
+"""
+Calculate distance between root and the element of list
+Input: 
+    list: list of synset
+    ss1: reference synset
+Ouput: 
+    distance from g (element of list) and ss1
+"""
 def getSubDistance(list, ss1):
     for g in list:
         if (g == ss1):

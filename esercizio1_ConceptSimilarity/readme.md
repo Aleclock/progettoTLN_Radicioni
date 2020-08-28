@@ -299,7 +299,59 @@ Inizialmente calcola tutti i path disponibili dato il synset (``hypernym_paths()
 
 # 2. Indici di correlazione
 
-La correlazione che ottengo con i risultati target e quelli relativi alle metriche NLTK è la seguente
+Dopo aver calcolato la similarità tra le parole mediante le tre metriche, è necessario calcolare gli indici di correlazione di Spearman and gli indici di correlazione di Pearson fra i risultati ottenuti e quelli ‘target’ presenti nel file annotato. Per fare questo si utilizzano le funzioni ``pearson_index()`` e ``spearman_index()``.
+
+* ##  pearson_index()
+
+> L'indice di correlazione di Pearson è definita come la covarianza tra le due variabili diviso per il prodotto delle loro deviazioni standard.
+>
+> ~~~~plain
+> ρ = cov(X,Y) / (σX * σY)
+> ~~~~
+
+Inizialmente entrambe le liste (``target`` e ``data``) vengono convertite in array di ``float``
+
+~~~~python
+np.array(data).astype(np.float)
+~~~~
+
+La funzione ritorna
+
+~~~~python
+np.cov(target,data)[0][1] / (np.std(target) * np.std(data))
+~~~~
+
+Siccome la funzione np.cov() ritorna una matrice 2x2 con la forma
+
+~~~~plain
+cov(a,a), cov(a,b),
+cov(a,b), cov(b,b)
+~~~~
+
+è necessario prendere il secondo elemento della prima riga.
+
+<br/>
+
+* ##  spearman_index()
+
+> L'indice di correlazione di Spearman è definita come la correlazione di Pearson applicato ai ranghi (rank) delle variabili.
+>
+> ~~~~plain
+> r = ρ(rgX,rgY) = cov(rgX,rgY) / (σ_rgX * σ_rgY)
+> ~~~~
+
+dove:
+
+- r: correlazione di Spearman
+- ρ: correlazione di Pearson
+- rgX/rgY: rango/rank della variabile X/Y
+- σ_rgX/σ_rgY: deviazione standard del rank
+
+Calcola il rank delle liste in input con la funzione ``scipy.stats rankdata()`` e ritorna la correlazione di Pearson applicata ai rank.
+
+<br/><br/>
+
+La correlazione ottenuta con i risultati target e quelli relativi alle metriche NLTK è la seguente
 
 Similarity index | Spearman index | Pearson index |
 ------------ | :------------: | :-------------:

@@ -48,23 +48,19 @@ def main():
         'Target': [],
         'wup': [],
         'sp': [],
-        'lch': []
-    }
-
-    nltk_sim = {
-        'Term 1': [],
-        'Term 2': [],
-        'wup': [],
-        'wup_api': [],
-        'sp' : [],
-        'sp_api' : [],
         'lch': [],
+        'wup_api': [],
+        'sp_api': [],
         'lch_api': []
     }
 
     for r in couple_list[:]:
         ss1 = wn.synsets(r[0])
         ss2 = wn.synsets(r[1])
+
+        # ------------------------------------------
+        # - 0. Calcolo similarità tra parole 
+        # ------------------------------------------
 
         sim_wup = mm.wuPalmerMetric(ss1, ss2)
         sim_path = mm.shortestPathMetric(ss1, ss2)
@@ -76,18 +72,15 @@ def main():
         similarities["wup"].append(sim_wup)
         similarities["sp"].append(sim_path)
         similarities["lch"].append(sim_lc)
-        
-        nltk_sim['Term 1'].append(r[0])
-        nltk_sim['Term 2'].append(r[1])
-        nltk_sim['wup'].append(sim_wup)
-        nltk_sim['wup_api'].append(mm.wuPalmerMetricAPI(ss1,ss2))
-        nltk_sim['sp'].append(sim_path)
-        nltk_sim['sp_api'].append(mm.shortestPathMetricAPI(ss1, ss2))
-        nltk_sim['lch'].append(sim_lc)
-        nltk_sim['lch_api'].append(mm.leakcockChodorowMetricAPI(ss1, ss2))
-        
+        similarities["wup_api"].append(mm.wuPalmerMetricAPI(ss1,ss2))
+        similarities['sp_api'].append(mm.shortestPathMetricAPI(ss1, ss2))
+        similarities['lch_api'].append(mm.leakcockChodorowMetricAPI(ss1, ss2))
 
     writeCSV(similarities)
+
+    # ------------------------------------------
+    # - 1. Calcolo indice di correlazione
+    # ------------------------------------------
 
     table = PrettyTable()
     table.title = 'Personal - target'
@@ -103,9 +96,9 @@ def main():
     table.add_row(["", "", ""])
     table.add_row(["PERSONAL / NLTK", "", ""])
     table.add_row(["", "", ""])
-    table.add_row(["Wu & Palmer", pearson_index(nltk_sim["wup"], nltk_sim["wup_api"]), spearman_index(nltk_sim["wup"], nltk_sim["wup_api"])])
-    table.add_row(["Shortest Path", pearson_index(nltk_sim["sp"], nltk_sim["sp_api"]), spearman_index(nltk_sim["sp"], nltk_sim["sp_api"])])
-    table.add_row(["Leakcock & Chodorow", pearson_index(nltk_sim["lch"], nltk_sim["lch_api"]), spearman_index(nltk_sim["lch"], nltk_sim["lch_api"])])
+    table.add_row(["Wu & Palmer", pearson_index(similarities["wup"], similarities["wup_api"]), spearman_index(similarities["wup"], similarities["wup_api"])])
+    table.add_row(["Shortest Path", pearson_index(similarities["sp"], similarities["sp_api"]), spearman_index(similarities["sp"], similarities["sp_api"])])
+    table.add_row(["Leakcock & Chodorow", pearson_index(similarities["lch"], similarities["lch_api"]), spearman_index(similarities["lch"], similarities["lch_api"])])
     print(table)
 
 main()
