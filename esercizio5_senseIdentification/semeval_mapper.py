@@ -31,18 +31,10 @@ Output:
     list of 50 elements
 """
 def openFile(path, l_bound, u_bound):
-    file_lines = read_file(path)
+    file = open(path,"r",encoding="utf-8")
+    file_lines = file.readlines()
     couples = []
     for i in range(l_bound, u_bound):
         token = file_lines[i].replace("\n", "").split("\t")
         couples.append((token[0], token[1]))
     return couples
-
-"""
-    Read file and return a list contain all line of the document
-    :param path: path of the document
-    :return: list contain all line of the document
-"""
-def read_file(path):
-    file = open(path,"r",encoding="utf-8")
-    return file.readlines()
