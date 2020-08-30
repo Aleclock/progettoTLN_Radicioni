@@ -4,7 +4,9 @@
 
 # 0. INDIVIDUAZIONE DELLE COPPIE
 
->Le 50 coppie (sul totale di 500 coppie presenti nel file) sono da individuare sulla base del cognome, tramite la funzione definita nel notebook ``semeval_mapper.ipynb``. Le coppie individuato dal cognome Clocchiatti sono
+>Le 50 coppie (sul totale di 500 coppie presenti nel file) sono da individuare sulla base del cognome, tramite la funzione definita nel notebook ``semeval_mapper.ipynb``.
+
+Le coppie individuato dal cognome Clocchiatti sono
 
 ~~~~plain
 Clocchiatti    :        coppie nell'intervallo 201-250
@@ -24,15 +26,27 @@ Clocchiatti    :        coppie nell'intervallo 201-250
 >   * `0: Totally dissimilar and unrelated` -- The two items do not mean the same thing and are
 >not on the same topic (e.g., pencil-frog).
 
-La lista delle coppie ottenute è la seguente:
+Uno parte di annotazione è il seguente
+
+~~~~plain
+terremoto   scossa	        3.5
+patrimonio	azione	        1
+ebreo	    Gerusalemme	    2.5
+nuvolosità	previsione	    3
+dizionario	enciclopedia	3.5
+zecca	    museo	        0.5
+sedia	    sgabello        3.5
+spagnolo	umidità         0
+lattina	    bottiglia       3.5
+~~~~
 
 <br/><br/>
 
 # 1.2 VALUTAZIONE ANNOTAZIONE
 
->1. La valutazione dei punteggi annotati dovrà essere condotta in rapporto alla similarità ottenuta utilizzando i vettori NASARI (versione embedded; file 
+>1. La valutazione dei punteggi annotati dovrà essere condotta in rapporto alla similarità ottenuta utilizzando i vettori NASARI (versione embedded; file
 > mini_NASARI.tsv, nel materiale della lezione).
->2. La valutazione della nostra annotazione è condotta calcolando i coefficienti di Pearsons e Separman fra (la media dei) i punteggi annotati a mano e quelli 
+>2. La valutazione della nostra annotazione è condotta calcolando i coefficienti di Pearsons e Separman fra (la media dei) i punteggi annotati a mano e quelli
 > calcolati con la versione embedded di NASARI.
 
 Inizialmente vengono caricati i seguenti file
@@ -60,13 +74,13 @@ Il calcolo della similarità tra due termini in base ai vettori Nasari viene fat
 
 Questi dizionari risultano utili durante il calcolo della massima similarità tra sensi.
 
-Per ogni coppia `(word1, word2)` della lista `record` viene calcolata la lista di id Babel associati alla parola. La funzione (`getBabelId()`) cicla su tutti gli elementi della lista Babel (`babelSenses`)e ritorna gli id babel riferiti alla parola in input (`word`). Nel caso in cui non ci siano id babel associati alla parola in input, la funzione ritorna una lista vuota.
+Per ogni coppia `(word1, word2)` della lista `record` (lista contenente i termini e le annotazioni) viene calcolata la lista di id Babel associati alla parola. La funzione `getBabelId()` cicla su tutti gli elementi della lista `babel` (`babelSenses`) e ritorna gli id Babel riferiti alla parola in input (`word`). Nel caso in cui non ci siano id Babel associati alla parola in input, la funzione ritorna una lista vuota.
 
-Una volta calcolate le liste di `babel_id` riferite ad ogni parola della coppia, nel caso in cui queste liste non siano vuote, viene calcolata la similarità massima tra i due termini (`bestSenseSimilarity()`)
+Una volta calcolate le liste di `babel_id` riferite ad ogni parola della coppia, nel caso in cui queste liste non siano vuote, viene calcolata la similarità massima tra i due termini (`bestSenseSimilarity()`). Nel caso in cui almeno una delle due liste sia vuota, la similarità tra i due termini è `0`.
 
 * ## bestSenseSimilarity()
 
-Per entrambe le liste di babel_id, viene creata una lista contenente la tupla
+Per entrambe le liste di babel_id, viene creata una lista di tuple con forma
 
 ~~~~python
 (id, vect)
@@ -81,7 +95,7 @@ for id in babel_id1:
             nasariVector_w1.append((id, vect))
 ~~~~
 
-Per ogni `babel_id` della lista di una parola si ricava il vettore corrispondente dal `dizionario babel_id-nasari_vecto` (`id_vect`).
+in cui per ogni `babel_id` della lista di una parola si ricava il vettore corrispondente dal `dizionario babel_id-nasari_vecto` (`id_vect`).
 
 <br/>
 
@@ -108,7 +122,35 @@ La funzione ritorna una lista contenente la coppia di sensi (`babel_id`) che han
 [babel_id_word1,babel_id_word2, similarity_score]
 ~~~~
 
-<br/><br/>
+La funzione ritorna i `babel_id` dei termini e il rispettivo score di similarità della coppia che ha ottenuto il punteggio di similarità maggiore. L'output sarà composto dalla seguente lista
+
+~~~~python
+[babel_id_w1, babel_id_w2, similarity_score]
+~~~~
+
+dove:
+
+* `babel_id_w1`: `babel_id` della parola 1
+* `babel_id_w2`: `babel_id` della parola 2
+* `similarity_score`: score di similarità tra i vettori Nasari corrispondenti ai `due babel_id`
+
+
+Tornando alla funzione `getNasariScore()`, ovvero quella che calcola gli score di similarità in base ai vettori Nasari, il suo output è una lista (`nasari_score`) di liste contenenti i termini e il corrispondente punteggio di similarità, ovvero
+
+~~~~plain
+[[word1, word2, score]]
+~~~~
+
+<br/>
+
+Dopo aver calcolato i punteggio di similarità mediante vettori Nasari, vengono estratti dalle liste `clocchiatti_score` e `nasari_score` i punteggi di similarità (si ottiene quindi una lista di valori di similarità). Successivamente le liste vengono normalizzate (`clocchiatti_score` contiene valori compresi nel renge `[0,4]`) e viene calcolato l'indice di correlazione tra i due punteggi in base a Pearson e a Spearman, ottenendo il seguente risultato:
+
+~~~~plain
+Pearson index correlation: 0.717
+Spearman index correlation: 0.758
+~~~~
+
+<br/>
 
 Di seguito la tabella che confronta i valori di similarità annotati (normalizzati) con quelli calcolati tramite vettori Nasari
 
@@ -164,3 +206,7 @@ lago | nuvola | 0.125 | 0.52
 monastero | doccia | 0.0 | 0.44
 lingua madre | lingua | 1.0 | 0.96
 porto | incarto | 0.0 | 0.46
+
+<br/><br/>
+
+# 2.1 VALUTAZIONE ANNOTAZIONE

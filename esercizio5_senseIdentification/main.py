@@ -7,6 +7,12 @@ from Correlation import *
 
 # cd /Users/aleclock/Desktop/uni/TLN/radicioni/progettoTLN_Radicioni/esercizio5_senseIdentification
 
+"""
+Save a list in .tsv format 
+Input:
+    path: file path
+    list: list to save
+"""
 def saveList(path, list):
     with open(path, 'wt') as out_file:
         tsv_writer = csv.writer(out_file, delimiter='\t')
@@ -14,10 +20,24 @@ def saveList(path, list):
         for l in list:
             tsv_writer.writerow(l)
 
+"""
+Read a .txt file
+Input:
+    path: file path
+Output:
+    list of file lines
+"""
 def readFile_txt(path):
     file = open(path,"r",encoding="utf-8")
     return file.readlines()
 
+"""
+Read a .tsv file
+Input:
+    path: path file
+Output:
+    array: list of lists (each list in list is a row in file)
+"""
 def readFile_tsv(path):
     array = []
     with open(path, "r") as tsv:
@@ -30,7 +50,7 @@ def readFile_tsv(path):
     return array
 
 """
-Normalize all elements in a list    norm_el = el / max(list)
+Normalize all elements in a list  ->  norm_el = el / max(list)
 Input:
     list: list to normalize
 Output:
@@ -72,24 +92,15 @@ def main():
     clocchiatti_score_norm = normalizeList(getScore(clocchiatti_score))
     nasari_score_norm = normalizeList(getScore(nasari_score))
 
-    for i, el in enumerate(clocchiatti_score):
-        print (str(el[0]) + " | " + str(el[1]) + " | " + str(clocchiatti_score_norm[i]) + " | " + str(nasari_score_norm[i]))
-        #print("{}% {}".format(ratio * 100, color))
-
-
-    """for el, value in clocchiatti_score.items():
-        print (el, value)
-        #print (el[0], el[1])"""
+    """for i, el in enumerate(clocchiatti_score):
+        print (str(el[0]) + " | " + str(el[1]) + " | " + str(clocchiatti_score_norm[i]) + " | " + str(nasari_score_norm[i]))"""
 
     corr_pearson = pearson_index(clocchiatti_score_norm, nasari_score_norm)
     corr_spearman = spearman_index(clocchiatti_score_norm, nasari_score_norm)
-
-    print (corr_pearson, corr_spearman)
-
-    corr_pearson = pearson_index(getScore(clocchiatti_score), getScore(nasari_score))
-    corr_spearman = spearman_index(getScore(clocchiatti_score), getScore(nasari_score))
     
-    print (corr_pearson, corr_spearman)
+
+    print ("\nPearson index correlation: " + str(corr_pearson))
+    print ("Spearman index correlation: " + str(corr_spearman))
 
 
     """ SENSE IDENTIFICATION """

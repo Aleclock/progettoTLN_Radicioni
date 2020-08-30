@@ -10,40 +10,40 @@ lattina	bottiglia	3.5
 mosca	formica	3
 mito	satira	1
 centro della città	autobus	1
-coda	Boeing 747-200	0
+coda	Boeing 747-200	1
 opera d'arte	artista	3.5
 NATO	alleanza	2
 re	sovrano	4
 ritmo	cadenza	4
-Alexander Fleming	penicillina	2.5
-flauto	musica	3
+Alexander Fleming	penicillina	3
+flauto	musica	3.5
 airone cenerino	lago	1
 viscosità	spruzzo	0.5
 hardware	case	2.5
 anello	fidanzamento	3
 latino	tedesco	3
 classe operaia	fabbrica	2
-Shakespeare	Dickens	2
+Shakespeare	Dickens	3
 banconota	prete	0
-strumento	lavoro	1
+strumento	lavoro	2
 cinghiale nano	suidi	4
 suffragio	uscita	0
 stella	luminosità	2
 trota	chitarra	0
-dollaro	milionario	1
+dollaro	milionario	2
 cifra	numero	4
 burrasca	coperta	0
-Obama	Clinton	2
+Obama	Clinton	3
 personaggio secondario	film	2.5
-Juventus	Bayern Monaco	2.5
+Juventus	Bayern Monaco	3
 cambiamento climatico	precipitazione	2
 IA	batteria	0.5
-capolavoro	Gioconda	1
-crimine	aggressione	2
+capolavoro	Gioconda	1.5
+crimine	aggressione	2.5
 incoronazione	acqua	0
 vocalista	pentagramma	1
 spareggio	pallacanestro	2.5
-forze armate	difesa	2
+forze armate	difesa	3
 lago	nuvola	0.5
 monastero	doccia	0
 lingua madre	lingua	4

@@ -1,10 +1,16 @@
 import numpy as np
 from numpy.linalg import norm
-from sklearn.metrics.pairwise import cosine_similarity
 
 # SEMANTIC SIMILARITY utils
 
 """
+Calculate similarity score (based on cosine similarity) of a list of couple of terms from Nasari vector.
+Input:
+    record: list of couples of words
+    nasari: list of nasari vector
+    babelSenses: list of Babel senses
+Output:
+    nasari_score: list of score between words in form [[word1, word2, score]]
 """
 def getNasariScore(record, nasari, babelSenses):
     
@@ -16,12 +22,13 @@ def getNasariScore(record, nasari, babelSenses):
         babel_id2 = getBabelId(babelSenses, rec[1])  # Babel id list word 2
 
         if len(babel_id1) > 0 and len(babel_id2) > 0:
-            score = bestSenseSimilarity(babel_id1,babel_id2, id_vect)
+            score = bestSenseSimilarity(babel_id1,babel_id2, id_vect) # [id_sense_word1, id_sense_word2, score]
             nasari_score.append([rec[0], rec[1], round(score[2],2)])
         else:
             nasari_score.append([rec[0], rec[1], 0])
 
     return nasari_score
+
 
 """
 Calculate the best similarity value between two words babel_id's list
@@ -37,8 +44,6 @@ def bestSenseSimilarity(babel_id1,babel_id2, id_vect):
     nasariVector_w1 = []    # list of tuple (id, nasari_vector)
     nasariVector_w2 = []
 
-    #print (babel_id1)
-    #print (babel_id2)
     for id in babel_id1:
         vect = id_vect.get(id)
         if vect:
@@ -63,6 +68,7 @@ def bestSenseSimilarity(babel_id1,babel_id2, id_vect):
             
     return maxSimilarity
 
+
 """
 Calculate Cosine similarity between two vectors
 Input: 
@@ -74,10 +80,7 @@ Output:
 def cosineSimilarity(x, y):
     x = np.array(x, dtype=float)
     y = np.array(y, dtype=float)
-    #sim = np.inner(x, y)/(norm(x) * norm(y))
-    x= x.reshape(1,-1)
-    y= y.reshape(1,-1)
-    sim = cosine_similarity(x,y)[0][0]
+    sim = np.inner(x, y)/(norm(x) * norm(y))
     return sim
 
 
@@ -98,6 +101,7 @@ def getDictNasariBabel(nasari):
         id_word[record[0]] = record[1]  # Map babel id (record[0]) to word (record[1])
         id_vector[record[0]] = record[2]  # Map babel id (record[0]) to word (record[2])
     return id_word, id_vector
+
 
 """
 Extract a score list from a list in form [[word1, word2, score]]
