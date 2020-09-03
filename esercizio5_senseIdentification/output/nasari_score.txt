@@ -1,0 +1,50 @@
+terremoto	scossa	0.98
+patrimonio	azione	0.86
+ebreo	Gerusalemme	0.9
+nuvolosità	previsione	0.51
+dizionario	enciclopedia	0.76
+zecca	museo	0.51
+sedia	sgabello	0.96
+spagnolo	umidità	0.42
+lattina	bottiglia	0.89
+mosca	formica	0.9
+mito	satira	0.58
+centro della città	autobus	0
+coda	Boeing 747-200	0.81
+opera d'arte	artista	0.92
+NATO	alleanza	0.66
+re	sovrano	1.0
+ritmo	cadenza	0.89
+Alexander Fleming	penicillina	0.95
+flauto	musica	0.89
+airone cenerino	lago	0.52
+viscosità	spruzzo	0.73
+hardware	case	0.92
+anello	fidanzamento	0.55
+latino	tedesco	0.84
+classe operaia	fabbrica	0.51
+Shakespeare	Dickens	0.77
+banconota	prete	0.33
+strumento	lavoro	0.69
+cinghiale nano	suidi	0.7
+suffragio	uscita	0.39
+stella	luminosità	0.97
+trota	chitarra	0.29
+dollaro	milionario	0.56
+cifra	numero	1.0
+burrasca	coperta	0.47
+Obama	Clinton	0.95
+personaggio secondario	film	0.85
+Juventus	Bayern Monaco	0.87
+cambiamento climatico	precipitazione	0.67
+IA	batteria	0.68
+capolavoro	Gioconda	0.93
+crimine	aggressione	0.92
+incoronazione	acqua	0.49
+vocalista	pentagramma	0
+spareggio	pallacanestro	0.68
+forze armate	difesa	0.91
+lago	nuvola	0.52
+monastero	doccia	0.44
+lingua madre	lingua	0.96
+porto	incarto	0.46

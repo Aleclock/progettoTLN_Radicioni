@@ -209,4 +209,104 @@ porto | incarto | 0.0 | 0.46
 
 <br/><br/>
 
-# 2.1 VALUTAZIONE ANNOTAZIONE
+# 2 VALUTAZIONE ANNOTAZIONE
+
+> Il secondo compito consiste nell’individuare i sensi selezionati nel giudizio di similarità.
+>
+> * La domanda che ci poniamo è la seguente: quali sensi abbiamo effettivamente utilizzato quando abbiamo assegnato un valore di similarità a una coppia di
+> termini (per esempio, società e cultura)?
+> * NB: questa annotazione, sebbene svolta successivamente a quella della prima consegna, deve essere coerente con l’annotazione dei punteggi di similarità.
+>
+>Per risolvere questo compito partiamo dall’assunzione che i due termini funzionino come contesto di disambiguazione l’uno per l’altro.
+> L’output di questa parte dell’esercitazione consiste in 2 Babel synset ID e dai termini del synset
+>
+> * il formato di output è quindi costituito da 6 campi (separatore fra campi ;a tabulazione, mentre usiamo la virgola ‘,’ come separatore all’interno dello
+> stesso campo):
+>
+>~~~~plain
+>#Term1 Term2 BS1 BS2 Terms_in_BS1 Terms_in_BS2
+> macchina bicicletta bn:00007309n bn:00010248n
+> auto,automobile,macchina bicicletta,bici,bike
+>~~~~
+>
+> Calcoliamo nuovamente il livello di agreement nelle annotazioni, questa volta utilizzando il punteggio kappa di Cohen
+>
+> * Chi usa Python può utilizzare il cohen_kappa_score della libreria sklearn.metrics.
+> * Se il gruppo di annotatori è formato da 3 componenti, calcolare la kappa di Cohen per ogni coppia e riportare la media risultante, che sarà il valore 
+> sintetico di agreement sulle annotazioni prodotte.
+>
+> Valutiamo il risultato ottenuto (cioè la coppia dei sensi identificati, e la relativa appropriatezza) in rapporto all’output di un semplice sistema realizzato come segue
+>
+> * Utilizziamo nuovamente i vettori NASARI (versione densa, embedded) presenti nel file mini_NASARI.tsv, disponibile all’interno del materiale della lezione.
+>   * NB: il file contiene soli i vettori per i synset associati ai termini delle coppie; NON tutti i termini delle coppie hanno un vettore...
+> * Con tali vettori calcoliamo la coppia di sensi che massimizzano lo score di similarità.
+>
+>~~~~plain
+> c1, c2 = argmax (sim(c1,c2))
+>~~~~
+>
+> Misuriamo in questo caso l’accuratezza sia sui singoli elementi, sia sulle coppie.
+
+<br/>
+
+Nella seconda parte dell'esercitazione si utilizza nuovamente la funzione per il calcolo della similarità tra due termini in base ai vettori Nasari, in quanto la consegna richiede un output del tipo
+
+~~~~plain
+[word1, word2, id_sense_word1, id_sense_word2, Terms_in_BS1 Terms_in_BS2]
+~~~~
+
+La funzione `getNasariScoreSenses()` permette di ottenere una lista di liste nella forma
+
+~~~~plain
+[word1, word2, id_sense_word1, id_sense_word2]
+~~~~
+
+Successivamente, la funzione `getBabelTerms()` permette di estrarre i Babel senses (termini) dato un `babel_id`. In particolare la funzione ha l'obiettivo di ritornare una lista con la seguente struttura
+
+~~~~plain
+[word1, word2, id_sense_word1, id_sense_word2, Terms_in_BS1 Terms_in_BS2]
+~~~~
+
+in cui `Terms_in_BS1` corrispondono ai sensi di Babel che corrispondono al senso migliore (`id_sense_word1`). Per fare questo si utilizza la funzione `extractBabelTermAPI()`, la quale utilizza le API Babel per ottenere i lemmi associati ad uno specifico `babel_id`.
+
+~~~~python
+def extractBabelTermAPI(babel_id):
+    api = BabelnetAPI('034fb2dd-f5af-4840-aab7-917260affe5c')
+    senses = api.get_synset(id=babel_id, targetLang="IT")
+
+    terms = []
+    for key,value in senses.items():
+        if key == "senses":
+            for i in value:
+                terms.append(i['properties']['fullLemma'])
+    return terms
+~~~~
+
+Inizialmente è necessario accedere alle API tramite key, per poi ottenere il le informazioni di un Babel synset dato il suo id. Siccome la funzione `api.get_synset()` ritorna un dizionario, è necessario iterare in modo da ottenere i `[senses]` e successivamente aggiungere alla lista `terms` tutti i lemmi di ogni senso.
+
+Siccome BabelNet permette di effettuare solo 1000 chiamate giornaliere, è stato necessario creare una struttura offline per ottenere la lista dei termini dato il `babel_id`. La lista contenente queste associazioni è `babelInfo_API.txt`, la quale è formata da
+
+~~~~plain
+[[id_sense_word1, [Terms_in_BS1]]]
+~~~~
+
+Utilizzando questo file è possibile, attraverso la funzione dedicata `extractBabelTerm()`, effettuare la stessa operazione offline.
+
+Dopo aver creato la lista in cui si associa alle parole i migliori sensi (`babel_id`) e i corrispondenti termini, questa viene salvata (`babelList.txt`). Viene salvata anche una versione contenente i valori di similarità (`babelList_score.txt`).
+
+<br/>
+
+L'ultima consegna prevede di calcolare l'agreement nell'annotazione utilizzando il punteggio Kappa di Cohen (si utilizza la funzione presente in `sklearn.metrics`). Per fare questo si utilizzano le due liste contententi i valori di similarità (quelli annotati manualmente e quelli calcolati tramite Cosine similarity) mappati nel range `[0,4]` e convertiti in valori interi.
+Il risultato è 
+
+~~~~
+Kappa Cohen score : 0.237
+~~~~
+
+<br/><br/><br/>
+
+Sitografia:
+
+* <https://github.com/ptorrestr/py_babelnet>
+* <https://babelnet.org/guide#access>
+* <https://babelnet.org/guide>

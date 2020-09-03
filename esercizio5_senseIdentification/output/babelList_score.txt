@@ -1,0 +1,336 @@
+terremoto	scossa	bn:00029448n	bn:00029441n	3.5	0.98
+
+['sisma', 'terremoto', 'sisma', 'terremoto', 'terremoto', 'Scossa_tellurica', 'Sisma', 'terremoto', 'tremito', 'attività_sismica', 'sisma', 'terremoto', 'sisma', 'sisma', 'terremoto', 'Evento_sismico', 'Fenomeni_sismici', 'Movimenti_tellurici', 'Movimento_sismico', 'Movimento_tellurico', 'Scossa_di_assestamento', 'Scossa_sismica', 'Scosse_di_assestamento', 'Sisma', 'Terremoti', 'Aftershock_(terremoto)', 'sisma', 'temblor', 'terremoto', 'tremito', 'attività_sismica', 'moonquake', 'scossa_di_terremoto', 'sismicità', 'terremoti', 'terremoto']
+['microsisma', 'microsismo', 'scossa', 'scossa_sismica', 'scossa', 'scossa', 'microseism', 'tremore_della_terra']
+
+--
+
+patrimonio	azione	bn:00009815n	bn:00025804n	1	0.86
+
+['bene', 'beni', 'capitale', 'denaro', 'merce', 'oro', 'patrimonio', 'possedimento', 'possesso', 'ricchezza', 'sostanza', 'bene', 'beni', 'capitale', 'cosa', 'denaro', 'merce', 'oro', 'patrimonio', 'possedimento', 'possesso', 'proprietà', 'ricchezza', 'roba', 'sostanza', 'bene', 'effetti_personali', 'proprietà']
+['atto', 'rogito', 'rogito', 'Deed', 'deed', 'atto', 'azione', 'atto_notarile_contratto', 'atto', 'atto_di_trasporto']
+
+--
+
+ebreo	Gerusalemme	bn:00043492n	bn:00015555n	2.5	0.9
+
+['ebreo', 'giudeo', 'israelita', 'ebreo', 'giudeo', 'israelita', 'Ebrei', 'ebrei', 'popolo_ebraico', 'ebreo', 'Comunità_ebraica', 'Comunità_ebraiche', 'Ebraiche', 'Ebraici', 'Ebrea', 'Ebree', 'Ebreo', 'ebreo', 'israelita', 'Popolo_ebraico', 'Unità_del_popolo_ebraico', 'ebreo', 'ebreo', 'ebrei', 'ebreo', 'israelita']
+['Gerico', 'Gerusalemme', 'Gerico', 'Gerusalemme', 'Gerusalemme', 'Gerusalemme', 'Gerusalemme', 'Aelia_Capitolina', 'Gerusalemme_Ovest', 'Yerushalaim', 'Yerushalayim', 'Yerushalàyim', 'capitale_di_israele', 'gerusalemme']
+
+--
+
+nuvolosità	previsione	bn:00020002n	bn:00035806n	3	0.51
+
+['nube', 'nuvola', 'nube', 'nuvola', 'nuvola', 'Nube', 'nuvola', 'nube', 'nuvola', 'nembo', 'nube', 'nuvola', 'Nefologia', 'Nembo', 'Nube', 'Nubi', 'Nuvolosità', 'formazione_di_nubi', 'nuvole']
+['previsione', 'prognostico', 'pronostico', 'predizione', 'previsione', 'profezia', 'prognostico', 'pronostico', 'Predizione', 'predizione', 'pronostico', 'predizione', 'pronostico', 'predizione', 'predittivo', 'prevedere', 'previsione', 'previsione', 'previsioni', 'previsioni', 'previsione']
+
+--
+
+dizionario	enciclopedia	bn:00026967n	bn:00024746n	3.5	0.76
+
+['calepino', 'dizionario', 'lessico', 'vocabolario', 'calepino', 'dizionario', 'vocabolario', 'dizionario', 'dizionario', 'Dizionario_online', 'vocabolario', 'dizionario', 'dizionario', 'vocabolario', 'dizionario', 'dizionario', 'Dizionari', 'Dizionario_online', 'dizionari', 'dizionario', 'dizionario', 'dizionario']
+['enciclopedia', 'enciclopedia', 'enciclopedia', 'enciclopedia_multilingue', 'encyclopædia', 'encyclopædia', 'enciclopedia', 'enciclopedia', 'Enciclopedie', 'cyclopaedia', 'cyclopedia', 'enciclopedia', 'enciclopedia', 'enciclopedia', 'enciclopedia', 'enciclopedica', 'enciclopedie']
+
+--
+
+zecca	museo	bn:03025746n	bn:00056426n	0.5	0.51
+
+['Zecca_di_Venezia', 'Palazzo_della_Zecca', 'Zecca_di_Venezia', 'Zecca_(Venezia)']
+['museo', 'museo', 'museo', 'polo_museale', 'museo', 'museo', 'Museo_di_storia', 'Museo_scientifico', 'Museo_statale', 'Polo_museale', 'musei', 'museo', 'museo_archeologico', 'museo_di_storia', 'museo']
+
+--
+
+sedia	sgabello	bn:00017515n	bn:00074427n	3.5	0.96
+
+['sedia', 'seggiola', 'sedia', 'seggiola', 'sedia', 'sedia', 'gamba_della_sedia', 'sedia', 'Impagliatura_delle_sedie', 'Impagliatura_sedie', 'Sedie', 'Seggiola', 'sedia', 'sedia', 'sedie']
+['sgabello', 'panchetto', 'sgabello', 'sgabello', 'sgabello', 'sgabello', 'sgabello']
+
+--
+
+spagnolo	umidità	bn:03187006n	bn:00055529n	0	0.42
+
+['vino_spagnolo', 'spagna', 'spagnolo', 'vino_spagnolo']
+['umidità', 'vapore_condensato', 'umidità', 'umidità', 'umidità', 'bagnato', 'umidità', 'umidità']
+
+--
+
+lattina	bottiglia	bn:00072586n	bn:00012339n	3.5	0.89
+
+['lattina_di_bibita', 'lattina_per_bibita', 'lattina_per_bibite', 'lattina']
+['bottiglia', 'bottiglia', 'bottiglia', 'bottiglia', 'Bottiglie', 'Chiantigiana', 'Jeoroboam', 'Jeroboam', 'Mathuzalem', 'bottiglia', 'Bottiglie', 'Chiantigiana', 'Jeoroboam', 'Jeroboam', 'Mathuzalem', 'bottiglia', 'bottiglie', 'bottiglia']
+
+--
+
+mosca	formica	bn:00045007n	bn:00004458n	3	0.9
+
+['mosca_domestica', 'Musca_domestica', 'Musca_domestica', 'Mosca_Domestica', 'Musca_domestica', 'Mosca_domestica', 'Mosca_Domestica', 'mosca_domestica', 'mosca_Domestica', 'Musca_Domestica', 'casa_fly', 'mosca_domestica', 'musca_domestica', 'mosca', 'mosche', 'mosche_domestiche', 'musca_domestica']
+['formica', 'formica', 'Formicidae', 'formica_(araldica)', 'formica', 'Formiche', 'Formicidae', 'formica', 'Formica', 'formica', 'Formicaio', 'Formiche', 'formica', 'formiche', 'formicidae', 'emmet', 'formica', 'pismire']
+
+--
+
+mito	satira	bn:00056669n	bn:00013998n	1	0.58
+
+['mito', 'mito', 'mito', 'Miti', 'mito', 'Racconti_mitologici', 'Racconti_mitologici', 'mito', 'mito', 'mito']
+['parodia', 'parodia', 'parodia', 'Parodie', 'Pasquino', 'Pasquino', 'Parodie', 'burlesque_vittoriano', 'parodia', 'parodiato', 'parodico', 'parodie', 'pasquinata', 'parodia', 'pasquinata', 'satira']
+
+--
+
+coda	Boeing 747-200	bn:00030590n	bn:03226093n	1	0.81
+
+['impennaggio', 'impennaggio', 'Impennaggi', 'Impennaggio', 'Impennaggio_di_coda', 'coda', 'Impennaggi', 'Impennaggio_a_farfalla', 'Impennaggio_a_T', 'Impennaggio_a_V', 'Impennaggio_bideriva', 'Impennaggio_cruciforme', 'Impennaggio_di_coda', 'Impennaggio_trideriva', 'coda_di_montaggio', 'impennaggio', 'impennaggio']
+['Boeing_747', 'Boeing_747', '747-200', '747-200B', '747_200', '747_200B', 'B-747', 'Boeing_747-200', 'Boeing_747-200B', 'Boeing_747-400', 'Boeing_747_200', 'Boeing_747_200B', 'Boeing_747SP', 'Jumbo_Jet', 'Jumbo_jet']
+
+--
+
+opera d'arte	artista	bn:00081581n	bn:00006182n	3.5	0.92
+
+["Opera_d'arte", "opera_d'arte", "opera_d'arte", "oggetti_d'arte", "opera_d'arte", "opere_d'arte"]
+['artista', 'artista', 'artista', 'artista', 'Artisti', 'artista', 'artista', 'Artisti', 'artista', 'artista', 'artisti', 'artista', 'artista', 'persona_creativa']
+
+--
+
+NATO	alleanza	bn:00056978n	bn:03544293n	2	0.66
+
+['nato', 'North_Atlantic_Treaty_Organization_(Organizzazione_del_Trattato_nord_atlantico)', 'N.A.T.O.', 'nato', 'Organizzazione_del_Trattato_Nordatlantico', 'North_Atlantic_Treaty_Organization_(Organizzazione_del_Trattato_nord_atlantico)', "Organizzazione_del_Trattato_dell'Atlantico_del_Nord", 'NATO', "Organizzazione_del_Trattato_dell'Atlantico_del_Nord", 'OTAN', 'Alleanza_Atlantica', 'Consiglio_Atlantico', 'N.A.T.O.', 'Nato', 'NATO', 'North_Atlantic_Treaty_Organization', 'Organizzazione_del_Trattato_Nord_Atlantico', 'OTAN', 'nato', "organizzazione_del_trattato_dell'atlantico_del_nord", 'nato', 'north_atlantic_treaty_organization']
+['Alleanza', 'alleanza', 'Alleato', 'Alleato', 'alleanza']
+
+--
+
+re	sovrano	bn:00024097n	bn:00024097n	4	1.0
+
+['monarca', 're', 'regnante', 'sovrano', 'monarca', 're', 'regnante', 'sovrano', 'monarca', 're', 'monarca', 'Monarchi', 'Sovrani', 'sovrano', 'testa_coronata', 'monarca', 'monarchi', 're', 'sovrano']
+['monarca', 're', 'regnante', 'sovrano', 'monarca', 're', 'regnante', 'sovrano', 'monarca', 're', 'monarca', 'Monarchi', 'Sovrani', 'sovrano', 'testa_coronata', 'monarca', 'monarchi', 're', 'sovrano']
+
+--
+
+ritmo	cadenza	bn:00009396n	bn:00051209n	4	0.89
+
+['ritmo', 'ritmo', 'Battere', 'Levare', 'Ritmi', 'ritmo', 'Ritmo_musicale', 'ritmo', 'tempo', 'ritmo', 'tempo', 'Battere', 'Levare', 'Ritmi', 'Ritmo_musicale', 'ritmo_musicale', 'off-beat', 'ritmi', 'ritmica', 'ritmo', 'unità_ritmica']
+['swing', 'swing', 'Swing_(musica)', 'Shuffle_notes', 'Swing', 'Swing', 'Swing_notes', 'Swung_note', 'Shuffle_notes', 'Swing_notes', 'Swung_note', 'cadenza', 'nota_oscillato', 'swing']
+
+--
+
+Alexander Fleming	penicillina	bn:00002616n	bn:00061363n	3	0.95
+
+['Alexander_Fleming', 'Alessandro_Fleming', 'Alexander_Fleming', 'Alessandro_Fleming', 'alexander_fleming', 'sir_alexander_fleming']
+['penicillina', 'penicillina', 'penicillina', 'penicillina', 'penicillina', 'Beta_lattamine', 'Penicilline', 'penicillina', 'penicillina', 'penicilline']
+
+--
+
+flauto	musica	bn:00035127n	bn:00021408n	3.5	0.89
+
+['flautista', 'auleta', 'aulete', 'flautista', 'flauto', 'flautista', 'flautista', 'flautista', 'flautista', 'flautista']
+['componimento_musicale', 'composizione', 'composizione_musicale', 'musica', 'componimento', 'componimento_musicale', 'composizione', 'composizione_musicale', 'musica', 'composizione_(musica)', 'composizione', 'composizione_musicale', 'composizioni_musicali', 'opera_musicale', 'brano', 'composizione', 'composizione', 'Composizione_musicale', 'Composizioni_musicali', 'Opera_musicale', 'brano_musicale', 'composizione_musicale', 'opus', 'pezzo', 'composizione', 'composizione_musicale', 'composizione_musicale', 'pezzo', 'pezzo_musicale']
+
+--
+
+airone cenerino	lago	bn:16449236n	bn:00051763n	1	0.52
+
+['ardea_cinerea', 'Airone_cenerino', 'Airone_cinerino', 'Airone_grigio', 'Ardea_cinerea', 'airone_cenerino', 'ardea_cinerea', 'Airone_cenerino', 'Airone_cinerino', 'Airone_grigio']
+['laghi', 'lago', 'lochan', 'Loch']
+
+--
+
+viscosità	spruzzo	bn:00080092n	bn:00073618n	0.5	0.73
+
+['vischiosità', 'vischiosità', 'viscosità', 'viscosità', 'coefficiente_di_scambio_di_quantità_di_moto', 'fluidità', 'viscosità', 'viscosità', 'Coefficiente_di_viscosità', 'Diffusività_cinematica', 'Fluidità', 'Indice_di_viscosità', 'Viscosità_cinematica', 'Viscosità_dinamica', 'Viscosità_oli_motore', 'non_viscoso', 'viscosità', 'viscosità_cinematica', 'viscoso', 'viscoso', 'viscosità', 'viscosità', 'viscousness']
+['spruzzata', 'spruzzo']
+
+--
+
+hardware	case	bn:00021480n	bn:00262368n	2.5	0.92
+
+['hardware', 'hardware', 'hardware', 'hardware', 'hardware', 'materiale_informatico', 'hardware', 'hardware', 'Apparecchiature_hardware', 'Hardware_del_computer', 'Strumentario', 'hardware', 'hardware_dei_personal_computer', 'hardware']
+['Case_(hardware)', 'case', 'chassis', 'Case_desktop', 'Case_tower', 'Miditower', 'case_del_computer', 'caso_torre', 'telaio_del_computer', 'unità_di_sistema']
+
+--
+
+anello	fidanzamento	bn:00008287n	bn:00010152n	3	0.55
+
+['anello', 'anello', 'anello_(gioiello)', 'anello', 'anello', 'anello', 'anello', 'anello_dito']
+['fidanzamento', 'Promessa_di_matrimonio', 'Fidanzamento', 'Fidanzato', 'promessa_di_matrimonio', 'fidanzamento', 'fidanzata', 'promessa', 'promessa_sposa', 'fidanzamento', 'fidanzamento', 'Fidanzamento', 'Fidanzato', 'fidanzamento', 'fidanzata', 'fidanzato', 'impegno', 'promessa_sposa']
+
+--
+
+latino	tedesco	bn:00050161n	bn:00040293n	3	0.84
+
+['latino', 'latino', 'Lingua_latina', 'latino', 'lingua_latina', 'latino', 'latino', 'Latinista', 'Latino_classico', 'Latino_umanistico', 'latina', 'latino', 'lingua_latina']
+['tedesco', 'tedesco', 'Lingua_alto-tedesca', 'Lingua_tedesca', 'lingua_alto-tedesca', 'lingua_tedesca', 'tedesco', 'tedesco', 'tedesco', 'Alto-tedesco', 'Alto_Tedesco', 'alto_tedesco', 'germanophone', 'lingua_tedesca', 'lingua_tedesca', 'lingua_tedesca', 'tedesco', 'alto_tedesco', 'lingua_tedesca', 'tedesco']
+
+--
+
+classe operaia	fabbrica	bn:00049570n	bn:00032675n	2	0.51
+
+['classe_lavoratrice', 'classe_operaia', 'popolo', 'proletariato', 'classe_lavoratrice', 'popolo', 'proletariato', 'classe_lavoratrice', 'proletariato', 'Capite_censi', 'Ceto_proletario', 'classe_lavoratrice', 'Classe_operaia', 'Classe_proletaria', 'Proletari', 'Proletaria', 'proletariato', 'Proletarii', 'Proletario', 'Working_class', 'classe_operaia', 'lavoro', 'proletariato', 'Capite_censi', 'Ceto_proletario', 'Classe_operaia', 'Classe_proletaria', 'Classi_lavoratrici', 'Proletari', 'Proletaria', 'Proletarii', 'Proletario', 'Working_class', 'classe_operaia', 'lavoro', 'proletariato', 'classe_operaia', 'classe_operaia', 'classi_lavoratrici', 'proletari', 'proletariato']
+['fabbrica', 'manifattura', 'opificio', 'stabilimento', 'fabbrica', 'fabbrica', 'Fabbriche', 'Stabilimenti', 'fabbrica', 'fabbrica', 'stabilimento', 'fabbrica', 'Fabbriche', 'Stabilimenti', 'fabbrica', 'fabbrica', 'stabilimento_di_produzione', 'fabbrica', 'fabbrica', 'fabbriche', 'impianti_di_produzione', 'impianto_di_produzione', 'operaio']
+
+--
+
+Shakespeare	Dickens	bn:00008556n	bn:00017842n	3	0.77
+
+['Shakespeare', 'William_Shakespeare', 'Shakespeare', 'William_Shakespeare', 'William_Shakespeare', 'Shakespeare', 'William_Shakespeare', 'William_Shakespeare', 'William_Shakespeare', 'Guglielmo_Shakespeare', 'Opere_di_William_Shakespeare', 'Shakespeare', 'Shakespeare', 'Shakespeariana', 'Shakespeariano', 'shakespeariano', 'shakespeariano', 'bardo_di_avon', 'shakespeare', 'shakespeare', 'william_shakespeare']
+['Charles_Dickens', 'Charles_Dickens', 'Charles_John_Huffam_Dickens', 'Charles_Dickens', 'Charles_John_Huffam_Dickens', 'Dickens', 'Dickens', 'charles_dickens', 'john_charles_dickens_huffam']
+
+--
+
+banconota	prete	bn:00008375n	bn:01104180n	0	0.33
+
+['banconota', 'biglietto', 'biglietto_di_banca', 'banconota', 'banconota', 'banconota', 'Banconote', 'Carta_moneta', 'Cartamoneta', 'Moneta_cartacea', 'banconota', 'biglietto_di_banca', 'banconota', 'Banconote', 'Carta-moneta', 'Carta_moneta', 'Cartamoneta', 'Moneta_cartacea', 'banchiere_disegno_di_legge', 'banconota', 'federal_reserve_nota', 'governo_nota', 'greenback', 'vaglia_bancario', 'banconote', 'banconote', 'banconote', 'biglietto_verde']
+['Il_prete', 'Il_prete', 'Prete']
+
+--
+
+strumento	lavoro	bn:00046961n	bn:00081569n	2	0.69
+
+['strumento', 'apparecchio', 'congegno', 'strumento', 'strumento', 'strumento']
+['lavoro', 'lavoro', 'lavoro_(fisica)', 'lavoro', 'lavoro', 'lavoro', 'Lavoro_isocoro', 'Lavoro_termodinamico', 'lavoro', 'lavoro_meccanico']
+
+--
+
+cinghiale nano	suidi	bn:03100066n	bn:00033468n	4	0.7
+
+['Sus_salvanius', 'Sus_salvanius', 'Cinghiale_nano', 'maiale_pigmeo']
+['Suidae', 'Suidae', 'Suide', 'Suidi', 'Suide', 'Suidi', 'suidi', 'suina', 'famiglia_dei_suini', 'suidae']
+
+--
+
+suffragio	uscita	bn:00008198n	bn:14617569n	0	0.39
+
+['suffragio', 'votazione', 'voto', 'suffragio', 'votazione', 'voto', 'Scheda_elettorale', 'Voto_(elezione)', 'scheda_elettorale', 'suffragio', 'votazione', 'voto', 'elezione', 'voto', 'voto', 'Scheda_bianca', 'Scheda_nulla', 'ballottaggio', 'voto', 'voto', 'voto', 'elettori', 'scheda_elettorale', 'voto', 'voto']
+['uscita']
+
+--
+
+stella	luminosità	bn:00073964n	bn:14292145n	2	0.97
+
+['astro', 'sole', 'stella', 'sole', 'stella', 'stella', 'stella', 'stella', 'Stelle', 'stella', 'stelle']
+['luminosità_(astronomia)', 'luminosità', 'luminosità', 'luminosità', 'Luminosità_(fisica)', 'luminosità', 'luminosità_bolometrica']
+
+--
+
+trota	chitarra	bn:00078435n	bn:00042150n	0	0.29
+
+['trota', 'trota', 'trota', 'trota', 'pesca_alla_trota', 'trota']
+['chitarra', 'chitarra', 'chitarra', 'chitarra', 'Chitarra_ritmica', 'chitarra_ritmica', 'chitarra_ritmica', 'Chitarra_solista', 'chitarra_solista', 'chitarra_solista', 'Shred_(musica)', 'chitarra', 'Chitarra_ritmica', 'Chitarra_solista', 'Chitarre', 'Chitarrista,', 'Flatpicking', 'Shred_(musica)', 'chitarra', 'chitarra', 'chitarra_rock', 'chitarre']
+
+--
+
+dollaro	milionario	bn:00044648n	bn:00055058n	2	0.56
+
+['dollaro', 'dollaro_di_Hong_Kong', 'dollaro_di_Hong_Kong', 'dollaro_hongkonghese', 'HK$', 'Dollaro_hongkonghese', 'dollari_di_hong_kong', 'dollaro_di_hong_kong', 'dollari_di_hong_kong']
+['milionario', 'milionario', 'milionario', 'milionario', 'milionari', 'milionario', 'multi-milionario', 'multimilionario']
+
+--
+
+cifra	numero	bn:00058287n	bn:00058287n	4	1.0
+
+['cifra', 'numero', 'cifra', 'numerale', 'numero', 'numerale', 'aggettivo_numerale', 'numerale', 'numerale', 'Aggettivo_numerale', 'numerale', 'numero']
+['cifra', 'numero', 'cifra', 'numerale', 'numero', 'numerale', 'aggettivo_numerale', 'numerale', 'numerale', 'Aggettivo_numerale', 'numerale', 'numero']
+
+--
+
+burrasca	coperta	bn:00009425n	bn:00052848n	0	0.47
+
+['Scala_di_Beaufort', 'Grado_Beaufort', 'Scala_Beaufort', 'Scala_di_Beaufort', 'scala_di_Beaufort', 'Grado_Beaufort', 'Scala_Beaufort', 'vento_scala', 'burrasca', 'scala_beaufort', 'venti_burrasca']
+['coperta', 'coperta', 'ponte_principale', 'Ponte_di_coperta', 'Ponte_di_coperta', 'ponte_principale', 'secondo_ponte', 'ponte_principale']
+
+--
+
+Obama	Clinton	bn:03330021n	bn:00010400n	3	0.95
+
+['Barack_Obama', 'Barack_Hussein_Obama', 'Barack_Hussein_Obama_II', 'Barack_Obama', 'Barack_Obama', 'Barack_Hussein_Obama', 'Barack_Hussein_Obama_II', 'Barak_Obama', 'Obama', 'Obama']
+['Bill_Clinton', 'Clinton', 'Bill_Clinton', 'Bill_Clinton', 'William_Jefferson_"Bill"_Clinton', 'Bill_Clinton', 'William_Clinton', 'William_Jefferson_Clinton', 'William_Jefferson_“Bill”_Clinton', 'bill_clinton', 'il_presidente_clinton', 'william_jefferson_clinton']
+
+--
+
+personaggio secondario	film	bn:00017746n	bn:03715325n	2.5	0.85
+
+['figura', 'personaggio', 'Personaggio_immaginario', 'personaggio_di_fantasia', 'personaggio_fittizio', 'personaggio_immaginario', 'personaggio_leggendario', 'Creatura_immaginaria', 'Divinità_immaginaria', 'Personaggi', 'Personaggi_immaginari', 'Personaggi_leggendari', 'Personaggi_letterari', 'Personaggio', 'Personaggio_cinematografico', 'Personaggio_dei_fumetti', 'Personaggio_dei_videogiochi', 'Personaggio_delle_favole', 'Personaggio_delle_fiabe', 'Personaggio_di_fantasia', 'Personaggio_fittizio', 'Personaggio_leggendario', 'Personaggio_letterario', 'Personaggio_ricorrente', 'Personaggio_teatrale', 'personaggi_dei_cartoni_animati', 'personaggi_di_fantasia', 'personaggio', 'personaggio_animato', 'personaggio_dei_cartoni_animati', 'personaggio_immaginario', 'personaggio_secondario', 'carattere', 'personaggio', 'personaggio_di_fantasia', 'personaggio_fittizio']
+['film', 'show-in-a-show']
+
+--
+
+Juventus	Bayern Monaco	bn:00876765n	bn:00963795n	3	0.87
+
+['Juventus_Football_Club', 'Bianconeri', 'F.C._Juventus', 'FC_Juventus', "Fidanzata_d'Italia", 'Goeba', 'Juve', 'Juventus', 'Juventus_Calcio', 'Juventus_F.C.', 'Juventus_FC', 'Juventus_Football_Club', 'Juventus_Football_Club_S.p.A.', 'Madama', 'Signora_omicidi', 'Vecchia_signora', 'Zebre', 'Juventus_Football_Club', 'Bianconera', 'Bianconera', 'Bianconeri', 'Bianconeri', 'Bianconero', 'Bianconero', 'FC_Juventus', 'FC_Juventus', 'Iuventus', 'Juve', 'Juve', 'Juventus', 'Juventus', 'Juventus_F.C.', 'Juventus_F.C.', 'Juventus_FC', 'Juventus_FC', 'Juventus_Torino']
+['Fußball-Club_Bayern_München', 'Fußball-Club_Bayern_München', 'Bayern_Monaco', 'Bayern_Munich', 'Bayern_München', 'F.C._Bayern_München', 'FC_Bayern_Monaco', 'FC_Bayern_Munich', 'FC_Bayern_München']
+
+--
+
+cambiamento climatico	precipitazione	bn:00019782n	bn:00028483n	2	0.67
+
+['cambiamento_climatico', 'Cambiamenti_climatici', 'cambiamento_climatico', 'Cambiamento_climatico', 'Cambiamento_climatico_brusco', 'Mutamenti_climatici', 'Mutamento_climatico_brusco', 'cambiamento_climatico', 'cambiamento_del_clima', 'mutamento_climatico', 'cambiamento_climatico', 'mutamento_climatico', 'Cambiamenti_climatici', 'Cambiamento_climatico_brusco', 'Mutamenti_climatici', 'Mutamento_climatico', 'Mutamento_climatico_brusco', 'cambiamento_climatico', 'cambiamento_climatico_globale', 'cambiamento_climatico', 'cambiamento_climatico', 'cambiamento_climatico_globale', 'variabilità_del_clima']
+['precipitazione', 'precipitazione', 'precipitazione_(meteorologia)', 'precipitazione', 'precipitazione', 'precipitazione_atmosferica', 'idrometeora', 'Acque_meteoriche', 'Piovosità', 'Precipitazione_atmosferica', 'Precipitazioni', 'Precipitazioni_atmosferiche', 'idrometeore', 'precipitazioni']
+
+--
+
+IA	batteria	bn:03714194n	bn:00049242n	0.5	0.68
+
+['Íþróttabandalag_Akraness', 'IA_Akranes', 'ÍA', 'ÍA_Akranes', 'ÍA_Akraness', 'Íþróttabandalag_Akraness', 'IA_Akranes', 'ÍA', 'ÍA_Akranes', 'ÍA_Akraness']
+['kit', 'set', 'armamentario', 'batteria', 'corredo', 'equipaggiamento', 'kit', 'set', 'Equipaggiamento_calcistico', 'equipaggiamento_calcistico', 'Equipaggiamento_dei_calciatori', 'Equipaggiamento_del_calcio']
+
+--
+
+capolavoro	Gioconda	bn:00018059n	bn:03571983n	1.5	0.93
+
+['capolavoro', "opera_d'arte", 'capolavoro', "opera_d'arte", 'capolavoro', 'capolavoro', 'capolavoro', 'capolavoro', 'capolavoro', 'capolavoro']
+['Gioconda', "''_La_Gioconda_''", 'Gioconda', 'La_Gioconda', 'La_Gioconda', 'Monna_Lisa', 'la_Gioconda', 'la_Monna_Lisa', 'Gioconda', 'La_gioconda', 'La_gioconda', 'La_Gioconda_(Leonardo)', 'Mona_Lisa', 'Monna_lisa', 'Monna_Lisa']
+
+--
+
+crimine	aggressione	bn:00023807n	bn:00006467n	2.5	0.92
+
+['crimine', 'delitto', 'fattaccio', 'illecito', 'misfatto', 'reato', 'crimine', 'delitto', 'misfatto', 'reato', 'crimine', 'crimine', 'crimine', 'crimine', 'delitto', 'reato', 'crimine', 'Crimina', 'Criminale', 'Criminali', 'Criminalità', 'Crimini', 'Crimini', 'la_violazione_della_legge', 'reato', 'attività_criminale', 'attività_criminali', 'attività_illegali', 'atto_criminale', 'comportamento_criminale', 'criminali', 'crimini', 'reato', 'reato', 'reato', 'reato']
+['aggressione', 'aggressione', 'aggressione', 'aggressione_a_mano_armata', 'aggressione_criminale', 'aggressione_semplice', 'aggressioni_fisiche', 'aggressore', 'assalti']
+
+--
+
+incoronazione	acqua	bn:03161106n	bn:00080561n	0	0.49
+
+['Pala_degli_Oddi', 'Incoronazione', 'Pala_degli_Oddi', 'Pala_Oddi', 'Pala_Oddi', 'Incoronazione_(Raffaello)']
+['acqua', 'acqua', 'acqua_(elemento)', 'Acqua', 'acqua', 'Acqua_(elemento_classico)', 'acqua']
+
+--
+
+spareggio	pallacanestro	bn:03528898n	bn:00008889n	2.5	0.68
+
+['Spareggio', 'Spareggi', 'Spareggio', 'Spareggi', 'partita_di_playoff']
+['basket', 'basketball', 'cestismo', 'palla_canestro', 'pallacanestro', 'basket', 'basketball', 'cestismo', 'pallacanestro', 'pallacanestro', 'Basket', 'pallacanestro', 'basket', 'giocatore_di_basket', 'pallacanestro', 'cestista', 'giocatore_di_basket_giocatrice_di_basket', 'Basket', 'Basketball', 'Kosarka', 'Layup', 'Regole_della_pallacanestro', 'Società_di_pallacanestro', 'Blocco_(pallacanestro)', 'basket', 'basket', 'basketballer_professionale', 'società_pallacanestro', 'cerchi', 'gioco_di_basket']
+
+--
+
+forze armate	difesa	bn:00005732n	bn:15622439n	3	0.91
+
+['esercito', 'forze_armate', 'Forza_armata', 'Militare', 'Arma_(forze_armate)', 'Arma', 'forza_armata', 'militare', 'ramo_militare', 'forze_armate', "forze_dell'ordine", 'forze_di_polizia', 'forze_militari', 'militari', 'unità_militare', 'forze_armate', 'Ex_militare', 'Forza_Armata', 'Forza_militare', 'Forze_Armate', 'Forze_armate', 'Forze_militari', 'militari', 'Militari', 'Paramilitari', 'Truppa', "Uomo_d'arme", 'armate', 'forza_armata', 'forze_armate', 'forze_militari', 'militari', 'militari', 'ramo_militare', 'resistenza_armata', 'armati_servizi', 'forze_armate', 'forze_armate', 'macchina_da_guerra', 'macchina_militare', 'militare']
+['Difesa_(politica)', 'difesa', 'difesa_nazionale', 'Sicurezza_nazionale_(politica)', 'politica_di_difesa', 'politica_di_difesa_nazionale']
+
+--
+
+lago	nuvola	bn:00049709n	bn:00020002n	0.5	0.52
+
+['lago', 'lago', 'lago', 'bacino_lacustre', 'lago', "specchio_d'acqua", 'lago', 'Bacino_lacustre', 'Laghi_Alpini', 'Lago_alpino', 'Lago_di_vapore', "Specchio_d'acqua", 'laghi', 'lago', "lago_d'acqua_dolce", 'lago_effimero', 'lago_intermittente', 'lago_naturale']
+['nube', 'nuvola', 'nube', 'nuvola', 'nuvola', 'Nube', 'nuvola', 'nube', 'nuvola', 'nembo', 'nube', 'nuvola', 'Nefologia', 'Nembo', 'Nube', 'Nubi', 'Nuvolosità', 'formazione_di_nubi', 'nuvole']
+
+--
+
+monastero	doccia	bn:00022329n	bn:00071325n	0	0.44
+
+['convento', 'monastero', 'convento', 'comunità_conventuale', 'convento', 'convento', 'convento', 'Comunità_conventuale', 'Conventi', 'conventi', 'convento']
+['doccia', 'doccia', 'doccia']
+
+--
+
+lingua madre	lingua	bn:00056969n	bn:00049911n	4	0.96
+
+['madrelingua', 'lingua_madre']
+['lingua', 'linguaggio', 'parlare', 'parlata', 'linguaggio', 'comunicazione_orale', 'lingua_parlata', 'lingua_parlata', 'Language', 'lingua', 'linguaggio', 'comunicazione_orale', 'comunicazione_vocale', 'conversazione', 'discorso', 'lingua_parlata', 'comunicazione_orale', 'comunicazione_verbale', 'comunicazione_vocale', 'comunicazione_vocale', 'lingua_orale', 'lingua_parlata', 'linguaggio_umano']
+
+--
+
+porto	incarto	bn:00022381n	bn:00060120n	0	0.46
+
+['traslazione', 'trasporto', 'traslazione', 'porto', 'trasferire', 'trasporto', 'trasferimento', 'trasferimento', 'trasferimento', 'trasporto']
+['imballaggio', 'imballo', 'imballaggio', 'imballo', 'imballaggio', 'Borra_(munizioni)', 'borra', 'Imballaggi', 'imballaggio', 'Packaging', 'Imballaggi', 'Imballo', 'Packaging', 'Stoppaccio', 'incarto', 'ovatta', 'imballaggi_flessibili', "imballaggio_e_l'etichettatura", 'materiale_di_imballaggio', 'ovatta', 'packaging_design']
+
+--
+
