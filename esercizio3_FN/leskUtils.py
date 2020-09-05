@@ -47,13 +47,7 @@ def syn_frameName(id, ctx_frame, el):
 
     mapped_el = []
 
-    # print ("************ " + f.name + " , " + el)
-
     if (len(synsets) == 1):  # If there is only one synset, it is the best
-        # print (str(synsets[0]) + " , " + str(synsets[0].definition()))
-        """print ("Synset | Score | Best synset | Definition")
-        print ("------------ | :------------: | :-------------: | -------------")
-        print ("```" + str(synsets[0]) + "``` | - |" + str(synsets[0].definition()))"""
         mapped_el.append(["fn", f.name, el, synsets[0]])
         return mapped_el
     elif (len(synsets) == 0):
@@ -66,9 +60,6 @@ def syn_frameName(id, ctx_frame, el):
     for s in synsets:
         ctx_synset = getSynsetContext(s)
         overlap = computeOverlap(ctx_frame, ctx_synset) + 1
-        #print('\t\t SY: {}\tDEF: {}\tSCORE: {}'.format(str(s), str(s.definition()), str(overlap/len(ctx_frame))))
-        #print ("```" + str(s) + "``` | " + str(round(overlap/len(ctx_frame),3)) + "| " + str(s.definition()))
-        # print (s.examples())
         if (overlap > max_overlap):
             max_overlap = overlap
             best_sense = s
@@ -99,29 +90,14 @@ def syn_frameElements(id, ctx_frame, el):
     for fe in el:   # for each frame element
         synsets = wn.synsets(fe)
 
-        """"print ("\n<br/><br/>\n")
-        print ("* ## " + fe + "\n")
-        print ("> " + f.FE[fe].definition + "\n")
-
-        print ("Synset | Score | Best synset | Definition")
-        print ("------------ | :------------: | :-------------: | -------------")"""
-        
-        #print ("************************************************")
-        #print(f.name + " , " + fe)
-        #print('\tFE: {}\tDEF: {}'.format(fe, f.FE[fe].definition))
-
         ctx_synset = []
         best_sense = None
         max_overlap = 0
 
         for s in synsets:
-            # print (str(s) + " , " + str(s.definition()))
-
             ctx_synset = getSynsetContext(s)
             overlap = computeOverlap(ctx_frame, ctx_synset) + 1
-            #print('\t\t SY: {}\tDEF: {}\tSCORE: {}'.format(str(s), str(s.definition()), str(overlap/len(ctx_frame))))
-            #print ("```" + str(s) + "``` |" + str(round(overlap/len(ctx_frame),3)) + " | | " + str(s.definition()))
-            #print(s.examples())
+
             if (overlap > max_overlap):
                 max_overlap=overlap
                 best_sense=s
@@ -151,14 +127,6 @@ def syn_lexicalUnits(id, ctx_frame, el):
     for name, lu in el.items():   # Per ogni lexical unit del frame f (name: lexical unit name, lu: lexical unit)
         synsets=wn.synsets(lu.lexemes[0].name)
 
-        """print ("\n<br/><br/>\n")
-        print ("* ## " + lu.lexemes[0].name + "\n")
-        print ("> " + lu.definition + "\n")
-
-        print ("Synset | Score | Best synset | Definition")
-        print ("------------ | :------------: | :-------------: | -------------")"""
-
-
         ctx_synset=[]
         best_sense=None
         max_overlap=0
@@ -167,7 +135,6 @@ def syn_lexicalUnits(id, ctx_frame, el):
             ctx_synset=getSynsetContext(s)
             overlap=computeOverlap(ctx_frame, ctx_synset) + 1
 
-            #print ("```" + str(s) + "``` |" + str(round(overlap/len(ctx_frame),3)) + " | | " + str(s.definition()))
             if (overlap > max_overlap):
                 max_overlap=overlap
                 best_sense=s
@@ -253,7 +220,6 @@ def preProcess(d):
     ps=PorterStemmer()
 
     tokens=nltk.word_tokenize(d)
-    # and "'s" not in x
     tokens=list(filter(lambda x: x not in stop_words and x not in punct, tokens))
     tokens=list(set(wnl.lemmatize(t) for t in tokens))
     tokens=list(set(ps.stem(t) for t in tokens))
@@ -286,15 +252,3 @@ def getMainTerm(pos):
             return word
         elif tag == "NOUN":
             return word
-
-
-"""
-il contesto del frame è uguale nel caso del frame name, frame elements e lexical units
-Cambia il contesto del synset
-
-Frame name:
-    trovo i synset dato il frame name e costruisco il contesto del synset
-Frame element e lexical unit:
-    prendo il nome del frame element e trovo i synset associati
-
-"""

@@ -5,14 +5,13 @@ from reformatSemcor import *
 import re
 import pandas as pd
 import xml.etree.ElementTree as ET
-from nltk.wsd import lesk as leskNltk
+from nltk.wsd import lesk as leskNLTK
 from sklearn.metrics import accuracy_score
 
 import numpy as np
 import random
 
 # cd /Users/aleclock/Desktop/uni/TLN/radicioni/progettoTLN_Radicioni/esercizio2_WSD
-
 
 def openFile(path):
     sentences = []
@@ -55,7 +54,6 @@ def main():
         'Synset': [],
         'New sentence': []
     }
-    print (len(sentences))
 
     for s in sentences:
         best_sense = lesk(s['word'], s['sentence'])
@@ -67,7 +65,7 @@ def main():
         output["Synset"].append(best_sense)
         output["New sentence"].append(newSentence)
     
-    writeCSV(output, "outputDisambiguation")
+    #writeCSV(output, "outputDisambiguation")
 
     # ---------------------------------------------
     # ----      PARTE 2
@@ -88,22 +86,22 @@ def main():
 
     for s in sentences:
         tagged_words = [word for word in s.iter()
-                            if word.get("cmd") is not "ignore" and      # Se non sbaglio "ignore" indica le parole che non devono essere taggate 
+                            if word.get("cmd") is not "ignore" and      # "ignore" indica le parole che non devono essere taggate 
                             word.get("lexsn") is not None and
                             word.get("lemma") is not None and 
                             word.get("pos") in ['NN', 'NNS', 'NNPS'] and  # In quanto si vuole prende un sostantivo  
                             word.get("wnsn") != "0"]   
-        
+
         word = random.choice(tagged_words)  # Choose a random word (NOUN)
 
-        """ http://www.nltk.org/api/nltk.corpus.reader.html?highlight=wordnet """
+        # http://www.nltk.org/_modules/nltk/corpus/reader/wordnet.html#WordNetCorpusReader.synset_from_sense_key
         semCorSynset = wn.synset_from_sense_key("%".join([word.get("lemma"), word.get("lexsn")]))   # Synset annotate in semCor
 
         w = word.text   # Word to disambiguate
-        sentence = " ".join(word.text for word in s.iter()) 
+        sentence = " ".join(term.text for term in s.iter()) 
         
         best_sense = lesk(w, sentence)
-        best_senseNLTK = leskNltk(sentence,w)
+        best_senseNLTK = leskNLTK(sentence,w)
 
         database["Sentence"].append(sentence)
         database["Ambiguos term"].append(w)
@@ -111,7 +109,7 @@ def main():
         database["My synset"].append(best_sense)
         database["Nltk synset"].append(best_senseNLTK)
 
-    writeCSV(database, "outputSemcor")
+    #writeCSV(database, "outputSemcor")
 
     ground = [str(i) for i in database["Semcor synset"]]
     predicted_lesk = [str(i) for i in database["My synset"]]
@@ -121,7 +119,7 @@ def main():
     accuracyNLTK = accuracy_score(ground,predicted_nltk)
 
     print ("------------------")
-    print ("Accuracy with personal Leks: "  + str(accuracyPersonal))
-    print ("Accuracy with Nltk Leks: "  + str(accuracyNLTK))
+    print ("Accuracy with personal Lesk: "  + str(accuracyPersonal))
+    print ("Accuracy with Nltk Lesk: "  + str(accuracyNLTK))
     print ("------------------")
 main()

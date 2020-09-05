@@ -1,12 +1,13 @@
 from summarization import *
 
 from pathlib import Path
+import os
 
 # cd /Users/aleclock/Desktop/uni/TLN/radicioni/progettoTLN_Radicioni/esercizio4_nasariSummarisation
 
 
 """
-__ Allow to load the article in path
+Load the article in path
 Title viene inizializzato False in quanto la prima riga con carattere alfabetico (alpha) è il titolo dell'articolo. 
 Se il primo carattere della riga è alfabetico e il titolo è già stato analizzato (title = True), allora si tratta della frase di un paragrafo.
 Nel caso in cui il primo carattere dell'articolo non sia alfabetico, vuol dire che si tratta della fonte (inizia con #) o di uno spazio
@@ -42,7 +43,7 @@ def loadDocument(path):
 
 
 """
-__ Load the nasari dictionary
+Load the nasari dictionary
 Input: 
     path: file in input
 Output: 
@@ -50,13 +51,6 @@ Output:
 """
 def loadNasari(path):
     concepts = {}
-    """
-    with open(path, 'r', encoding='utf8') as file:
-        for line in file:
-            line = (line.strip().lower().split(';'))
-            concepts[line[1]] = [tuple(element.split("_")) for element in line[2:]]
-    file.close()
-    """
 
     # Allow to create a dictionary with the form:   nasari_word: {nasari_lexic:nasari_score}
     with open(path, 'r', encoding='utf8') as file:
@@ -74,6 +68,13 @@ def loadNasari(path):
 
     return concepts
 
+"""
+Delete file in path
+Input: 
+    path: path of file
+"""
+def clear_file(path):
+    os.remove(path)
 
 """
 Allow to save the summarised article in .txt located in path
@@ -84,6 +85,7 @@ Input:
     compressione: percent of reduction (used in file name)
 """
 def saveArticle(path, name, article, compression):
+    clear_file(path + name + "_summ_" + str(compression) + ".txt")
     file = open(path + name + "_summ_" + str(compression) + ".txt", 'a')
     file.write(article)
     file.close()
@@ -97,20 +99,16 @@ def init_summarization(document_path, ouput_path, nasari, compression):
     title, article = loadDocument(document_path)
     article_summ = summarization(title, article, nasari, compression)
     saveArticle(ouput_path, document_path.split ("/")[-1], article_summ, compression)
-    #print("Numero caratteri documento finale: ",len(new_article),"\n")
 
 
 def main():
 
-    nasari = loadNasari("./nasariSubset/dd-small-nasari-15.txt")
+    #nasari = loadNasari("./nasariSubset/dd-small-nasari-15.txt")
     #nasari = loadNasari("./nasariSubset/dd-nasari.txt")
-    #nasari = loadNasari("./nasariSubset/dd-small-nasari-15__.txt") # Contain Bonaparte and Napoleone vectors
+    nasari = loadNasari("./nasariSubset/dd-small-nasari-15__.txt") # Contain Bonaparte and Napoleon nasari vectors
     
-    method_score = "title"  # Altri: cue, phrase, cohesion TODO da implementare eventualmente    
-    
-    #init_summarization("./documents/Andy-Warhol.txt", nasari, 10)
     init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 10)
-    """init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 20)
+    init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 20)
     init_summarization("./documents/Ebola-virus-disease.txt", "./output/", nasari, 30)
 
     init_summarization("./documents/Andy-Warhol.txt", "./output/", nasari, 10)
@@ -123,6 +121,6 @@ def main():
     
     init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 10)
     init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 20)
-    init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 30)"""
+    init_summarization("./documents/Napoleon-wiki.txt", "./output/", nasari, 30)
 
 main()

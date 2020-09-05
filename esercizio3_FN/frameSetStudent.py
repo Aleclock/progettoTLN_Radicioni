@@ -4,6 +4,10 @@ import random
 from random import randint
 from random import seed
 
+"""
+This functions allow to retrieve FrameNet elements
+"""
+
 def print_frames_with_IDs():
     for x in fn.frames():
         print('{}\t{}'.format(x.ID, x.name))

@@ -11,7 +11,7 @@ from prettytable import PrettyTable
 # cd /Users/aleclock/Desktop/uni/TLN/radicioni/progettoTLN_Radicioni/esercizio1_ConceptSimilarity
 
 """
-Allow to load a csv file
+Load a csv file
 Input:
     path: path file
 Output:
@@ -28,7 +28,7 @@ def load_csv(path):
     return couple_list
 
 """
-Allow to write a dictionary
+Write a dictionary
 Input:
     dict: dictionary
 """
@@ -37,7 +37,6 @@ def writeCSV(dict):
 
 
 def main():
-    # print(wordnet.get_version())
     couple_list = load_csv('./WordSim353.csv')
 
     mm = Metrics()
@@ -59,7 +58,7 @@ def main():
         ss2 = wn.synsets(r[1])
 
         # ------------------------------------------
-        # - 0. Calcolo similarità tra parole 
+        # - 0. Calculate similarity between words
         # ------------------------------------------
 
         sim_wup = mm.wuPalmerMetric(ss1, ss2)
@@ -76,10 +75,10 @@ def main():
         similarities['sp_api'].append(mm.shortestPathMetricAPI(ss1, ss2))
         similarities['lch_api'].append(mm.leakcockChodorowMetricAPI(ss1, ss2))
 
-    writeCSV(similarities)
+    #writeCSV(similarities)
 
     # ------------------------------------------
-    # - 1. Calcolo indice di correlazione
+    # - 1. Calculate the correlation
     # ------------------------------------------
 
     table = PrettyTable()

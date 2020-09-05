@@ -6,10 +6,6 @@ import collections
 
 
 class Metrics:
-
-    # https://docs.huihoo.com/nltk/0.9.5/api/nltk.wordnet.synset.Synset-class.html
-
-
     """
     Calculate the maximum similarity between words based on Wu-Palmer similarity metric
     Input:
@@ -24,7 +20,7 @@ class Metrics:
         maxSimilarity = 0
         for ss1 in listSynsets1:
             for ss2 in listSynsets2:
-                lcs= getLowestCommonSubsumer(ss1,ss2) # Least Common Subsumer (most specific ancestor node)
+                lcs= getLowestCommonSubsumer(ss1,ss2) # Lowest Common Subsumer (most specific ancestor node)
 
                 if not lcs:
                     similarity = 0
@@ -54,10 +50,9 @@ class Metrics:
 
         for ss1 in listSynsets1:
             for ss2 in listSynsets2:
-                #distance = shortestPath(ss1,ss2)
-                distance = ss1.shortest_path_distance(ss2)
+                distance = shortestPath(ss1,ss2)
+                #distance = ss1.shortest_path_distance(ss2)
                 similarity = ((2 * maxDepth) - distance) / (2 * maxDepth) if distance is not None else 0
-                #similarity = 1 / (distance + 1) if distance is not None else 0
                 maxSimilarity = max(similarity, maxSimilarity)
     
         return maxSimilarity
@@ -98,7 +93,6 @@ class Metrics:
             for ss2 in listSynsets2:
                 wuSimilarity = ss1.wup_similarity(ss2) or 0
                 maxSimilarity = max(maxSimilarity, wuSimilarity)
-        
         return maxSimilarity
     
     """
@@ -110,7 +104,6 @@ class Metrics:
             for ss2 in listSynsets2:
                 spSimilarity = ss1.path_similarity(ss2) or 0
                 maxSimilarity = max(spSimilarity, maxSimilarity)
-        
         return maxSimilarity
 
     """
@@ -127,7 +120,6 @@ class Metrics:
                 
                 if lchSimilarity is not None:
                     maxSimilarity = max(maxSimilarity, lchSimilarity)
-        
         return maxSimilarity
 
 
@@ -157,7 +149,7 @@ Output:
     lowest common subsumer
 """
 def getLowestCommonSubsumer (ss1, ss2):
-    #commons_api = ss1.lowest_common_hypernyms(ss2)
+    commons_api = ss1.lowest_common_hypernyms(ss2)
     common_hypernyms = getCommonSubsumer(ss1,ss2)
     
     lch_index = 0   # lch depth  
@@ -181,8 +173,8 @@ Ouput:
 """
 def min_depthPath(synset,lcs):
     paths = synset.hypernym_paths()
-    paths = list(filter(lambda x: lcs in x, paths))  # Seleziono solo i path che contengono lcs
-    depth = (min(len(path) for path in paths))  # Prende la lunghezza della lista path con cardinalità minore (profondità minore)
+    paths = list(filter(lambda x: lcs in x, paths))  # Select only path containing lcs
+    depth = (min(len(path) for path in paths))  # Get length of list of shortest path (minor depth)
     return depth
 
 """
@@ -211,7 +203,7 @@ def getSubDistance(list, ss1):
 Calculate the shortest path between two synsets
 """
 def shortestPath(ss1, ss2):
-    pathDistanceAPI = ss1.shortest_path_distance(ss2)
+    #pathDistanceAPI = ss1.shortest_path_distance(ss2)
     
     # VERSIONE PERSONALE (CON ERRORI)
     cs = getCommonSubsumer(ss1,ss2)
@@ -242,18 +234,7 @@ def shortestPath(ss1, ss2):
             if d1 is not None and d2 is not None:
                 minDist = min(minDist, (d1 + d2))
     
-    """if pathDistanceAPI != minDist:
-        print ("cs " + str(cs))
-        print ("LCS " + str(lcs))
-        print (path_s1)
-        print (path_s2)
-        print ("")
-        print (ss1._shortest_hypernym_paths(simulate_root=False))
-        print (ss2._shortest_hypernym_paths(simulate_root=False))
-        print ("API " + str(pathDistanceAPI), "MY " + str(minDist))
-        print ("-----")"""
-    
-    # VERSIONE NLTK (uguale a quella implementata nella funzione shortest_path_distance() )
+    # VERSIONE NLTK (uguale a quella implementata nella funzione NTLK shortest_path_distance() )
     """
     dist_dict1 = ss1._shortest_hypernym_paths(simulate_root=False)
     dist_dict2 = ss2._shortest_hypernym_paths(simulate_root=False)
@@ -263,21 +244,12 @@ def shortestPath(ss1, ss2):
     for synset, d1 in dist_dict1.items():
         d2 = dist_dict2.get(synset, inf)
         minDist = min(minDist, d1 + d2)"""
-    
-    """if pathDistanceAPI != minDist:    
-        print ("-- Synsets " + str(ss1) + " , " + str(ss2))
-        print ("** HCS " + str(lcs))
-        print ("== common sub " + str(cs))
-        print ([p[::-1] for p in path_s1])
-        print ([p[::-1] for p in path_s2])
-        print ("")
-        print ("+++ dist (API, my) " + str(pathDistanceAPI) + " , " + str(minDist))
-        print ("\n")"""
 
     return minDist
 
 """
 Return the maximum depth of WordNet
+https://stackoverflow.com/questions/36206023/wordnet-3-0-maximum-depth-of-the-taxonomy
 """
 def maximimDepth():
     return max(max(len(hyp_path) for hyp_path in ss.hypernym_paths()) for ss in wn.all_synsets())

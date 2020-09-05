@@ -110,7 +110,7 @@ def saveBabelNetList(path, babel_list):
     for el in babel_list:
         file.write(str(el[0]) + "\t" + str(el[1]) + "\t" + str(el[2]) + "\t" + str(el[3]) + "\n\n")
         file.write(str(el[4]) + "\n")
-        file.write(str(el[5]) + "\n\n") # TODO per avere un output più compatto rimuovere i vari "\n"
+        file.write(str(el[5]) + "\n\n") # Per ottenere un output più compatto rimuovere i vari "\n"
         file.write("--\n\n")
         #file.write(str(el[0]) + "\t" + str(el[1]) + "\n")
     file.close()

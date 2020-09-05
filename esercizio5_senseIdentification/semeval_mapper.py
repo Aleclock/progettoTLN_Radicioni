@@ -5,13 +5,9 @@ import re
 def getList(name, path):
     sx = get_range(name)
     dx = sx+50-1
-    #dx = sx + 50 
     intervallo = "" + str(sx) + "-" + str(dx)
     print('{:15}:\tcoppie nell\'intervallo {}'.format(name, intervallo))
     couples = openFile(path, sx-1, dx)
-    #couples = openFile(path, 0, 500)
-    """for (i, item) in enumerate(couples, start=1):
-        print(i, item)"""
     
     return couples
 

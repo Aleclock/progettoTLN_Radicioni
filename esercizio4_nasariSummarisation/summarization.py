@@ -6,7 +6,7 @@ from nltk.corpus import stopwords
 
 
 """
-__ Summarized the text with title method of Compression%
+__ Summarized the text with title method of Compression
 Input
 	title: title of the document
 	document: rapresentation of the document
@@ -19,7 +19,7 @@ def summarization(title, article, nasari, compression):
     topics = getNasariVectors(title, nasari)    # Nasari vectors of title
 
     if len(topics) == 0:
-        print ("Impossibile effettuare riassunto, non ci sono abbastanza topics")
+        print ("Impossibile effettuare riassunto, non ci sono topic")
         return article
     
     sentences = []
@@ -34,7 +34,8 @@ def summarization(title, article, nasari, compression):
                 topics_wo += getWeightedOverlap(c,t)
             topics_wo /= len(topics)
             sentence_wo += topics_wo
-        # This control allow to eliminate from analysis/summarization sentences (s) with no topic in Nasari vectors
+
+        # This control allow to delete from analysis/summarization sentences (s) with no topic in Nasari vectors
         if len(context) > 0:
             sentence_wo /= len(context)
             sentences.append(s)
@@ -45,8 +46,8 @@ def summarization(title, article, nasari, compression):
 
     i = 0
     while (i < percent):
-        print ("---------- Paragraph removed")
-        print (sentences[paragraph_score_sorted[i]])
+        #print ("---------- Paragraph removed")
+        #print (sentences[paragraph_score_sorted[i]])
         sentences[paragraph_score_sorted[i]]= ""
         i += 1
 
@@ -54,8 +55,7 @@ def summarization(title, article, nasari, compression):
     for s in sentences:
         article_summ += s + "\n"
 
-    print ("Summarized completed")
-    print ("Final length: " + str(len(article_summ)))
+    print ("Final length: " + str(len(article_summ)) + "\n")
 
     return article_summ
 
@@ -82,16 +82,12 @@ Input:
 Output:
     list of Nasari vectors
 """
-# TODO non è corretto, nel progetto che sto copiando utilizza due funzioni diverse, capire perchè
-# nel caso di "Napoleone Bonaparte" non trova vettori nasari quindi non è possibile eseguire il riassunto
 def getNasariVectors(sentence, nasari):
     topic = clear_sentence(sentence)
-
     vectors = []
     for word in topic:
         if word in nasari.keys():
             vectors.append(nasari[word])
-
     return vectors
 
 
