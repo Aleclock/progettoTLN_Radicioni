@@ -1,4 +1,4 @@
-# **Mapping di Frame in WN Synsets**
+# **Conceptual similarity with WordNet**
 
 # *Consegna*
 
@@ -99,8 +99,8 @@ ss2_depth = depthPath(ss2, lcs)
 
 Dopo aver calcolato le distanze, la similarità tra i due sensi si calcola come
 
-~~~~plain
-similarity (s1, s2) = 2 * lcs_depth / (ss1_depth + ss2_depth)
+~~~~python
+similarity = 2 * lcs_depth / (ss1_depth + ss2_depth)
 ~~~~
 
 Il valore di similarità ottenuto viene confrontato con il massimo valore corrente, in modo da selezionare il valore maggiore tra i due.
@@ -119,13 +119,13 @@ def maximimDepth():
 
 Per ogni synset del primo termine e per ogni synset del secondo, viene calcolato il percorso più corto (``depth = shortestPath(ss1,ss2)``) tra i due sensi. Se non esiste una distanza tra i due sensi, la similarità è ``0``, altrimenti viene calcolata come
 
-~~~~plain
-similarity (s1, s2) = 2 * maxDepth - depth 
+~~~~python
+similarity = ((2 * maxDepth) - distance) / (2 * maxDepth)
 ~~~~
 
-Il valore di similarità ottenuto viene confrontato con il massimo valore corrente, in modo da selezionare il valore maggiore tra i due.
+Siccome il range di similarità è ``[0, 2 * maxDepth]``, il massimo valore di similarità ottenuto viene diviso per ``2 * maxDepth``.
 
-Siccome il range di similarità è ``[0, 2 * maxDepth]``, il massimo valore di similarità ottenuto viene diviso per ``2 * maxDepth``
+Il valore di similarità ottenuto viene confrontato con il massimo valore corrente, in modo da selezionare il valore maggiore tra i due.
 
 <br/>
 
@@ -136,11 +136,17 @@ Come nel calcolo precedente, la profndità massima (``maxDepth``) viene settata 
 
 Per ogni synset del primo termine e per ogni synset del secondo, viene calcolato il percorso più corto (``depth = shortestPath(ss1,ss2)``) tra i due sensi. La similarità viene calcolata come
 
-~~~~plain
-similarity (s1, s2) = log ((depth or 1.) / (2*maxDepth))
+~~~~python
+if distance is not None:
+  if distance > 0:
+    similarity = - (math.log(distance/(2 * maxDepth))) / math.log(2 * maxDepth + 1)
+  else:
+    similarity = - (math.log(1/(2 * maxDepth + 1))) / math.log(2 * maxDepth + 1)
+else:
+  similarity = 0
 ~~~~
 
-dove ``depth`` diventa 1 se nullo.
+I controlli permettono di evitare di calcolare il logaritmo di ``0``.
 
 Il valore di similarità ottenuto viene confrontato con il massimo valore corrente, in modo da selezionare il valore maggiore tra i due.
 
@@ -165,37 +171,7 @@ Di seguito vengono spiegate le funzioni utilizzate per il calcolo della similari
 
 <br/>
 
-Inizialmente viene calcolato, per ogni synset, il percorso/lista di percorsi (``hp1``e``hp2``) tra il synset e root, attraverso la funzione ``ss1.hypernym_paths()``. Citando la documentazione
-> Get the path(s) from this synset to the root, where each path is a list of the synset nodes traversed on the way to the root.<br/>
->:return: A list of lists, where each list gives the node sequence connecting the initial ``Synset`` node and a root node.
-Questa funzione ritorna tutti i path dal ``root`` al ``synset``, quindi dall'elemento più generico al synset che si sta analizzando (più specifico)
-
-<br/>
-
-Per ogni path della lista di path del primo synset (``hp1``) e per ogni percorso della lista di path del secondo synset (``hp2``), le due liste vengono unite in una lista di tuple, in modo da ottenere una struttura del tipo
-
-~~~~plain
-[ (nodo_path_synset1 , nodo_path_synset2) ]
-~~~~
-
-Per ogni elemento della tupla
-
-* Se i due elementi sono uguali (``nodo_path_synset1 == nodo_path_synset2``), il valore del antenato comune (``common``) viene aggiornato se non già presente nella lista totale di synset comuni (``commons_hypernyms``);
-* Se i due elementi sono diversi, il ciclo sugli elementi della tupla viene bloccato in quanto c'è divergenza tra i due percorsi.
-
-<br/>
-
-La lista degli iperonimi in comune ai due synset (``commons_hypernyms``) ha una struttura del tipo:
-
-~~~~plain
-[(Synset('abstraction.n.06'), 1)]
-~~~~
-
-dove il primo elemento è il synset e il secondo (``1 in questo caso``) si riferisce alla profondità nel path.
-
-<br/>
-
-Siccome la versione precedente non funzionava correttamente, ne ho sviluppata un'altra utilizzando la funzione nltk ``ss1._all_hypernyms``, la quale ritorna tutti gli iperonimi di un synset. Calcolando gli iperonimi di entrambe i synset, è possibile ottenere gli iperonimi comuni facendo l'intersezione tra le due liste
+Inizialmente viene calcolato, per ogni synset, tutti gli iperonimi dei due synset, attrverso la funzione ``ss1._all_hypernyms``. Calcolando gli iperonimi di entrambe i synset, è possibile ottenere gli iperonimi comuni facendo l'intersezione tra le due liste
 
 ~~~~python
 ah1 = ss1._all_hypernyms  # all hypernym
@@ -218,23 +194,7 @@ comm = list(ah1.intersection(ah2))
 
 <br/>
 
-Inizialmente viene calcolata la lista degli iperonimi comuni ai due synset (``common_hypernyms``) e viene ordinata in base alla profondità del synset comune.
-Se non ci sono elementi nella lista (``len(common_hypernyms) == 0``), viene ritornato ``None``, altrimenti viene ritornato il synset del primo elemento della lista, ovvero quello con profondità maggiore.
-
-### **ATTENZIONE** <br/>
-Dalle mie analisi questa funzione ritorna lo stesso risultato della funzione embedded di NLTK ``ss1.lowest_common_hypernyms(ss2)``. Solo in un caso il risultato è diverso, in quanto le liste che si ottengono sono
-
-~~~~python
-# Synset('space.n.02') Synset('chemistry.n.02')
-[Synset('abstraction.n.06'), Synset('physical_entity.n.01')] #NLTK lowest_common_hypernyms(ss2)
-[(Synset('abstraction.n.06'), 1), (Synset('physical_entity.n.01'), 1), (Synset('entity.n.01'), 0)] # getLowestCommonSubsumer()
-~~~~
-
-In questo caso entrambi i synset hanno lo stesso valore di profondità, quindi l'errore dipende da un ordinamento diverso
-
-<br/>
-
-Siccome ho cambiato la funzione ``getCommonSubsumer()``, è necessario cambiare anche questa funzione. Inizialmente si calcolano gli iperonimi comuni ai due synset. Successivamente, per ogni iperonimo comune, il lcs (least common subsumer) è l'elemento della lista che ha il path (synset - root) più lungo. Questo si ottiene con la funzione ``max_depthPath()``.
+Inizialmente viene calcolata la lista degli iperonimi comuni ai due synset (``common_hypernyms``). Siccome il lowest common subsumer è l'antenato comune ai due synset più generico, viene ritornato il synset comune che ha distanza maggiore da ``root`` (distanza calcolata con la funzione ``max_depthPath(s)``)
 
 ~~~~python
 def max_depthPath(synset):
@@ -258,17 +218,17 @@ Inizialmente calcola la lista di iperonimi in comune ai due synsets (``cs``) e, 
 list(filter(lambda x: lcs in x, path_s1))
 ~~~~
 
-vengono mantenute solo le liste che contengono il lowest common subsumer (``lcs``). Questo viene calcolato ordinando cs in base alla profondità e selezionando l'ultimo elemento.
+vengono mantenuti solo i percorsi che contengono il lowest common subsumer (``lcs``), calcolato con la funzione ``getLowestCommonSubsumer(ss1,ss2)``.
 
 Per ogni path del primo synset e per ogni path del secondo, vengono calcolate due distanze:
 
-* distanza tra il ``path`` (invertito) del primo synset e ``lcs``;
-* distanza tra il ``path`` (invertito) del secondo synset e ``lcs``. <br/>
-L'inversione della lista permette di ordinarla in modo tale che i primi elementi siano i più specifici e gli ultimi i più generici.  
+* distanza tra il synset e ``lcs`` (nel primo ``path`` invertivo);
+* distanza tra il synset e ``lcs`` (nel secondo ``path`` invertito). <br/>
+L'inversione della lista (``path``) permette di ordinarla in modo tale che i primi elementi siano i più specifici e gli ultimi i più generici.  
 
-Questa operazione viene fatta dalla funzione ``getSubDistance(path, lcs)`` la quale confronta ogni elemento con la lista con il synset hcs (highest common subsumer). Appena il confronto ha successo (i due synset sono uguali), viene ritornato l'indice del synset della lista. In questo modo è possibile determinare la distanza tra il synset di partenza e il synset comune ad entrambi. <br/>
+Questa operazione viene fatta dalla funzione ``getSubDistance(path, lcs)`` la quale confronta ogni elemento con la lista con il synset ``hcs`` (highest common subsumer). Appena il confronto ha successo (i due synset sono uguali), viene ritornato l'indice del synset della lista. In questo modo è possibile determinare la distanza tra il synset di partenza e il synset comune ad entrambi (lcs). <br/>
 
-Calcolando questa distanza per entrambi i path/synset è possibile determinare la distanza tra i due synset. Siccome è necessario trovare il percorso più corto, viene valutata la lunghezza del percorso attuale con quella minima trovata nei cicli precedenti.
+Calcolando questa distanza per entrambi i path/synset è possibile determinare la distanza tra i due synset. Siccome è necessario trovare il percorso più corto, viene valutata la lunghezza del percorso attuale (somma delle lunghezze parziali) con quella minima trovata nei cicli precedenti.
 
 ~~~~python
 minDist = min(minDist, (d1+d2))
@@ -290,16 +250,16 @@ Inizialmente viene calcolata la lista dei percorsi degli iperonimi più corti da
 
 <br/>
 
-## depthPath()
+## min_depthPath()
 
-Questa funzione permette di calcolare la distanza/lunghezza minima del percorso tra il synset in input e root. 
-Inizialmente calcola tutti i path disponibili dato il synset (``hypernym_paths()``) e successivamente la funzione ritorna la lunghezza (``len(path)``) tra i percorsi disponibili. 
+Questa funzione permette di calcolare la distanza/lunghezza minima del percorso tra il synset in input e root.
+Inizialmente calcola tutti i path disponibili dato il synset (``hypernym_paths()``) e successivamente la funzione ritorna la lunghezza (``len(path)``) del path più corto tra quelli disponibili.
 
 <br/><br/>
 
 # 2. Indici di correlazione
 
-Dopo aver calcolato la similarità tra le parole mediante le tre metriche, è necessario calcolare gli indici di correlazione di Spearman and gli indici di correlazione di Pearson fra i risultati ottenuti e quelli ‘target’ presenti nel file annotato. Per fare questo si utilizzano le funzioni ``pearson_index()`` e ``spearman_index()``.
+Dopo aver calcolato la similarità tra le parole mediante le tre metriche, è necessario calcolare gli indici di correlazione di Spearman e gli indici di correlazione di Pearson fra i risultati ottenuti e quelli ‘target’ presenti nel file annotato. Per fare questo si utilizzano le funzioni ``pearson_index()`` e ``spearman_index()``.
 
 * ##  pearson_index()
 

@@ -26,18 +26,18 @@ Clocchiatti    :        coppie nell'intervallo 201-250
 >   * `0: Totally dissimilar and unrelated` -- The two items do not mean the same thing and are
 >not on the same topic (e.g., pencil-frog).
 
-Uno parte di annotazione è il seguente
+Una parte dell' annotazione è la seguente
 
 ~~~~plain
-terremoto   scossa	        3.5
-patrimonio	azione	        1
-ebreo	    Gerusalemme	    2.5
-nuvolosità	previsione	    3
-dizionario	enciclopedia	3.5
-zecca	    museo	        0.5
-sedia	    sgabello        3.5
-spagnolo	umidità         0
-lattina	    bottiglia       3.5
+terremoto   scossa         3.5
+patrimonio	azione         1
+ebreo	    Gerusalemme    2.5
+nuvolosità	previsione     3
+dizionario	enciclopedia   3.5
+zecca	    museo	       0.5
+sedia	    sgabello       3.5
+spagnolo	umidità        0
+lattina	    bottiglia      3.5
 ~~~~
 
 <br/><br/>
@@ -95,7 +95,7 @@ for id in babel_id1:
             nasariVector_w1.append((id, vect))
 ~~~~
 
-in cui per ogni `babel_id` della lista di una parola si ricava il vettore corrispondente dal `dizionario babel_id-nasari_vecto` (`id_vect`).
+in cui per ogni `babel_id` della lista di una parola si ricava il vettore corrispondente dal dizionario `babel_id-nasari_vector` (`id_vect`).
 
 <br/>
 

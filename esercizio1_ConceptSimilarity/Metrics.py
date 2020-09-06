@@ -149,7 +149,7 @@ Output:
     lowest common subsumer
 """
 def getLowestCommonSubsumer (ss1, ss2):
-    commons_api = ss1.lowest_common_hypernyms(ss2)
+    #commons_api = ss1.lowest_common_hypernyms(ss2)
     common_hypernyms = getCommonSubsumer(ss1,ss2)
     
     lch_index = 0   # lch depth  
@@ -214,9 +214,6 @@ def shortestPath(ss1, ss2):
     lcs = getLowestCommonSubsumer(ss1,ss2)
     if lcs is None:
         return None
-
-    #cs.sort(key=lambda x: x[1], reverse=True) # Ordina la lista in base alla profondità del synset comune (ordine decrescente di profondità)
-    #lcs = cs[0][0]
 
     path_s1 = ss1.hypernym_paths()
     path_s2 = ss2.hypernym_paths()

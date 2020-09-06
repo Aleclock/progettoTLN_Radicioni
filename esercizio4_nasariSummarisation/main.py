@@ -98,7 +98,7 @@ def init_summarization(document_path, ouput_path, nasari, compression):
     print("Starting compression of: {} by {}%".format(document_path.split("/")[-1],compression))
     title, article = loadDocument(document_path)
     article_summ = summarization(title, article, nasari, compression)
-    saveArticle(ouput_path, document_path.split ("/")[-1], article_summ, compression)
+    #saveArticle(ouput_path, document_path.split ("/")[-1], article_summ, compression)
 
 
 def main():
